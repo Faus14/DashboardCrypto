@@ -1,0 +1,54 @@
+<div class="usuarios-container">
+    <h2>Lista de Usuarios</h2>
+    
+    <div *ngIf="errorMessage" class="error-message">
+        <p>{{ errorMessage }}</p>
+      </div>
+   
+    <div class="user-form">
+      <h3>{{ isEditing ? 'Editar Usuario' : 'Crear Usuario' }}</h3>
+      <form (ngSubmit)="isEditing ? updateUser() : createUser()">
+        <label for="username">Nombre de Usuario</label>
+        <input type="text" id="username" [(ngModel)]="usuarioForm.username" name="username" required />
+  
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" [(ngModel)]="usuarioForm.password" name="password" required />
+  
+        <label for="role">Rol</label>
+        <input type="text" id="role" [(ngModel)]="usuarioForm.role" name="role" required />
+  
+        <button type="submit">{{ isEditing ? 'Actualizar' : 'Crear' }} Usuario</button>
+        <button type="button" (click)="resetForm()">Cancelar</button>
+      </form>
+    </div>
+  
+    <table *ngIf="usuarios.length > 0" class="table">
+      <thead>
+        <tr>
+          <th>Nombre de Usuario</th>
+          <th>Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.username }}</td>
+          <td>{{ usuario.role }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="editUser(usuario)">Editar</button>
+            <button 
+            *ngIf="usuario.id !== loggedUserId" 
+            class="btn btn-danger"
+            (click)="deleteUser(usuario.id)">
+            Eliminar
+          </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="usuarios.length === 0">
+      <p>No hay usuarios disponibles.</p>
+    </div>
+  </div>
+  

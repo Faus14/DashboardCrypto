@@ -1,0 +1,33 @@
+<div class="dashboard-container">
+    <header class="dashboard-header"></header>
+  
+    <main class="dashboard-content">
+      <h2>Criptomonedas</h2>
+  
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+  
+      <table *ngIf="cryptos.length > 0; else noCryptos" class="crypto-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Símbolo</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let crypto of cryptos">
+            <td>{{ crypto.name }}</td>
+            <td>{{ crypto.symbol }}</td>
+            <td>${{ crypto.price | number: '1.2-2' }}</td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <ng-template #noCryptos>
+        <p>No hay criptomonedas disponibles.</p>
+      </ng-template>
+    </main>
+  </div>
+  

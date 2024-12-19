@@ -1,0 +1,56 @@
+.dashboard-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .logout-button {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .logout-button:hover {
+    background-color: #ff0000;
+  }
+  
+  .crypto-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .crypto-table th,
+  .crypto-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .crypto-table th {
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .crypto-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .crypto-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
