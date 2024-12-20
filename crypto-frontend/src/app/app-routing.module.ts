@@ -7,10 +7,11 @@ import { CriptosComponent } from './components/criptos/criptos.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { AuthGuard } from './auth.guard';
 import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
-//import { PortafoliosComponent } from './components/portafolios/portafolios.component';
+import { PortfolioComponent } from './components/portafolios/portafolios.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
 
   { 
     path: 'dashboard', 
@@ -36,10 +37,17 @@ const routes: Routes = [
   },
 
   {path: 'unauthorized', component: UnauthorizedComponent},
+
+  { 
+    path: 'portafolios', 
+    component: LayoutComponent,
+    children: [{ path: '', component: PortfolioComponent }],
+    canActivate: [AuthGuard], 
+    data: { role: 'User' }
+  },
+
+
 ];
-
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

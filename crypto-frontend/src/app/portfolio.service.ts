@@ -30,4 +30,6 @@ export class PortfolioService {
   removeCryptoFromPortfolio(portfolioId: number, cryptoId: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/remove-crypto/${portfolioId}/${cryptoId}`);
   }
+
+  
 }

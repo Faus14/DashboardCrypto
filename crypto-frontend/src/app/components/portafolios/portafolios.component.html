@@ -1,1 +1,25 @@
-<h1>PORTAFOLIOS</h1>
+<div>
+    <h2>Portafolios de Criptomonedas</h2>
+  
+    <!-- Mostrar balance total -->
+    <h3>Balance Total: ${{ portfolioBalance }}</h3>
+  
+    <!-- Lista de portafolios -->
+    <div *ngFor="let portfolio of portfolios">
+      <h4>{{ portfolio.portfolio_name }}</h4>
+      <ul>
+        <li *ngFor="let crypto of portfolio.cryptos">
+          {{ crypto.symbol }} - {{ crypto.quantity }}
+          <button (click)="removeCryptoFromPortfolio(portfolio.portfolio_id, crypto.crypto_id)">Eliminar</button>
+        </li>
+      </ul>
+      <button (click)="addCryptoToPortfolio(portfolio.portfolio_id, 1, 10)">Agregar Crypto</button> <!-- Suponiendo que tienes el ID de la criptomoneda -->
+    </div>
+  
+    <!-- Formulario para crear un nuevo portafolio -->
+    <div>
+      <input type="text" #portfolioName placeholder="Nombre del portafolio" />
+      <button (click)="createPortfolio(portfolioName.value)">Crear Portafolio</button>
+    </div>
+  </div>
+  

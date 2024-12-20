@@ -19,7 +19,8 @@ import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.compone
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSelectModule } from '@angular/material/select';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSnackBarModule } from '@angular/material/snack-bar'; // Para las alertas
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
@@ -37,7 +38,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'; // Para las ale
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     HttpClientModule,
     MatButtonModule,
     MatTableModule,
@@ -48,6 +48,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'; // Para las ale
     MatSelectModule,
     MatPaginator,
     MatSnackBarModule,
+    MatToolbarModule,
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

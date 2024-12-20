@@ -36,4 +36,23 @@ export class CryptoService {
       catchError(() => of(0)) 
     );
   }
+
+  createCrypto(crypto: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, crypto);
+  }
+
+  updateCrypto(id: number, crypto: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, crypto);
+  }
+
+  deleteCrypto(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/${id}`);
+  }
+
+  getSelectedCrypto(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
+
+  
+  
 }

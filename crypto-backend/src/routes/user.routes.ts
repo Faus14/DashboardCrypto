@@ -7,11 +7,11 @@ import { authorize } from '../middleware/authorize';
 const router = Router();
 
 
-router.get('/', authenticate,authorize(['Admin']) ,userController.getAllUsers);
-router.get('/:id', authenticate, authorize(['Admin']), userController.getUserById);
-router.post('/', authenticate, authorize(['Admin']), userController.createUser);
-router.put('/:id', authenticate, authorize(['Admin']), userController.updateUser);
-router.delete('/:id', authenticate, authorize(['Admin']), userController.deleteUser);
+router.get('/' ,userController.getAllUsers);
+router.get('/:id', userController.getUserById);
+router.post('/',userController.createUser);
+router.put('/:id',userController.updateUser);
+router.delete('/:id',userController.deleteUser);
 
 
 export default router;

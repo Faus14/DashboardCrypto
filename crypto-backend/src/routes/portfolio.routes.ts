@@ -6,19 +6,19 @@ import { authorize } from '../middleware/authorize';
 const router = Router();
 
 
-router.get('/:user_id', authenticate, authorize(['Admin', 'User']), portfolioController.getUserPortfolio); 
-router.get('/user/:user_id', authenticate, authorize(['Admin']), portfolioController.getAllUserPortfolios);
+router.get('/:user_id', portfolioController.getUserPortfolio); 
+router.get('/user/:user_id',portfolioController.getAllUserPortfolios);
 
 
-router.post('/create', authenticate, authorize(['Admin', 'User']), portfolioController.createPortfolio); 
-router.delete('/delete/:portfolio_id', authenticate, authorize(['Admin']), portfolioController.deletePortfolio); 
+router.post('/create',portfolioController.createPortfolio); 
+router.delete('/delete/:portfolio_id',portfolioController.deletePortfolio); 
 
 
-router.post('/add-crypto', authenticate, authorize(['Admin', 'User']), portfolioController.addCryptoToPortfolio); 
-router.delete('/remove-crypto/:portfolio_id/:crypto_id', authenticate, authorize(['Admin', 'User']), portfolioController.removeCryptoFromPortfolio); 
+router.post('/add-crypto',portfolioController.addCryptoToPortfolio); 
+router.delete('/remove-crypto/:portfolio_id/:crypto_id',portfolioController.removeCryptoFromPortfolio); 
 
 
-router.get('/balance/:user_id', authenticate, authorize(['Admin', 'User']), portfolioController.getPortfolioBalanceForUser); 
+router.get('/balance/:user_id', portfolioController.getPortfolioBalanceForUser); 
 
 
 export default router;

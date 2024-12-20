@@ -1,3 +1,60 @@
 
     <h2>Lista de Criptomonedas</h2>
-  
+    <div>
+        <h1>Criptomonedas</h1>
+      
+        <!-- Lista de criptomonedas con su precio -->
+        <ul>
+          <li *ngFor="let crypto of cryptos">
+            <strong>{{ crypto.name }} ({{ crypto.symbol }})</strong> - Precio: ARS {{ crypto.price | number: '1.0-2' }}
+            <button (click)="selectCrypto(crypto)">Seleccionar</button>
+            <button (click)="deleteCrypto(crypto.crypto_id)">Eliminar</button>
+          </li>
+        </ul>
+      
+        <!-- Formulario para crear una nueva criptomoneda -->
+        <div>
+          <h2>Añadir nueva criptomoneda</h2>
+          <form (ngSubmit)="createCrypto()">
+            <label for="name">Nombre:</label>
+            <input
+              id="name"
+              [(ngModel)]="newCrypto.name"
+              name="name"
+              required
+            />
+            <label for="symbol">Símbolo:</label>
+            <input
+              id="symbol"
+              [(ngModel)]="newCrypto.symbol"
+              name="symbol"
+              required
+            />
+            <button type="submit">Crear</button>
+          </form>
+        </div>
+      
+        <!-- Formulario para actualizar una criptomoneda seleccionada -->
+        <div *ngIf="selectedCrypto">
+          <h2>Actualizar criptomoneda</h2>
+          <form (ngSubmit)="updateCrypto()">
+            <label for="update-name">Nombre:</label>
+            <input
+              id="update-name"
+              [(ngModel)]="selectedCrypto.name"
+              name="name"
+              required
+            />
+            <label for="update-symbol">Símbolo:</label>
+            <input
+              id="update-symbol"
+              [(ngModel)]="selectedCrypto.symbol"
+              name="symbol"
+              required
+            />
+            <button type="submit">Actualizar</button>
+          </form>
+          <button (click)="selectedCrypto = null">Cancelar</button>
+        </div>
+      </div>
+      

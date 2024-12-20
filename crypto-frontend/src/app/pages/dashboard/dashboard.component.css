@@ -1,56 +1,88 @@
 .dashboard-container {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.dashboard-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.app-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.dashboard-content {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.table-container {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mat-table {
+  width: 100%;
+}
+
+.crypto-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.crypto-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  color: #666;
+}
+
+.price-column {
+  text-align: right !important;
+}
+
+.error-container {
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 4px;
+  background-color: #fef2f2;
+}
+
+.no-data-card {
+  text-align: center;
+  padding: 32px;
+}
+
+.no-data-card mat-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .dashboard-content {
+    padding: 16px;
   }
-  
-  .dashboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+
+  .mat-table {
+    overflow-x: auto;
   }
-  
-  h1 {
-    color: #333;
-  }
-  
-  .logout-button {
-    background-color: #ff4d4d;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .logout-button:hover {
-    background-color: #ff0000;
-  }
-  
-  .crypto-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .crypto-table th,
-  .crypto-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-  }
-  
-  .crypto-table th {
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  .crypto-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .crypto-table tr:hover {
-    background-color: #f1f1f1;
-  }
-  
+}

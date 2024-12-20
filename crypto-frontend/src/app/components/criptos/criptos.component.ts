@@ -29,4 +29,43 @@ export class CriptosComponent implements OnInit {
     );
   }
 
+  createCrypto(): void {
+    this.cryptoService.createCrypto(this.newCrypto).subscribe(
+      (data) => {
+        this.cryptos.push(data);
+        this.newCrypto = { name: '', symbol: '' };
+      },
+      (error) => {
+        console.error('Error al crear la criptomoneda', error);
+      }
+    );
+  }
+
+  updateCrypto(): void {
+    this.cryptoService.updateCrypto(this.selectedCrypto.crypto_id, this.selectedCrypto).subscribe(
+      (data) => {
+        const index = this.cryptos.findIndex((crypto) => crypto.crypto_id === data.crypto_id);
+        this.cryptos[index] = data;
+      },
+      (error) => {
+        console.error('Error al actualizar la criptomoneda', error);
+      }
+    );
+  }
+
+  deleteCrypto(id: number): void {
+    this.cryptoService.deleteCrypto(id).subscribe(
+      () => {
+        this.cryptos = this.cryptos.filter((crypto) => crypto.crypto_id !== id);
+      },
+      (error) => {
+        console.error('Error al eliminar la criptomoneda', error);
+      }
+    );
+  }
+
+  selectCrypto(crypto: any): void {
+    this.selectedCrypto = { ...crypto };
+  }
+
 }
