@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,29 +11,36 @@ export class TransactionService {
 
   constructor(private http: HttpClient) {}
 
+  private getAuthHeaders(): HttpHeaders {
+    const token = localStorage.getItem('token');
+    return new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+    });
+  }
+
   // Obtener todas las transacciones de un usuario
   getTransactions(userId: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${userId}`);
+    return this.http.get(`${this.apiUrl}/${userId}`, { headers: this.getAuthHeaders() });
   }
 
   getPortfolioTransactions(portfolioId: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/portfolio/${portfolioId}`);
+    return this.http.get(`${this.apiUrl}/portfolio/${portfolioId}`, { headers: this.getAuthHeaders() });
   }
 
 
   // Obtener las criptomonedas de un portafolio
   getPortfolioCryptos(portfolioId: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/monedas/${portfolioId}`);
+    return this.http.get(`${this.apiUrl}/monedas/${portfolioId}`, { headers: this.getAuthHeaders() });
   }
 
   addCryptoToPortfolio(portfolioId: number, cryptoId: number, quantity: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/add`, { portfolio_id: portfolioId, crypto_id: cryptoId, quantity: quantity });
+    return this.http.post(`${this.apiUrl}/add`, { portfolio_id: portfolioId, crypto_id: cryptoId, quantity: quantity }, { headers: this.getAuthHeaders() });
   }
   
 
   removeCryptoFromPortfolio(portfolioId: number, cryptoId: number, quantity: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/remove`, {
-      body: { portfolio_id: portfolioId, crypto_id: cryptoId , quantity: quantity}
+      body: { portfolio_id: portfolioId, crypto_id: cryptoId , quantity: quantity}, headers: this.getAuthHeaders()
     });
   }
   

@@ -129,7 +129,7 @@ export class PortfolioComponent implements OnInit {
   
 
   getTransactionCryptoName(transaction: any): string {
-    return transaction.crypto_name || ''; // Usa el nombre que se obtuvo
+    return transaction.crypto_name || '';
   }
 
   getPortfolioName(portfolioId: number): string {

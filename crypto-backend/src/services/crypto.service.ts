@@ -1,6 +1,5 @@
 import pool from '../config/database';
 import { Crypto } from '../models/crypto.model';
-import axios from 'axios';
 
 
 export const getCryptos = async (): Promise<Crypto[]> => {

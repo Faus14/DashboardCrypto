@@ -3,7 +3,6 @@ import { Request, Response, NextFunction } from 'express';
 export const authorize = (roles: Array<'Admin' | 'User'>) => {
   return (req: Request, res: Response, next: NextFunction): void => {
     const user = req.user;
-
     if (!user) {
       res.status(401).json({ message: 'No autorizado' });
       return;

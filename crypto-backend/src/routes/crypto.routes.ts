@@ -8,12 +8,12 @@ const router = Router();
 
 
 router.get('/',authenticate, authorize(['Admin', 'User']),cryptoController.getCryptos);
-router.get('/:id',cryptoController.getCryptoById);
+router.get('/:id',authenticate, authorize(['Admin', 'User']),cryptoController.getCryptoById);
 
 
-router.post('/',cryptoController.createCrypto);
-router.put('/:id',cryptoController.updateCrypto);
-router.delete('/:id',cryptoController.deleteCrypto);
+router.post('/',authenticate, authorize(['Admin', 'User']),cryptoController.createCrypto);
+router.put('/:id',authenticate, authorize(['Admin', 'User']),cryptoController.updateCrypto);
+router.delete('/:id',authenticate, authorize(['Admin', 'User']),cryptoController.deleteCrypto);
 
 
 export default router;

@@ -7,18 +7,18 @@ const router = Router();
 
 
 // Obtener todos los portafolios de un usuario
-router.get('/:user_id',portfolioController.getUserPortfolios);
+router.get('/:user_id',authenticate, authorize(['Admin', 'User']),portfolioController.getUserPortfolios);
 
 // Obtener un portafolio por su id
-router.get('/portfolio/:portfolio_id',portfolioController.getPortfolioById);
+router.get('/portfolio/:portfolio_id',authenticate, authorize(['Admin', 'User']),portfolioController.getPortfolioById);
 
 // Crear un nuevo portafolio
-router.post('/create',portfolioController.createPortfolio);
+router.post('/create',authenticate, authorize(['Admin', 'User']),portfolioController.createPortfolio);
 
 // Eliminar un portafolio
-router.delete('/delete/:portfolio_id',portfolioController.deletePortfolio);
+router.delete('/delete/:portfolio_id',authenticate, authorize(['Admin', 'User']),portfolioController.deletePortfolio);
 
 // Ver el balance total de un portafolio
-router.get('/total/:portfolio_id',portfolioController.getTotalPortfolioBalance);
+router.get('/total/:portfolio_id',authenticate, authorize(['Admin', 'User']),portfolioController.getTotalPortfolioBalance);
 
 export default router;

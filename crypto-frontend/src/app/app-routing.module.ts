@@ -25,7 +25,7 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [{ path: '', component: CriptosComponent }],
     canActivate: [AuthGuard], 
-    data: { role: 'Admin' } // Solo administradores pueden acceder
+    data: { role: 'Admin' }
   },
 
   { 
@@ -33,7 +33,7 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [{ path: '', component: UsuariosComponent }],
     canActivate: [AuthGuard], 
-    data: { role: 'Admin' } // Solo administradores pueden acceder
+    data: { role: 'Admin' }
   },
 
   { path: 'unauthorized', component: UnauthorizedComponent },

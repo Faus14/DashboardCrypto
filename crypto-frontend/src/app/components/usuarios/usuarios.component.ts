@@ -14,7 +14,8 @@ export class UsuariosComponent implements OnInit {
   displayedColumns: string[] = ['username', 'role', 'acciones']; 
   isModalOpen: boolean = false;
   errorMessage = ''; 
-  loggedUserId: number | null = null;  // Guardamos el ID del usuario logueado
+  loggedUserId: number | null = null;
+  
 
   constructor(private userService: UserService) { }
 
