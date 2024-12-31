@@ -15,21 +15,18 @@ export class PortfolioService {
     return this.http.get(`${this.apiUrl}/${userId}`);
   }
 
-  getPortfolioBalance(userId: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/balance/${userId}`);
+  getTotalPortfolioBalance(portfolio_id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/total/${portfolio_id}`);
   }
 
   createPortfolio(userId: number, portfolioName: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/create`, { user_id: userId, portfolio_name: portfolioName });
   }
 
-  addCryptoToPortfolio(portfolioId: number, cryptoId: number, quantity: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/add-crypto`, { portfolio_id: portfolioId, crypto_id: cryptoId, quantity: quantity });
+  deletePortfolio(portfolioId: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/delete/${portfolioId}`);
   }
-
-  removeCryptoFromPortfolio(portfolioId: number, cryptoId: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/remove-crypto/${portfolioId}/${cryptoId}`);
-  }
+  
 
   
 }

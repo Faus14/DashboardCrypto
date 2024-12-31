@@ -9,8 +9,6 @@ export const getCryptos = async (req: Request, res: Response): Promise<void> => 
     console.error(error);
     res.status(500).json({ message: 'Error al obtener cryptos' });
   }
-
-  
   
 };
 

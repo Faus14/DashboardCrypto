@@ -1,60 +1,136 @@
-
-    <h2>Lista de Criptomonedas</h2>
-    <div>
-        <h1>Criptomonedas</h1>
-      
-        <!-- Lista de criptomonedas con su precio -->
-        <ul>
-          <li *ngFor="let crypto of cryptos">
-            <strong>{{ crypto.name }} ({{ crypto.symbol }})</strong> - Precio: ARS {{ crypto.price | number: '1.0-2' }}
-            <button (click)="selectCrypto(crypto)">Seleccionar</button>
-            <button (click)="deleteCrypto(crypto.crypto_id)">Eliminar</button>
-          </li>
-        </ul>
-      
-        <!-- Formulario para crear una nueva criptomoneda -->
-        <div>
-          <h2>Añadir nueva criptomoneda</h2>
-          <form (ngSubmit)="createCrypto()">
-            <label for="name">Nombre:</label>
-            <input
-              id="name"
-              [(ngModel)]="newCrypto.name"
-              name="name"
-              required
-            />
-            <label for="symbol">Símbolo:</label>
-            <input
-              id="symbol"
-              [(ngModel)]="newCrypto.symbol"
-              name="symbol"
-              required
-            />
-            <button type="submit">Crear</button>
-          </form>
+<!-- Crypto List Container -->
+<div class="min-h-screen bg-gradient-to-br from-blue-900 via-black to-purple-900 p-4 sm:p-6">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-6">
+      <div class="flex items-center space-x-4">
+        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
         </div>
-      
-        <!-- Formulario para actualizar una criptomoneda seleccionada -->
-        <div *ngIf="selectedCrypto">
-          <h2>Actualizar criptomoneda</h2>
-          <form (ngSubmit)="updateCrypto()">
-            <label for="update-name">Nombre:</label>
-            <input
-              id="update-name"
-              [(ngModel)]="selectedCrypto.name"
-              name="name"
-              required
-            />
-            <label for="update-symbol">Símbolo:</label>
-            <input
-              id="update-symbol"
-              [(ngModel)]="selectedCrypto.symbol"
-              name="symbol"
-              required
-            />
-            <button type="submit">Actualizar</button>
-          </form>
-          <button (click)="selectedCrypto = null">Cancelar</button>
-        </div>
+        <h2 class="text-3xl font-bold text-white">Lista de Criptomonedas</h2>
       </div>
       
+      <button 
+        (click)="openModal()"
+        class="btn btn-primary bg-gradient-to-r from-blue-500 to-purple-500 border-0"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+        </svg>
+        Nueva Criptomoneda
+      </button>
+    </div>
+
+    <!-- Crypto List -->
+    <div class="backdrop-blur-lg bg-white/10 rounded-2xl shadow-2xl border border-white/20 overflow-hidden">
+      <div *ngIf="cryptos.length > 0" class="overflow-x-auto">
+        <table class="table w-full">
+          <thead>
+            <tr class="border-b border-white/10">
+              <th class="bg-white/5 text-white font-semibold px-6 py-4">Criptomoneda</th>
+              <th class="bg-white/5 text-white font-semibold px-6 py-4">Precio (ARS)</th>
+              <th class="bg-white/5 text-white font-semibold px-6 py-4">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let crypto of cryptos" class="border-b border-white/10 hover:bg-white/5 transition-colors">
+              <td class="px-6 py-4">
+                <div class="flex items-center space-x-3">
+                  <div class="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white">
+                    {{ crypto.symbol.charAt(0) }}
+                  </div>
+                  <div>
+                    <span class="text-white font-medium">{{ crypto.name }}</span>
+                    <span class="text-gray-400 text-sm ml-2">({{ crypto.symbol }})</span>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4">
+                <span class="text-white">{{ crypto.price | number: '1.0-2' }}</span>
+              </td>
+              <td class="px-6 py-4">
+                <div class="flex gap-2">
+                  <button 
+                    (click)="selectCrypto(crypto)"
+                    class="btn btn-sm btn-ghost text-blue-400 hover:bg-blue-500/20"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                  </button>
+                  <button 
+                    (click)="deleteCrypto(crypto.crypto_id)"
+                    class="btn btn-sm btn-ghost text-red-400 hover:bg-red-500/20"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Empty State -->
+      <div *ngIf="cryptos.length === 0" class="flex flex-col items-center justify-center py-12">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <p class="text-gray-300 text-lg">No hay criptomonedas disponibles.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<dialog id="crypto_modal" class="modal modal-bottom sm:modal-middle" [ngClass]="{'modal-open': isModalOpen}">
+  <div class="modal-box bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <h3 class="font-bold text-lg mb-6">
+      {{ selectedCrypto ? 'Editar Criptomoneda' : 'Crear Criptomoneda' }}
+    </h3>
+    
+    <form (ngSubmit)="selectedCrypto ? updateCrypto() : createCrypto()" class="space-y-4">
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text text-white">Nombre</span>
+        </label>
+        <input 
+          type="text"
+          class="input input-bordered bg-gray-800/50 border-gray-700 text-white focus:border-blue-500"
+          placeholder="Ej: Bitcoin"
+          [(ngModel)]="selectedCrypto ? selectedCrypto.name : newCrypto.name"
+          name="name"
+          required
+        />
+      </div>
+
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text text-white">Símbolo</span>
+        </label>
+        <input 
+          type="text"
+          class="input input-bordered bg-gray-800/50 border-gray-700 text-white focus:border-blue-500"
+          placeholder="Ej: BTC"
+          [(ngModel)]="selectedCrypto ? selectedCrypto.symbol : newCrypto.symbol"
+          name="symbol"
+          required
+        />
+      </div>
+
+      <div class="modal-action">
+        <button type="button" class="btn btn-ghost" (click)="closeModal()">Cancelar</button>
+        <button type="submit" class="btn btn-primary bg-gradient-to-r from-blue-500 to-purple-500 border-0">
+          {{ selectedCrypto ? 'Actualizar' : 'Crear' }}
+        </button>
+      </div>
+    </form>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button (click)="closeModal()">close</button>
+  </form>
+</dialog>

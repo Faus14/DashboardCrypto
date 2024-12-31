@@ -1,25 +1,214 @@
-<div>
-    <h2>Portafolios de Criptomonedas</h2>
-  
-    <!-- Mostrar balance total -->
-    <h3>Balance Total: ${{ portfolioBalance }}</h3>
-  
-    <!-- Lista de portafolios -->
-    <div *ngFor="let portfolio of portfolios">
-      <h4>{{ portfolio.portfolio_name }}</h4>
-      <ul>
-        <li *ngFor="let crypto of portfolio.cryptos">
-          {{ crypto.symbol }} - {{ crypto.quantity }}
-          <button (click)="removeCryptoFromPortfolio(portfolio.portfolio_id, crypto.crypto_id)">Eliminar</button>
-        </li>
-      </ul>
-      <button (click)="addCryptoToPortfolio(portfolio.portfolio_id, 1, 10)">Agregar Crypto</button> <!-- Suponiendo que tienes el ID de la criptomoneda -->
-    </div>
-  
-    <!-- Formulario para crear un nuevo portafolio -->
-    <div>
-      <input type="text" #portfolioName placeholder="Nombre del portafolio" />
-      <button (click)="createPortfolio(portfolioName.value)">Crear Portafolio</button>
+<div class="p-6 max-w-7xl mx-auto space-y-8">
+  <!-- Portfolio Cards Grid -->
+<!-- Header con botón de nuevo portafolio -->
+<div class="p-6 max-w-7xl mx-auto space-y-8">
+  <div class="flex justify-between items-center mb-6">
+    <button (click)="createNewPortfolio()" 
+            class="btn btn-primary btn-md gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           fill="none" 
+           viewBox="0 0 24 24" 
+           stroke="currentColor" 
+           class="w-5 h-5">
+        <path stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2" 
+              d="M12 4v16m8-8H4" />
+      </svg>
+      Nuevo Portafolio
+    </button>
+  </div>
+
+  <!-- Grid de Portafolios -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div *ngFor="let portfolio of portfolios" 
+         class="card bg-base-300 hover:bg-base-200 transition-all duration-300 relative">
+      <!-- Contenido del Portafolio -->
+      <div class="card-body cursor-pointer" 
+           (click)="selectPortfolio(portfolio.portfolio_id)">
+        <h3 class="card-title text-primary">{{ portfolio.portfolio_name }}</h3>
+        <div class="flex items-center text-primary-content/60 mt-2">
+          <span class="text-white/70">Ver detalles</span>
+        </div>
+      </div>
+      
+      <!-- Botón Eliminar -->
+      <button (click)="deletePortfolio(portfolio.portfolio_id)" 
+              class="btn btn-ghost absolute top-2 right-2 hover:btn-error">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             fill="none" 
+             viewBox="0 0 24 24" 
+             stroke="currentColor" 
+             class="w-5 h-5">
+          <path stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
     </div>
   </div>
+
+  <!-- Modal de Confirmación de Eliminación -->
+  <dialog id="deleteModal" class="modal">
+    <div class="modal-box">
+      <h3 class="font-bold text-lg text-error">¿Eliminar Portafolio?</h3>
+      <p class="py-4">Esta acción no se puede deshacer.</p>
+      <div class="modal-action">
+        <button class="btn" onclick="deleteModal.close()">Cancelar</button>
+        <button class="btn btn-error" (click)="confirmDelete()">Eliminar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal de Nuevo Portafolio -->
+  <dialog id="createModal" class="modal">
+    <div class="modal-box">
+      <h3 class="font-bold text-lg">Nuevo Portafolio</h3>
+      <div class="py-4">
+        <input type="text" 
+               [(ngModel)]="newPortfolioName" 
+               placeholder="Nombre del portafolio" 
+               class="input input-bordered w-full" />
+      </div>
+      <div class="modal-action">
+        <button class="btn" onclick="createModal.close()">Cancelar</button>
+        <button class="btn btn-primary" 
+                (click)="confirmCreatePortfolio()" 
+                [disabled]="!newPortfolioName">
+          Crear
+        </button>
+      </div>
+    </div>
+  </dialog>
   
+
+  <!-- Notifications -->
+  <div *ngIf="errorMessage" class="notification error fade-out">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <div *ngIf="successMessage" class="notification success fade-out">
+    <p>{{ successMessage }}</p>
+  </div>
+
+  <!-- Portfolio Details Section -->
+  <div *ngIf="selectedPortfolioId > 0" class="space-y-6">
+    <!-- Balance Card -->
+    <div class="card bg-base-300">
+      <div class="card-body">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="card-title text-2xl">{{ selectedPortfolioName }}</h2>
+          
+          <!-- Dropdown Management -->
+          <div class="dropdown">
+            <button class="btn btn-primary">
+              <i class="fas fa-plus-circle mr-1"></i>
+              Nueva transaccion
+            </button>
+            
+            <div class="dropdown-content">
+              <h3 class="text-xl font-bold mb-4 text-white">
+                Agregar o Eliminar Criptomoneda
+              </h3>
+              
+              <form (ngSubmit)="handleCryptoAction()" class="space-y-4">
+                <div class="form-group">
+                  <label class="form-label">Seleccionar Criptomoneda</label>
+                  <select [(ngModel)]="selectedCryptoId" 
+                          name="cryptos" 
+                          class="form-select">
+                    <option *ngFor="let crypto of TodasCryptos" 
+                            [value]="crypto.crypto_id">
+                      {{ crypto.name }}
+                    </option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Cantidad</label>
+                  <input type="number" 
+                         [(ngModel)]="quantity" 
+                         name="quantity" 
+                         class="form-input" 
+                         min="1"
+                         step="any"
+                         required>
+                </div>
+                
+                <div class="btn-group">
+                  <button type="submit" 
+                          (click)="setAction('add')" 
+                          class="btn btn-add">
+                    <i class="fas fa-plus-circle mr-2"></i>
+                    Agregar
+                  </button>
+                  <button type="submit" 
+                          (click)="setAction('remove')" 
+                          class="btn btn-remove">
+                    <i class="fas fa-minus-circle mr-2"></i>
+                    Eliminar
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+        <p class="text-3xl font-bold text-success">{{ portfolioBalance | currency:'ARS' }}</p>
+      </div>
+    </div>
+
+    <!-- Cryptocurrencies Card -->
+    <div class="card bg-base-300">
+      <div class="card-body">
+        <h3 class="card-title mb-4">Criptomonedas</h3>
+        <div class="space-y-3">
+          <div *ngFor="let crypto of Cryptos" 
+               class="bg-base-200 p-4 rounded-lg flex justify-between items-center">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-coins text-primary"></i>
+              <div>
+                <p class="font-semibold">{{ crypto.crypto_name }}</p>
+                <p class="text-sm opacity-70">Cantidad: {{ crypto.total_quantity }}</p>
+              </div>
+            </div>
+          </div>
+          <p *ngIf="!Cryptos.length" class="text-center opacity-70">
+            No se han registrado criptomonedas en este portafolio.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transactions Card -->
+    <div class="card bg-base-300">
+      <div class="card-body">
+        <h3 class="card-title mb-4">Historial de Transacciones</h3>
+        <div class="space-y-3">
+          <div *ngFor="let tx of transactions" 
+               class="bg-base-200 p-4 rounded-lg flex justify-between items-center">
+            <div>
+              <p class="font-semibold">{{ tx.crypto_name }}</p>
+              <p class="text-sm opacity-70">
+                {{ tx.quantity }} {{ tx.crypto_symbol }} • {{ tx.transaction_date }}
+              </p>
+            </div>
+            <span [class]="tx.transaction_type === 'add' ? 'badge badge-success' : 'badge badge-error'">
+              {{ tx.transaction_type === 'add' ? 'Compra' : 'Venta' }}
+            </span>
+          </div>
+          <p *ngIf="!transactions.length" class="text-center opacity-70">
+            No se han registrado transacciones en este portafolio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No Portfolio Selected Message -->
+  <div *ngIf="selectedPortfolioId === 0" class="text-center opacity-70 py-8">
+    <i class="fas fa-arrow-up text-2xl mb-2"></i>
+    <p>Selecciona un portafolio para ver más detalles.</p>
+  </div>
+</div>

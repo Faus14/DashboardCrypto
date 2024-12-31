@@ -1,32 +1,108 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="'/dashboard'">Dashboard</a>
-      </li>
-      <!-- Menú para Administradores -->
-      <li *ngIf="isAdmin" class="nav-item">
-        <a class="nav-link" [routerLink]="'/criptos'">Criptos</a>
-      </li>
-      <li *ngIf="isAdmin" class="nav-item">
-        <a class="nav-link" [routerLink]="'/usuarios'">Usuarios</a>
-      </li>
-      <!-- Menú para Usuarios -->
-      <li *ngIf="!isAdmin" class="nav-item">
-        <a class="nav-link" [routerLink]="'/portafolios'">Portafolios</a>
-      </li>
-    </ul>
-    <form class="d-flex align-items-center">
-      <img 
-      src="assets/agregar-usuario.png "
-        alt="Logo" 
-        class="rounded-circle" 
-        style="width: 40px; height: 40px; margin-right: 10px;"
-      />
-      <span class="text-white me-2">{{loggedUser?.username}}</span>
-      <button class="btn btn-primary ms-2" type="button" (click)="onLogoff()">Salir</button>
-    </form>
+<!-- Navbar con efecto glassmorphism -->
+<div class="backdrop-blur-lg bg-white/10 border-b-0 fixed top-0 left-0 right-0 z-50">
+  <div class="navbar max-w-7xl mx-auto px-4">
+    <!-- Navbar Inicio -->
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle lg:hidden text-white hover:bg-white/10">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </div>
+        <!-- Menú móvil -->
+        <ul
+          tabindex="0"
+          class="menu menu-sm dropdown-content backdrop-blur-lg bg-gray-900/95 text-white rounded-xl z-[1] mt-3 w-52 p-2 shadow-lg border border-white/10">
+          <li><a [routerLink]="'/dashboard'" class="hover:bg-white/10">Dashboard</a></li>
+          <li *ngIf="isAdmin">
+            <a [routerLink]="'/criptos'" class="hover:bg-white/10">Criptos</a>
+          </li>
+          <li *ngIf="isAdmin">
+            <a [routerLink]="'/usuarios'" class="hover:bg-white/10">Usuarios</a>
+          </li>
+          <li *ngIf="!isAdmin">
+            <a [routerLink]="'/portafolios'" class="hover:bg-white/10">Portafolios</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Logo -->
+      <a [routerLink]="'/dashboard'" class="flex items-center space-x-3 text-white">
+        <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+          </svg>
+        </div>
+        <span class="text-xl font-bold">CryptoLab</span>
+      </a>
+    </div>
+
+    <!-- Navbar Centro -->
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal space-x-2">
+        <li>
+          <a [routerLink]="'/dashboard'" 
+             class="text-white hover:bg-white/10 rounded-lg px-4">Dashboard</a>
+        </li>
+        <li *ngIf="isAdmin">
+          <a [routerLink]="'/criptos'" 
+             class="text-white hover:bg-white/10 rounded-lg px-4">Criptos</a>
+        </li>
+        <li *ngIf="isAdmin">
+          <a [routerLink]="'/usuarios'" 
+             class="text-white hover:bg-white/10 rounded-lg px-4">Usuarios</a>
+        </li>
+        <li *ngIf="!isAdmin">
+          <a [routerLink]="'/portafolios'" 
+             class="text-white hover:bg-white/10 rounded-lg px-4">Portafolios</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Navbar Fin -->
+    <div class="navbar-end">
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost btn-circle avatar border border-white/20 hover:bg-white/10">
+          <div class="w-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500">
+            <img src="assets/agregar-usuario.png" alt="Avatar de Usuario" />
+          </div>
+        </label>
+        <ul
+          tabindex="0"
+          class="menu menu-sm dropdown-content backdrop-blur-lg bg-gray-900/95 text-white rounded-xl mt-3 w-52 p-4 shadow-lg border border-white/10">
+          <li>
+            <div class="flex items-center space-x-3 px-2 py-1">
+              <div class="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                {{ loggedUser?.username.charAt(0).toUpperCase() }}
+              </div>
+              <span class="font-semibold">{{ loggedUser?.username }}</span>
+            </div>
+          </li>
+          <div class="divider my-2 before:bg-white/10 after:bg-white/10"></div>
+          <li>
+            <button (click)="onLogoff()" 
+                    class="btn btn-sm w-full bg-red-500/20 hover:bg-red-500/30 text-white border-red-500/30">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              </svg>
+              Cerrar sesión
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
-</nav>
-<router-outlet></router-outlet>
+</div>
+
+<div style="padding-top: 50px;">
+  <router-outlet></router-outlet>
+</div>
 

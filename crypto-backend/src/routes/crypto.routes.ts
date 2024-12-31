@@ -7,7 +7,7 @@ const router = Router();
 
 
 
-router.get('/',cryptoController.getCryptos);
+router.get('/',authenticate, authorize(['Admin', 'User']),cryptoController.getCryptos);
 router.get('/:id',cryptoController.getCryptoById);
 
 

@@ -12,7 +12,7 @@ export class UsuariosComponent implements OnInit {
   usuarioForm: any = { id: null, username: '', password: '', role: '' };
   isEditing: boolean = false; 
   displayedColumns: string[] = ['username', 'role', 'acciones']; 
-  
+  isModalOpen: boolean = false;
   errorMessage = ''; 
   loggedUserId: number | null = null;  // Guardamos el ID del usuario logueado
 
@@ -43,8 +43,10 @@ export class UsuariosComponent implements OnInit {
     if (this.usuarioForm.username && this.usuarioForm.password && this.usuarioForm.role) {
       this.userService.createUser(this.usuarioForm).subscribe(
         (data) => {
-          this.getAllUsers(); 
+          this.getAllUsers();
+          this.closeModal(); 
           this.resetForm();
+          this.errorMessage = '';
         },
         (error) => {
           this.errorMessage = error.error.message || 'Error al crear el usuario';
@@ -54,8 +56,9 @@ export class UsuariosComponent implements OnInit {
   }
 
   editUser(user: any): void {
-    this.usuarioForm = { ...user };
     this.isEditing = true;
+    this.usuarioForm = { ...user };
+    this.isModalOpen = true;
   }
 
   updateUser(): void {
@@ -63,7 +66,8 @@ export class UsuariosComponent implements OnInit {
       this.userService.updateUser(this.usuarioForm.id, this.usuarioForm).subscribe(
         (data) => {
           this.getAllUsers();  
-          this.resetForm(); 
+          this.resetForm();
+          this.errorMessage = '';
         },
         (error) => {
           this.errorMessage = error.error.message || 'Error al actualizar el usuario';
@@ -94,4 +98,16 @@ export class UsuariosComponent implements OnInit {
     this.usuarioForm = { id: null, username: '', password: '', role: '' };
     this.isEditing = false;
   }
+
+
+  openModal(): void {
+    this.resetForm();
+    this.isModalOpen = true;
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
+    this.resetForm();
+  }
+
 }

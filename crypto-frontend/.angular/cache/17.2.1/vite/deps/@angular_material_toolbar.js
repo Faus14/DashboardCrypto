@@ -1,10 +1,10 @@
 import {
   MatCommonModule,
   Platform
-} from "./chunk-E3TBRHGJ.js";
+} from "./chunk-5MBBO3DQ.js";
 import {
   DOCUMENT
-} from "./chunk-EVZ7MBMK.js";
+} from "./chunk-CJQ54GTB.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -29,27 +29,30 @@ import {
   ɵɵprojection,
   ɵɵprojectionDef,
   ɵɵqueryRefresh
-} from "./chunk-QHIF2FQR.js";
-import "./chunk-UKEHM6V6.js";
+} from "./chunk-FDSD7WD4.js";
 import "./chunk-V2DXGMIT.js";
+import "./chunk-UKEHM6V6.js";
 import "./chunk-ZDOIMVJD.js";
 
 // node_modules/@angular/material/fesm2022/toolbar.mjs
 var _c0 = ["*", [["mat-toolbar-row"]]];
 var _c1 = ["*", "mat-toolbar-row"];
-var _MatToolbarRow = class _MatToolbarRow {
+var MatToolbarRow = class _MatToolbarRow {
+  static {
+    this.ɵfac = function MatToolbarRow_Factory(t) {
+      return new (t || _MatToolbarRow)();
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatToolbarRow,
+      selectors: [["mat-toolbar-row"]],
+      hostAttrs: [1, "mat-toolbar-row"],
+      exportAs: ["matToolbarRow"],
+      standalone: true
+    });
+  }
 };
-_MatToolbarRow.ɵfac = function MatToolbarRow_Factory(t) {
-  return new (t || _MatToolbarRow)();
-};
-_MatToolbarRow.ɵdir = ɵɵdefineDirective({
-  type: _MatToolbarRow,
-  selectors: [["mat-toolbar-row"]],
-  hostAttrs: [1, "mat-toolbar-row"],
-  exportAs: ["matToolbarRow"],
-  standalone: true
-});
-var MatToolbarRow = _MatToolbarRow;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatToolbarRow, [{
     type: Directive,
@@ -63,7 +66,7 @@ var MatToolbarRow = _MatToolbarRow;
     }]
   }], null, null);
 })();
-var _MatToolbar = class _MatToolbar {
+var MatToolbar = class _MatToolbar {
   constructor(_elementRef, _platform, document) {
     this._elementRef = _elementRef;
     this._platform = _platform;
@@ -86,51 +89,54 @@ var _MatToolbar = class _MatToolbar {
       }
     }
   }
+  static {
+    this.ɵfac = function MatToolbar_Factory(t) {
+      return new (t || _MatToolbar)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Platform), ɵɵdirectiveInject(DOCUMENT));
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _MatToolbar,
+      selectors: [["mat-toolbar"]],
+      contentQueries: function MatToolbar_ContentQueries(rf, ctx, dirIndex) {
+        if (rf & 1) {
+          ɵɵcontentQuery(dirIndex, MatToolbarRow, 5);
+        }
+        if (rf & 2) {
+          let _t;
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._toolbarRows = _t);
+        }
+      },
+      hostAttrs: [1, "mat-toolbar"],
+      hostVars: 6,
+      hostBindings: function MatToolbar_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          ɵɵclassMap(ctx.color ? "mat-" + ctx.color : "");
+          ɵɵclassProp("mat-toolbar-multiple-rows", ctx._toolbarRows.length > 0)("mat-toolbar-single-row", ctx._toolbarRows.length === 0);
+        }
+      },
+      inputs: {
+        color: "color"
+      },
+      exportAs: ["matToolbar"],
+      standalone: true,
+      features: [ɵɵStandaloneFeature],
+      ngContentSelectors: _c1,
+      decls: 2,
+      vars: 0,
+      template: function MatToolbar_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵprojectionDef(_c0);
+          ɵɵprojection(0);
+          ɵɵprojection(1, 1);
+        }
+      },
+      styles: [".mat-toolbar{background:var(--mat-toolbar-container-background-color);color:var(--mat-toolbar-container-text-color)}.mat-toolbar,.mat-toolbar h1,.mat-toolbar h2,.mat-toolbar h3,.mat-toolbar h4,.mat-toolbar h5,.mat-toolbar h6{font-family:var(--mat-toolbar-title-text-font);font-size:var(--mat-toolbar-title-text-size);line-height:var(--mat-toolbar-title-text-line-height);font-weight:var(--mat-toolbar-title-text-weight);letter-spacing:var(--mat-toolbar-title-text-tracking);margin:0}.cdk-high-contrast-active .mat-toolbar{outline:solid 1px}.mat-toolbar .mat-form-field-underline,.mat-toolbar .mat-form-field-ripple,.mat-toolbar .mat-focused .mat-form-field-ripple{background-color:currentColor}.mat-toolbar .mat-form-field-label,.mat-toolbar .mat-focused .mat-form-field-label,.mat-toolbar .mat-select-value,.mat-toolbar .mat-select-arrow,.mat-toolbar .mat-form-field.mat-focused .mat-select-arrow{color:inherit}.mat-toolbar .mat-input-element{caret-color:currentColor}.mat-toolbar .mat-mdc-button-base.mat-mdc-button-base.mat-unthemed{--mdc-text-button-label-text-color:var(--mat-toolbar-container-text-color);--mdc-outlined-button-label-text-color:var(--mat-toolbar-container-text-color)}.mat-toolbar-row,.mat-toolbar-single-row{display:flex;box-sizing:border-box;padding:0 16px;width:100%;flex-direction:row;align-items:center;white-space:nowrap;height:var(--mat-toolbar-standard-height)}@media(max-width: 599px){.mat-toolbar-row,.mat-toolbar-single-row{height:var(--mat-toolbar-mobile-height)}}.mat-toolbar-multiple-rows{display:flex;box-sizing:border-box;flex-direction:column;width:100%;min-height:var(--mat-toolbar-standard-height)}@media(max-width: 599px){.mat-toolbar-multiple-rows{min-height:var(--mat-toolbar-mobile-height)}}"],
+      encapsulation: 2,
+      changeDetection: 0
+    });
+  }
 };
-_MatToolbar.ɵfac = function MatToolbar_Factory(t) {
-  return new (t || _MatToolbar)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Platform), ɵɵdirectiveInject(DOCUMENT));
-};
-_MatToolbar.ɵcmp = ɵɵdefineComponent({
-  type: _MatToolbar,
-  selectors: [["mat-toolbar"]],
-  contentQueries: function MatToolbar_ContentQueries(rf, ctx, dirIndex) {
-    if (rf & 1) {
-      ɵɵcontentQuery(dirIndex, MatToolbarRow, 5);
-    }
-    if (rf & 2) {
-      let _t;
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._toolbarRows = _t);
-    }
-  },
-  hostAttrs: [1, "mat-toolbar"],
-  hostVars: 6,
-  hostBindings: function MatToolbar_HostBindings(rf, ctx) {
-    if (rf & 2) {
-      ɵɵclassMap(ctx.color ? "mat-" + ctx.color : "");
-      ɵɵclassProp("mat-toolbar-multiple-rows", ctx._toolbarRows.length > 0)("mat-toolbar-single-row", ctx._toolbarRows.length === 0);
-    }
-  },
-  inputs: {
-    color: "color"
-  },
-  exportAs: ["matToolbar"],
-  standalone: true,
-  features: [ɵɵStandaloneFeature],
-  ngContentSelectors: _c1,
-  decls: 2,
-  vars: 0,
-  template: function MatToolbar_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵprojectionDef(_c0);
-      ɵɵprojection(0);
-      ɵɵprojection(1, 1);
-    }
-  },
-  styles: [".mat-toolbar{background:var(--mat-toolbar-container-background-color);color:var(--mat-toolbar-container-text-color)}.mat-toolbar,.mat-toolbar h1,.mat-toolbar h2,.mat-toolbar h3,.mat-toolbar h4,.mat-toolbar h5,.mat-toolbar h6{font-family:var(--mat-toolbar-title-text-font);font-size:var(--mat-toolbar-title-text-size);line-height:var(--mat-toolbar-title-text-line-height);font-weight:var(--mat-toolbar-title-text-weight);letter-spacing:var(--mat-toolbar-title-text-tracking);margin:0}.cdk-high-contrast-active .mat-toolbar{outline:solid 1px}.mat-toolbar .mat-form-field-underline,.mat-toolbar .mat-form-field-ripple,.mat-toolbar .mat-focused .mat-form-field-ripple{background-color:currentColor}.mat-toolbar .mat-form-field-label,.mat-toolbar .mat-focused .mat-form-field-label,.mat-toolbar .mat-select-value,.mat-toolbar .mat-select-arrow,.mat-toolbar .mat-form-field.mat-focused .mat-select-arrow{color:inherit}.mat-toolbar .mat-input-element{caret-color:currentColor}.mat-toolbar .mat-mdc-button-base.mat-mdc-button-base.mat-unthemed{--mdc-text-button-label-text-color:var(--mat-toolbar-container-text-color);--mdc-outlined-button-label-text-color:var(--mat-toolbar-container-text-color)}.mat-toolbar-row,.mat-toolbar-single-row{display:flex;box-sizing:border-box;padding:0 16px;width:100%;flex-direction:row;align-items:center;white-space:nowrap;height:var(--mat-toolbar-standard-height)}@media(max-width: 599px){.mat-toolbar-row,.mat-toolbar-single-row{height:var(--mat-toolbar-mobile-height)}}.mat-toolbar-multiple-rows{display:flex;box-sizing:border-box;flex-direction:column;width:100%;min-height:var(--mat-toolbar-standard-height)}@media(max-width: 599px){.mat-toolbar-multiple-rows{min-height:var(--mat-toolbar-mobile-height)}}"],
-  encapsulation: 2,
-  changeDetection: 0
-});
-var MatToolbar = _MatToolbar;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatToolbar, [{
     type: Component,
@@ -174,20 +180,25 @@ var MatToolbar = _MatToolbar;
 function throwToolbarMixedModesError() {
   throw Error("MatToolbar: Attempting to combine different toolbar modes. Either specify multiple `<mat-toolbar-row>` elements explicitly or just place content inside of a `<mat-toolbar>` for a single row.");
 }
-var _MatToolbarModule = class _MatToolbarModule {
+var MatToolbarModule = class _MatToolbarModule {
+  static {
+    this.ɵfac = function MatToolbarModule_Factory(t) {
+      return new (t || _MatToolbarModule)();
+    };
+  }
+  static {
+    this.ɵmod = ɵɵdefineNgModule({
+      type: _MatToolbarModule,
+      imports: [MatCommonModule, MatToolbar, MatToolbarRow],
+      exports: [MatToolbar, MatToolbarRow, MatCommonModule]
+    });
+  }
+  static {
+    this.ɵinj = ɵɵdefineInjector({
+      imports: [MatCommonModule, MatCommonModule]
+    });
+  }
 };
-_MatToolbarModule.ɵfac = function MatToolbarModule_Factory(t) {
-  return new (t || _MatToolbarModule)();
-};
-_MatToolbarModule.ɵmod = ɵɵdefineNgModule({
-  type: _MatToolbarModule,
-  imports: [MatCommonModule, MatToolbar, MatToolbarRow],
-  exports: [MatToolbar, MatToolbarRow, MatCommonModule]
-});
-_MatToolbarModule.ɵinj = ɵɵdefineInjector({
-  imports: [MatCommonModule, MatCommonModule]
-});
-var MatToolbarModule = _MatToolbarModule;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatToolbarModule, [{
     type: NgModule,

@@ -7,29 +7,29 @@ import {
   OverlayModule,
   PortalModule,
   TemplatePortal
-} from "./chunk-57PNTQRY.js";
+} from "./chunk-U2ZC2C4G.js";
+import "./chunk-FQLL2CFB.js";
+import {
+  MatButton,
+  MatButtonModule
+} from "./chunk-XDQUXPM7.js";
 import {
   animate,
   state,
   style,
   transition,
   trigger
-} from "./chunk-WZAAAADQ.js";
-import "./chunk-UKIMETGX.js";
-import {
-  MatButton,
-  MatButtonModule
-} from "./chunk-K7ASUQOV.js";
+} from "./chunk-2EVYLA5W.js";
 import {
   BreakpointObserver,
   Breakpoints,
   LiveAnnouncer,
   MatCommonModule,
   Platform
-} from "./chunk-E3TBRHGJ.js";
+} from "./chunk-5MBBO3DQ.js";
 import {
   DOCUMENT
-} from "./chunk-EVZ7MBMK.js";
+} from "./chunk-CJQ54GTB.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -77,9 +77,9 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-QHIF2FQR.js";
-import "./chunk-UKEHM6V6.js";
+} from "./chunk-FDSD7WD4.js";
 import "./chunk-V2DXGMIT.js";
+import "./chunk-UKEHM6V6.js";
 import {
   Subject,
   __spreadValues,
@@ -191,18 +191,21 @@ var MatSnackBarConfig = class {
     this.verticalPosition = "bottom";
   }
 };
-var _MatSnackBarLabel = class _MatSnackBarLabel {
+var MatSnackBarLabel = class _MatSnackBarLabel {
+  static {
+    this.ɵfac = function MatSnackBarLabel_Factory(t) {
+      return new (t || _MatSnackBarLabel)();
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatSnackBarLabel,
+      selectors: [["", "matSnackBarLabel", ""]],
+      hostAttrs: [1, "mat-mdc-snack-bar-label", "mdc-snackbar__label"],
+      standalone: true
+    });
+  }
 };
-_MatSnackBarLabel.ɵfac = function MatSnackBarLabel_Factory(t) {
-  return new (t || _MatSnackBarLabel)();
-};
-_MatSnackBarLabel.ɵdir = ɵɵdefineDirective({
-  type: _MatSnackBarLabel,
-  selectors: [["", "matSnackBarLabel", ""]],
-  hostAttrs: [1, "mat-mdc-snack-bar-label", "mdc-snackbar__label"],
-  standalone: true
-});
-var MatSnackBarLabel = _MatSnackBarLabel;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSnackBarLabel, [{
     type: Directive,
@@ -215,18 +218,21 @@ var MatSnackBarLabel = _MatSnackBarLabel;
     }]
   }], null, null);
 })();
-var _MatSnackBarActions = class _MatSnackBarActions {
+var MatSnackBarActions = class _MatSnackBarActions {
+  static {
+    this.ɵfac = function MatSnackBarActions_Factory(t) {
+      return new (t || _MatSnackBarActions)();
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatSnackBarActions,
+      selectors: [["", "matSnackBarActions", ""]],
+      hostAttrs: [1, "mat-mdc-snack-bar-actions", "mdc-snackbar__actions"],
+      standalone: true
+    });
+  }
 };
-_MatSnackBarActions.ɵfac = function MatSnackBarActions_Factory(t) {
-  return new (t || _MatSnackBarActions)();
-};
-_MatSnackBarActions.ɵdir = ɵɵdefineDirective({
-  type: _MatSnackBarActions,
-  selectors: [["", "matSnackBarActions", ""]],
-  hostAttrs: [1, "mat-mdc-snack-bar-actions", "mdc-snackbar__actions"],
-  standalone: true
-});
-var MatSnackBarActions = _MatSnackBarActions;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSnackBarActions, [{
     type: Directive,
@@ -239,18 +245,21 @@ var MatSnackBarActions = _MatSnackBarActions;
     }]
   }], null, null);
 })();
-var _MatSnackBarAction = class _MatSnackBarAction {
+var MatSnackBarAction = class _MatSnackBarAction {
+  static {
+    this.ɵfac = function MatSnackBarAction_Factory(t) {
+      return new (t || _MatSnackBarAction)();
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatSnackBarAction,
+      selectors: [["", "matSnackBarAction", ""]],
+      hostAttrs: [1, "mat-mdc-snack-bar-action", "mdc-snackbar__action"],
+      standalone: true
+    });
+  }
 };
-_MatSnackBarAction.ɵfac = function MatSnackBarAction_Factory(t) {
-  return new (t || _MatSnackBarAction)();
-};
-_MatSnackBarAction.ɵdir = ɵɵdefineDirective({
-  type: _MatSnackBarAction,
-  selectors: [["", "matSnackBarAction", ""]],
-  hostAttrs: [1, "mat-mdc-snack-bar-action", "mdc-snackbar__action"],
-  standalone: true
-});
-var MatSnackBarAction = _MatSnackBarAction;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSnackBarAction, [{
     type: Directive,
@@ -263,7 +272,7 @@ var MatSnackBarAction = _MatSnackBarAction;
     }]
   }], null, null);
 })();
-var _SimpleSnackBar = class _SimpleSnackBar {
+var SimpleSnackBar = class _SimpleSnackBar {
   constructor(snackBarRef, data) {
     this.snackBarRef = snackBarRef;
     this.data = data;
@@ -276,40 +285,43 @@ var _SimpleSnackBar = class _SimpleSnackBar {
   get hasAction() {
     return !!this.data.action;
   }
+  static {
+    this.ɵfac = function SimpleSnackBar_Factory(t) {
+      return new (t || _SimpleSnackBar)(ɵɵdirectiveInject(MatSnackBarRef), ɵɵdirectiveInject(MAT_SNACK_BAR_DATA));
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _SimpleSnackBar,
+      selectors: [["simple-snack-bar"]],
+      hostAttrs: [1, "mat-mdc-simple-snack-bar"],
+      exportAs: ["matSnackBar"],
+      standalone: true,
+      features: [ɵɵStandaloneFeature],
+      decls: 3,
+      vars: 2,
+      consts: [["matSnackBarLabel", ""], ["matSnackBarActions", ""], ["mat-button", "", "matSnackBarAction", "", 3, "click"]],
+      template: function SimpleSnackBar_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵelementStart(0, "div", 0);
+          ɵɵtext(1);
+          ɵɵelementEnd();
+          ɵɵtemplate(2, SimpleSnackBar_Conditional_2_Template, 3, 1, "div", 1);
+        }
+        if (rf & 2) {
+          ɵɵadvance();
+          ɵɵtextInterpolate1(" ", ctx.data.message, "\n");
+          ɵɵadvance();
+          ɵɵconditional(2, ctx.hasAction ? 2 : -1);
+        }
+      },
+      dependencies: [MatButton, MatSnackBarLabel, MatSnackBarActions, MatSnackBarAction],
+      styles: [".mat-mdc-simple-snack-bar{display:flex}"],
+      encapsulation: 2,
+      changeDetection: 0
+    });
+  }
 };
-_SimpleSnackBar.ɵfac = function SimpleSnackBar_Factory(t) {
-  return new (t || _SimpleSnackBar)(ɵɵdirectiveInject(MatSnackBarRef), ɵɵdirectiveInject(MAT_SNACK_BAR_DATA));
-};
-_SimpleSnackBar.ɵcmp = ɵɵdefineComponent({
-  type: _SimpleSnackBar,
-  selectors: [["simple-snack-bar"]],
-  hostAttrs: [1, "mat-mdc-simple-snack-bar"],
-  exportAs: ["matSnackBar"],
-  standalone: true,
-  features: [ɵɵStandaloneFeature],
-  decls: 3,
-  vars: 2,
-  consts: [["matSnackBarLabel", ""], ["matSnackBarActions", ""], ["mat-button", "", "matSnackBarAction", "", 3, "click"]],
-  template: function SimpleSnackBar_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵelementStart(0, "div", 0);
-      ɵɵtext(1);
-      ɵɵelementEnd();
-      ɵɵtemplate(2, SimpleSnackBar_Conditional_2_Template, 3, 1, "div", 1);
-    }
-    if (rf & 2) {
-      ɵɵadvance();
-      ɵɵtextInterpolate1(" ", ctx.data.message, "\n");
-      ɵɵadvance();
-      ɵɵconditional(2, ctx.hasAction ? 2 : -1);
-    }
-  },
-  dependencies: [MatButton, MatSnackBarLabel, MatSnackBarActions, MatSnackBarAction],
-  styles: [".mat-mdc-simple-snack-bar{display:flex}"],
-  encapsulation: 2,
-  changeDetection: 0
-});
-var SimpleSnackBar = _SimpleSnackBar;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SimpleSnackBar, [{
     type: Component,
@@ -349,7 +361,7 @@ var matSnackBarAnimations = {
   })))])
 };
 var uniqueId = 0;
-var _MatSnackBarContainer = class _MatSnackBarContainer extends BasePortalOutlet {
+var MatSnackBarContainer = class _MatSnackBarContainer extends BasePortalOutlet {
   constructor(_ngZone, _elementRef, _changeDetectorRef, _platform, snackBarConfig) {
     super();
     this._ngZone = _ngZone;
@@ -538,62 +550,65 @@ var _MatSnackBarContainer = class _MatSnackBarContainer extends BasePortalOutlet
       });
     }
   }
-};
-_MatSnackBarContainer.ɵfac = function MatSnackBarContainer_Factory(t) {
-  return new (t || _MatSnackBarContainer)(ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(Platform), ɵɵdirectiveInject(MatSnackBarConfig));
-};
-_MatSnackBarContainer.ɵcmp = ɵɵdefineComponent({
-  type: _MatSnackBarContainer,
-  selectors: [["mat-snack-bar-container"]],
-  viewQuery: function MatSnackBarContainer_Query(rf, ctx) {
-    if (rf & 1) {
-      ɵɵviewQuery(CdkPortalOutlet, 7);
-      ɵɵviewQuery(_c0, 7);
-    }
-    if (rf & 2) {
-      let _t;
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._portalOutlet = _t.first);
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._label = _t.first);
-    }
-  },
-  hostAttrs: [1, "mdc-snackbar", "mat-mdc-snack-bar-container", "mdc-snackbar--open"],
-  hostVars: 1,
-  hostBindings: function MatSnackBarContainer_HostBindings(rf, ctx) {
-    if (rf & 1) {
-      ɵɵsyntheticHostListener("@state.done", function MatSnackBarContainer_animation_state_done_HostBindingHandler($event) {
-        return ctx.onAnimationEnd($event);
-      });
-    }
-    if (rf & 2) {
-      ɵɵsyntheticHostProperty("@state", ctx._animationState);
-    }
-  },
-  standalone: true,
-  features: [ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
-  decls: 6,
-  vars: 3,
-  consts: [[1, "mdc-snackbar__surface"], [1, "mat-mdc-snack-bar-label"], ["label", ""], ["aria-hidden", "true"], ["cdkPortalOutlet", ""]],
-  template: function MatSnackBarContainer_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵelementStart(0, "div", 0)(1, "div", 1, 2)(3, "div", 3);
-      ɵɵtemplate(4, MatSnackBarContainer_ng_template_4_Template, 0, 0, "ng-template", 4);
-      ɵɵelementEnd();
-      ɵɵelement(5, "div");
-      ɵɵelementEnd()();
-    }
-    if (rf & 2) {
-      ɵɵadvance(5);
-      ɵɵattribute("aria-live", ctx._live)("role", ctx._role)("id", ctx._liveElementId);
-    }
-  },
-  dependencies: [CdkPortalOutlet],
-  styles: ['.mdc-snackbar{display:none;position:fixed;right:0;bottom:0;left:0;align-items:center;justify-content:center;box-sizing:border-box;pointer-events:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mdc-snackbar--opening,.mdc-snackbar--open,.mdc-snackbar--closing{display:flex}.mdc-snackbar--open .mdc-snackbar__label,.mdc-snackbar--open .mdc-snackbar__actions{visibility:visible}.mdc-snackbar__surface{padding-left:0;padding-right:8px;display:flex;align-items:center;justify-content:flex-start;box-sizing:border-box;transform:scale(0.8);opacity:0}.mdc-snackbar__surface::before{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;border:1px solid rgba(0,0,0,0);border-radius:inherit;content:"";pointer-events:none}@media screen and (forced-colors: active){.mdc-snackbar__surface::before{border-color:CanvasText}}[dir=rtl] .mdc-snackbar__surface,.mdc-snackbar__surface[dir=rtl]{padding-left:8px;padding-right:0}.mdc-snackbar--open .mdc-snackbar__surface{transform:scale(1);opacity:1;pointer-events:auto}.mdc-snackbar--closing .mdc-snackbar__surface{transform:scale(1)}.mdc-snackbar__label{padding-left:16px;padding-right:8px;width:100%;flex-grow:1;box-sizing:border-box;margin:0;visibility:hidden;padding-top:14px;padding-bottom:14px}[dir=rtl] .mdc-snackbar__label,.mdc-snackbar__label[dir=rtl]{padding-left:8px;padding-right:16px}.mdc-snackbar__label::before{display:inline;content:attr(data-mdc-snackbar-label-text)}.mdc-snackbar__actions{display:flex;flex-shrink:0;align-items:center;box-sizing:border-box;visibility:hidden}.mdc-snackbar__action+.mdc-snackbar__dismiss{margin-left:8px;margin-right:0}[dir=rtl] .mdc-snackbar__action+.mdc-snackbar__dismiss,.mdc-snackbar__action+.mdc-snackbar__dismiss[dir=rtl]{margin-left:0;margin-right:8px}.mat-mdc-snack-bar-container{margin:8px;position:static}.mat-mdc-snack-bar-container .mdc-snackbar__surface{min-width:344px}@media(max-width: 480px),(max-width: 344px){.mat-mdc-snack-bar-container .mdc-snackbar__surface{min-width:100%}}@media(max-width: 480px),(max-width: 344px){.mat-mdc-snack-bar-container{width:100vw}}.mat-mdc-snack-bar-container .mdc-snackbar__surface{max-width:672px}.mat-mdc-snack-bar-container .mdc-snackbar__surface{box-shadow:0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12)}.mat-mdc-snack-bar-container .mdc-snackbar__surface{background-color:var(--mdc-snackbar-container-color)}.mat-mdc-snack-bar-container .mdc-snackbar__surface{border-radius:var(--mdc-snackbar-container-shape)}.mat-mdc-snack-bar-container .mdc-snackbar__label{color:var(--mdc-snackbar-supporting-text-color)}.mat-mdc-snack-bar-container .mdc-snackbar__label{font-size:var(--mdc-snackbar-supporting-text-size);font-family:var(--mdc-snackbar-supporting-text-font);font-weight:var(--mdc-snackbar-supporting-text-weight);line-height:var(--mdc-snackbar-supporting-text-line-height)}.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled){color:var(--mat-snack-bar-button-color);--mat-text-button-state-layer-color:currentColor;--mat-text-button-ripple-color:currentColor}.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) .mat-ripple-element{opacity:.1}.mat-mdc-snack-bar-container .mdc-snackbar__label::before{display:none}.mat-mdc-snack-bar-handset,.mat-mdc-snack-bar-container,.mat-mdc-snack-bar-label{flex:1 1 auto}.mat-mdc-snack-bar-handset .mdc-snackbar__surface{width:100%}'],
-  encapsulation: 2,
-  data: {
-    animation: [matSnackBarAnimations.snackBarState]
+  static {
+    this.ɵfac = function MatSnackBarContainer_Factory(t) {
+      return new (t || _MatSnackBarContainer)(ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(Platform), ɵɵdirectiveInject(MatSnackBarConfig));
+    };
   }
-});
-var MatSnackBarContainer = _MatSnackBarContainer;
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _MatSnackBarContainer,
+      selectors: [["mat-snack-bar-container"]],
+      viewQuery: function MatSnackBarContainer_Query(rf, ctx) {
+        if (rf & 1) {
+          ɵɵviewQuery(CdkPortalOutlet, 7);
+          ɵɵviewQuery(_c0, 7);
+        }
+        if (rf & 2) {
+          let _t;
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._portalOutlet = _t.first);
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._label = _t.first);
+        }
+      },
+      hostAttrs: [1, "mdc-snackbar", "mat-mdc-snack-bar-container", "mdc-snackbar--open"],
+      hostVars: 1,
+      hostBindings: function MatSnackBarContainer_HostBindings(rf, ctx) {
+        if (rf & 1) {
+          ɵɵsyntheticHostListener("@state.done", function MatSnackBarContainer_animation_state_done_HostBindingHandler($event) {
+            return ctx.onAnimationEnd($event);
+          });
+        }
+        if (rf & 2) {
+          ɵɵsyntheticHostProperty("@state", ctx._animationState);
+        }
+      },
+      standalone: true,
+      features: [ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
+      decls: 6,
+      vars: 3,
+      consts: [[1, "mdc-snackbar__surface"], [1, "mat-mdc-snack-bar-label"], ["label", ""], ["aria-hidden", "true"], ["cdkPortalOutlet", ""]],
+      template: function MatSnackBarContainer_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵelementStart(0, "div", 0)(1, "div", 1, 2)(3, "div", 3);
+          ɵɵtemplate(4, MatSnackBarContainer_ng_template_4_Template, 0, 0, "ng-template", 4);
+          ɵɵelementEnd();
+          ɵɵelement(5, "div");
+          ɵɵelementEnd()();
+        }
+        if (rf & 2) {
+          ɵɵadvance(5);
+          ɵɵattribute("aria-live", ctx._live)("role", ctx._role)("id", ctx._liveElementId);
+        }
+      },
+      dependencies: [CdkPortalOutlet],
+      styles: ['.mdc-snackbar{display:none;position:fixed;right:0;bottom:0;left:0;align-items:center;justify-content:center;box-sizing:border-box;pointer-events:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mdc-snackbar--opening,.mdc-snackbar--open,.mdc-snackbar--closing{display:flex}.mdc-snackbar--open .mdc-snackbar__label,.mdc-snackbar--open .mdc-snackbar__actions{visibility:visible}.mdc-snackbar__surface{padding-left:0;padding-right:8px;display:flex;align-items:center;justify-content:flex-start;box-sizing:border-box;transform:scale(0.8);opacity:0}.mdc-snackbar__surface::before{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;border:1px solid rgba(0,0,0,0);border-radius:inherit;content:"";pointer-events:none}@media screen and (forced-colors: active){.mdc-snackbar__surface::before{border-color:CanvasText}}[dir=rtl] .mdc-snackbar__surface,.mdc-snackbar__surface[dir=rtl]{padding-left:8px;padding-right:0}.mdc-snackbar--open .mdc-snackbar__surface{transform:scale(1);opacity:1;pointer-events:auto}.mdc-snackbar--closing .mdc-snackbar__surface{transform:scale(1)}.mdc-snackbar__label{padding-left:16px;padding-right:8px;width:100%;flex-grow:1;box-sizing:border-box;margin:0;visibility:hidden;padding-top:14px;padding-bottom:14px}[dir=rtl] .mdc-snackbar__label,.mdc-snackbar__label[dir=rtl]{padding-left:8px;padding-right:16px}.mdc-snackbar__label::before{display:inline;content:attr(data-mdc-snackbar-label-text)}.mdc-snackbar__actions{display:flex;flex-shrink:0;align-items:center;box-sizing:border-box;visibility:hidden}.mdc-snackbar__action+.mdc-snackbar__dismiss{margin-left:8px;margin-right:0}[dir=rtl] .mdc-snackbar__action+.mdc-snackbar__dismiss,.mdc-snackbar__action+.mdc-snackbar__dismiss[dir=rtl]{margin-left:0;margin-right:8px}.mat-mdc-snack-bar-container{margin:8px;position:static}.mat-mdc-snack-bar-container .mdc-snackbar__surface{min-width:344px}@media(max-width: 480px),(max-width: 344px){.mat-mdc-snack-bar-container .mdc-snackbar__surface{min-width:100%}}@media(max-width: 480px),(max-width: 344px){.mat-mdc-snack-bar-container{width:100vw}}.mat-mdc-snack-bar-container .mdc-snackbar__surface{max-width:672px}.mat-mdc-snack-bar-container .mdc-snackbar__surface{box-shadow:0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12)}.mat-mdc-snack-bar-container .mdc-snackbar__surface{background-color:var(--mdc-snackbar-container-color)}.mat-mdc-snack-bar-container .mdc-snackbar__surface{border-radius:var(--mdc-snackbar-container-shape)}.mat-mdc-snack-bar-container .mdc-snackbar__label{color:var(--mdc-snackbar-supporting-text-color)}.mat-mdc-snack-bar-container .mdc-snackbar__label{font-size:var(--mdc-snackbar-supporting-text-size);font-family:var(--mdc-snackbar-supporting-text-font);font-weight:var(--mdc-snackbar-supporting-text-weight);line-height:var(--mdc-snackbar-supporting-text-line-height)}.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled){color:var(--mat-snack-bar-button-color);--mat-text-button-state-layer-color:currentColor;--mat-text-button-ripple-color:currentColor}.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) .mat-ripple-element{opacity:.1}.mat-mdc-snack-bar-container .mdc-snackbar__label::before{display:none}.mat-mdc-snack-bar-handset,.mat-mdc-snack-bar-container,.mat-mdc-snack-bar-label{flex:1 1 auto}.mat-mdc-snack-bar-handset .mdc-snackbar__surface{width:100%}'],
+      encapsulation: 2,
+      data: {
+        animation: [matSnackBarAnimations.snackBarState]
+      }
+    });
+  }
+};
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSnackBarContainer, [{
     type: Component,
@@ -644,7 +659,7 @@ var MAT_SNACK_BAR_DEFAULT_OPTIONS = new InjectionToken("mat-snack-bar-default-op
   providedIn: "root",
   factory: MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY
 });
-var _MatSnackBar = class _MatSnackBar {
+var MatSnackBar = class _MatSnackBar {
   /** Reference to the currently opened snackbar at *any* level. */
   get _openedSnackBarRef() {
     const parent = this._parentSnackBar;
@@ -834,16 +849,19 @@ var _MatSnackBar = class _MatSnackBar {
       }]
     });
   }
+  static {
+    this.ɵfac = function MatSnackBar_Factory(t) {
+      return new (t || _MatSnackBar)(ɵɵinject(Overlay), ɵɵinject(LiveAnnouncer), ɵɵinject(Injector), ɵɵinject(BreakpointObserver), ɵɵinject(_MatSnackBar, 12), ɵɵinject(MAT_SNACK_BAR_DEFAULT_OPTIONS));
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _MatSnackBar,
+      factory: _MatSnackBar.ɵfac,
+      providedIn: "root"
+    });
+  }
 };
-_MatSnackBar.ɵfac = function MatSnackBar_Factory(t) {
-  return new (t || _MatSnackBar)(ɵɵinject(Overlay), ɵɵinject(LiveAnnouncer), ɵɵinject(Injector), ɵɵinject(BreakpointObserver), ɵɵinject(_MatSnackBar, 12), ɵɵinject(MAT_SNACK_BAR_DEFAULT_OPTIONS));
-};
-_MatSnackBar.ɵprov = ɵɵdefineInjectable({
-  token: _MatSnackBar,
-  factory: _MatSnackBar.ɵfac,
-  providedIn: "root"
-});
-var MatSnackBar = _MatSnackBar;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSnackBar, [{
     type: Injectable,
@@ -874,21 +892,26 @@ var MatSnackBar = _MatSnackBar;
   }], null);
 })();
 var DIRECTIVES = [MatSnackBarContainer, MatSnackBarLabel, MatSnackBarActions, MatSnackBarAction];
-var _MatSnackBarModule = class _MatSnackBarModule {
+var MatSnackBarModule = class _MatSnackBarModule {
+  static {
+    this.ɵfac = function MatSnackBarModule_Factory(t) {
+      return new (t || _MatSnackBarModule)();
+    };
+  }
+  static {
+    this.ɵmod = ɵɵdefineNgModule({
+      type: _MatSnackBarModule,
+      imports: [OverlayModule, PortalModule, MatButtonModule, MatCommonModule, SimpleSnackBar, MatSnackBarContainer, MatSnackBarLabel, MatSnackBarActions, MatSnackBarAction],
+      exports: [MatCommonModule, MatSnackBarContainer, MatSnackBarLabel, MatSnackBarActions, MatSnackBarAction]
+    });
+  }
+  static {
+    this.ɵinj = ɵɵdefineInjector({
+      providers: [MatSnackBar],
+      imports: [OverlayModule, PortalModule, MatButtonModule, MatCommonModule, SimpleSnackBar, MatCommonModule]
+    });
+  }
 };
-_MatSnackBarModule.ɵfac = function MatSnackBarModule_Factory(t) {
-  return new (t || _MatSnackBarModule)();
-};
-_MatSnackBarModule.ɵmod = ɵɵdefineNgModule({
-  type: _MatSnackBarModule,
-  imports: [OverlayModule, PortalModule, MatButtonModule, MatCommonModule, SimpleSnackBar, MatSnackBarContainer, MatSnackBarLabel, MatSnackBarActions, MatSnackBarAction],
-  exports: [MatCommonModule, MatSnackBarContainer, MatSnackBarLabel, MatSnackBarActions, MatSnackBarAction]
-});
-_MatSnackBarModule.ɵinj = ɵɵdefineInjector({
-  providers: [MatSnackBar],
-  imports: [OverlayModule, PortalModule, MatButtonModule, MatCommonModule, SimpleSnackBar, MatCommonModule]
-});
-var MatSnackBarModule = _MatSnackBarModule;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSnackBarModule, [{
     type: NgModule,

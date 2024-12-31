@@ -1,15 +1,15 @@
 import {
   DomSanitizer
-} from "./chunk-Q2ED7VAN.js";
+} from "./chunk-FCCZDRCO.js";
 import {
   HttpClient
-} from "./chunk-J4NJLBY7.js";
+} from "./chunk-6VBU4IMH.js";
 import {
   MatCommonModule
-} from "./chunk-E3TBRHGJ.js";
+} from "./chunk-5MBBO3DQ.js";
 import {
   DOCUMENT
-} from "./chunk-EVZ7MBMK.js";
+} from "./chunk-CJQ54GTB.js";
 import {
   Attribute,
   ChangeDetectionStrategy,
@@ -43,11 +43,11 @@ import {
   ɵɵinjectAttribute,
   ɵɵprojection,
   ɵɵprojectionDef
-} from "./chunk-QHIF2FQR.js";
-import "./chunk-UKEHM6V6.js";
+} from "./chunk-FDSD7WD4.js";
 import {
   forkJoin
 } from "./chunk-V2DXGMIT.js";
+import "./chunk-UKEHM6V6.js";
 import {
   Subscription,
   catchError,
@@ -99,7 +99,7 @@ var SvgIconConfig = class {
     this.options = options;
   }
 };
-var _MatIconRegistry = class _MatIconRegistry {
+var MatIconRegistry = class _MatIconRegistry {
   constructor(_httpClient, _sanitizer, document, _errorHandler) {
     this._httpClient = _httpClient;
     this._sanitizer = _sanitizer;
@@ -516,16 +516,19 @@ var _MatIconRegistry = class _MatIconRegistry {
     }
     return void 0;
   }
+  static {
+    this.ɵfac = function MatIconRegistry_Factory(t) {
+      return new (t || _MatIconRegistry)(ɵɵinject(HttpClient, 8), ɵɵinject(DomSanitizer), ɵɵinject(DOCUMENT, 8), ɵɵinject(ErrorHandler));
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _MatIconRegistry,
+      factory: _MatIconRegistry.ɵfac,
+      providedIn: "root"
+    });
+  }
 };
-_MatIconRegistry.ɵfac = function MatIconRegistry_Factory(t) {
-  return new (t || _MatIconRegistry)(ɵɵinject(HttpClient, 8), ɵɵinject(DomSanitizer), ɵɵinject(DOCUMENT, 8), ɵɵinject(ErrorHandler));
-};
-_MatIconRegistry.ɵprov = ɵɵdefineInjectable({
-  token: _MatIconRegistry,
-  factory: _MatIconRegistry.ɵfac,
-  providedIn: "root"
-});
-var MatIconRegistry = _MatIconRegistry;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatIconRegistry, [{
     type: Injectable,
@@ -586,7 +589,7 @@ function MAT_ICON_LOCATION_FACTORY() {
 var funcIriAttributes = ["clip-path", "color-profile", "src", "cursor", "fill", "filter", "marker", "marker-start", "marker-mid", "marker-end", "mask", "stroke"];
 var funcIriAttributeSelector = funcIriAttributes.map((attr) => `[${attr}]`).join(", ");
 var funcIriPattern = /^url\(['"]?#(.*?)['"]?\)$/;
-var _MatIcon = class _MatIcon {
+var MatIcon = class _MatIcon {
   /** Theme palette color of the icon. */
   get color() {
     return this._color || this._defaultColor;
@@ -807,46 +810,49 @@ var _MatIcon = class _MatIcon {
       });
     }
   }
+  static {
+    this.ɵfac = function MatIcon_Factory(t) {
+      return new (t || _MatIcon)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(MatIconRegistry), ɵɵinjectAttribute("aria-hidden"), ɵɵdirectiveInject(MAT_ICON_LOCATION), ɵɵdirectiveInject(ErrorHandler), ɵɵdirectiveInject(MAT_ICON_DEFAULT_OPTIONS, 8));
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _MatIcon,
+      selectors: [["mat-icon"]],
+      hostAttrs: ["role", "img", 1, "mat-icon", "notranslate"],
+      hostVars: 10,
+      hostBindings: function MatIcon_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          ɵɵattribute("data-mat-icon-type", ctx._usingFontIcon() ? "font" : "svg")("data-mat-icon-name", ctx._svgName || ctx.fontIcon)("data-mat-icon-namespace", ctx._svgNamespace || ctx.fontSet)("fontIcon", ctx._usingFontIcon() ? ctx.fontIcon : null);
+          ɵɵclassMap(ctx.color ? "mat-" + ctx.color : "");
+          ɵɵclassProp("mat-icon-inline", ctx.inline)("mat-icon-no-color", ctx.color !== "primary" && ctx.color !== "accent" && ctx.color !== "warn");
+        }
+      },
+      inputs: {
+        color: "color",
+        inline: [InputFlags.HasDecoratorInputTransform, "inline", "inline", booleanAttribute],
+        svgIcon: "svgIcon",
+        fontSet: "fontSet",
+        fontIcon: "fontIcon"
+      },
+      exportAs: ["matIcon"],
+      standalone: true,
+      features: [ɵɵInputTransformsFeature, ɵɵStandaloneFeature],
+      ngContentSelectors: _c0,
+      decls: 1,
+      vars: 0,
+      template: function MatIcon_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵprojectionDef();
+          ɵɵprojection(0);
+        }
+      },
+      styles: ["mat-icon,mat-icon.mat-primary,mat-icon.mat-accent,mat-icon.mat-warn{color:var(--mat-icon-color)}.mat-icon{-webkit-user-select:none;user-select:none;background-repeat:no-repeat;display:inline-block;fill:currentColor;height:24px;width:24px;overflow:hidden}.mat-icon.mat-icon-inline{font-size:inherit;height:inherit;line-height:inherit;width:inherit}.mat-icon.mat-ligature-font[fontIcon]::before{content:attr(fontIcon)}[dir=rtl] .mat-icon-rtl-mirror{transform:scale(-1, 1)}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{display:block}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button .mat-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button .mat-icon{margin:auto}"],
+      encapsulation: 2,
+      changeDetection: 0
+    });
+  }
 };
-_MatIcon.ɵfac = function MatIcon_Factory(t) {
-  return new (t || _MatIcon)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(MatIconRegistry), ɵɵinjectAttribute("aria-hidden"), ɵɵdirectiveInject(MAT_ICON_LOCATION), ɵɵdirectiveInject(ErrorHandler), ɵɵdirectiveInject(MAT_ICON_DEFAULT_OPTIONS, 8));
-};
-_MatIcon.ɵcmp = ɵɵdefineComponent({
-  type: _MatIcon,
-  selectors: [["mat-icon"]],
-  hostAttrs: ["role", "img", 1, "mat-icon", "notranslate"],
-  hostVars: 10,
-  hostBindings: function MatIcon_HostBindings(rf, ctx) {
-    if (rf & 2) {
-      ɵɵattribute("data-mat-icon-type", ctx._usingFontIcon() ? "font" : "svg")("data-mat-icon-name", ctx._svgName || ctx.fontIcon)("data-mat-icon-namespace", ctx._svgNamespace || ctx.fontSet)("fontIcon", ctx._usingFontIcon() ? ctx.fontIcon : null);
-      ɵɵclassMap(ctx.color ? "mat-" + ctx.color : "");
-      ɵɵclassProp("mat-icon-inline", ctx.inline)("mat-icon-no-color", ctx.color !== "primary" && ctx.color !== "accent" && ctx.color !== "warn");
-    }
-  },
-  inputs: {
-    color: "color",
-    inline: [InputFlags.HasDecoratorInputTransform, "inline", "inline", booleanAttribute],
-    svgIcon: "svgIcon",
-    fontSet: "fontSet",
-    fontIcon: "fontIcon"
-  },
-  exportAs: ["matIcon"],
-  standalone: true,
-  features: [ɵɵInputTransformsFeature, ɵɵStandaloneFeature],
-  ngContentSelectors: _c0,
-  decls: 1,
-  vars: 0,
-  template: function MatIcon_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵprojectionDef();
-      ɵɵprojection(0);
-    }
-  },
-  styles: ["mat-icon,mat-icon.mat-primary,mat-icon.mat-accent,mat-icon.mat-warn{color:var(--mat-icon-color)}.mat-icon{-webkit-user-select:none;user-select:none;background-repeat:no-repeat;display:inline-block;fill:currentColor;height:24px;width:24px;overflow:hidden}.mat-icon.mat-icon-inline{font-size:inherit;height:inherit;line-height:inherit;width:inherit}.mat-icon.mat-ligature-font[fontIcon]::before{content:attr(fontIcon)}[dir=rtl] .mat-icon-rtl-mirror{transform:scale(-1, 1)}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{display:block}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button .mat-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button .mat-icon{margin:auto}"],
-  encapsulation: 2,
-  changeDetection: 0
-});
-var MatIcon = _MatIcon;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatIcon, [{
     type: Component,
@@ -917,20 +923,25 @@ var MatIcon = _MatIcon;
     }]
   });
 })();
-var _MatIconModule = class _MatIconModule {
+var MatIconModule = class _MatIconModule {
+  static {
+    this.ɵfac = function MatIconModule_Factory(t) {
+      return new (t || _MatIconModule)();
+    };
+  }
+  static {
+    this.ɵmod = ɵɵdefineNgModule({
+      type: _MatIconModule,
+      imports: [MatCommonModule, MatIcon],
+      exports: [MatIcon, MatCommonModule]
+    });
+  }
+  static {
+    this.ɵinj = ɵɵdefineInjector({
+      imports: [MatCommonModule, MatCommonModule]
+    });
+  }
 };
-_MatIconModule.ɵfac = function MatIconModule_Factory(t) {
-  return new (t || _MatIconModule)();
-};
-_MatIconModule.ɵmod = ɵɵdefineNgModule({
-  type: _MatIconModule,
-  imports: [MatCommonModule, MatIcon],
-  exports: [MatIcon, MatCommonModule]
-});
-_MatIconModule.ɵinj = ɵɵdefineInjector({
-  imports: [MatCommonModule, MatCommonModule]
-});
-var MatIconModule = _MatIconModule;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatIconModule, [{
     type: NgModule,

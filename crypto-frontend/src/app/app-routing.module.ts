@@ -36,17 +36,17 @@ const routes: Routes = [
     data: { role: 'Admin' } // Solo administradores pueden acceder
   },
 
-  {path: 'unauthorized', component: UnauthorizedComponent},
+  { path: 'unauthorized', component: UnauthorizedComponent },
 
   { 
     path: 'portafolios', 
     component: LayoutComponent,
-    children: [{ path: '', component: PortfolioComponent }],
+    children: [
+      { path: '', component: PortfolioComponent },
+    ],
     canActivate: [AuthGuard], 
     data: { role: 'User' }
   },
-
-
 ];
 
 @NgModule({

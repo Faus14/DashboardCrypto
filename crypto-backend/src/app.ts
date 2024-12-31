@@ -5,6 +5,7 @@ import userRoutes from './routes/user.routes';
 import cryptoRoutes from './routes/crypto.routes';
 import portfolioRoutes from './routes/portfolio.routes';
 import loginRoutes from './routes/auth.routes';
+import transactionRoutes from './routes/transaction.routes';
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 app.use('/users', userRoutes);
 app.use('/cryptos', cryptoRoutes);
 app.use('/portfolio', portfolioRoutes);
+app.use('/transaction', transactionRoutes);
 app.use('/login', loginRoutes);
 
 

@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import * as userService from '../services/user.service';
 import bcrypt from 'bcrypt';
-import { Model } from 'sequelize';
 
 export const getAllUsers = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -34,8 +33,7 @@ export const getUserById = async (req: Request, res: Response): Promise<void> =>
 
 export const createUser = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { username, password, role } = req.body;
-
+    const { username, password, role } = req.body
     if (!username || !password || !role) {
       res.status(400).json({ message: 'Faltan campos obligatorios' });
       return;

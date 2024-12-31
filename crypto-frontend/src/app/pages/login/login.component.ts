@@ -24,8 +24,7 @@ export class LoginComponent {
       (response: any) => {
         console.log('Login exitoso:', response);
         
-        // Ajusta según la estructura de la respuesta del backend
-        const role = response.user?.role; // Si el rol está dentro de user
+        const role = response.user?.role; 
         
         localStorage.setItem('token', response.token);
         localStorage.setItem('role', role || '');

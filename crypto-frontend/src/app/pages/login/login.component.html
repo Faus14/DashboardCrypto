@@ -1,23 +1,59 @@
-
-<div class="parent"> 
-    <div class="container" [ngClass]="isSignDivVisiable ? 'active' :'' " id="container">
-        <div class="form-container sign-in" >
-            <form>
-                <h1>Ingresar</h1>
-                <span>Ingrese sus credenciales</span>
-                <input type="username" name="username" [(ngModel)]="loginObj.username" placeholder="username">
-                <input type="password" name="password"   [(ngModel)]="loginObj.password" placeholder="Password">
-                <button (click)="onLogin()">Sign In</button>
-            </form>
-        </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-right">
-                    <h1>Bienvenido,   Amigo!</h1>
-                    <p>Portafolio de cripto monedas</p>
-                </div>
-            </div>
-        </div>
+<!-- Fondo con gradiente y patrón -->
+<div class="min-h-screen bg-gradient-to-br from-blue-900 via-black to-purple-900 flex items-center justify-center p-4">
+  <!-- Efecto de blur para el fondo -->
+  <div class="absolute inset-0 bg-[url('https://cdnjs.cloudflare.com/ajax/libs/pattern.css/1.0.0/pattern.min.css')] opacity-10"></div>
+  
+  <!-- Container principal con efecto glassmorphism -->
+  <div class="container relative max-w-md w-full backdrop-blur-lg bg-white/10 p-8 rounded-2xl shadow-2xl border border-white/20">
+    
+    <!-- Logo o Icono -->
+    <div class="flex justify-center mb-8">
+      <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+        </svg>
+      </div>
     </div>
-</div>
 
+    <!-- Formulario -->
+    <form (ngSubmit)="onLogin()" class="space-y-6">
+      <div class="text-center space-y-2">
+        <h1 class="text-3xl font-bold text-white">Crypto Portfolio</h1>
+        <p class="text-gray-300">Accede a tu portafolio</p>
+      </div>
+
+      <!-- Username Input -->
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text text-gray-300">Username</span>
+        </label>
+        <input 
+          type="text" 
+          name="username" 
+          [(ngModel)]="loginObj.username"
+          class="input input-bordered w-full bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500"
+          placeholder="Ingresa tu username"
+        >
+      </div>
+
+      <!-- Password Input -->
+      <div class="form-control">
+        <input 
+          type="password" 
+          name="password" 
+          [(ngModel)]="loginObj.password"
+          class="input input-bordered w-full bg-white/5 border-white/10 text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500"
+          placeholder="Ingresa tu contraseña"
+        >
+      </div>
+
+      <!-- Login Button -->
+      <button 
+        type="submit" 
+        class="btn btn-primary w-full bg-gradient-to-r from-blue-500 to-purple-500 border-0 hover:from-blue-600 hover:to-purple-600 text-white font-bold"
+      >
+        Iniciar Sesión
+      </button>
+    </form>
+  </div>
+</div>

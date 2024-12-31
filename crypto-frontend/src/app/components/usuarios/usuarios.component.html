@@ -1,54 +1,161 @@
-<div class="usuarios-container">
-    <h2>Lista de Usuarios</h2>
-    
-    <div *ngIf="errorMessage" class="error-message">
-        <p>{{ errorMessage }}</p>
+<!-- User List Container -->
+<div class="min-h-screen bg-gradient-to-br from-blue-900 via-black to-purple-900 p-4 sm:p-6">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-6">
+      <div class="flex items-center space-x-4">
+        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-white">Gestión de Usuarios</h2>
       </div>
-   
-    <div class="user-form">
-      <h3>{{ isEditing ? 'Editar Usuario' : 'Crear Usuario' }}</h3>
-      <form (ngSubmit)="isEditing ? updateUser() : createUser()">
-        <label for="username">Nombre de Usuario</label>
-        <input type="text" id="username" [(ngModel)]="usuarioForm.username" name="username" required />
-  
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" [(ngModel)]="usuarioForm.password" name="password" required />
-  
-        <label for="role">Rol</label>
-        <input type="text" id="role" [(ngModel)]="usuarioForm.role" name="role" required />
-  
-        <button type="submit">{{ isEditing ? 'Actualizar' : 'Crear' }} Usuario</button>
-        <button type="button" (click)="resetForm()">Cancelar</button>
-      </form>
+      
+      <button 
+        (click)="openModal()"
+        class="btn btn-primary bg-gradient-to-r from-blue-500 to-purple-500 border-0"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+        </svg>
+        Nuevo Usuario
+      </button>
     </div>
-  
-    <table *ngIf="usuarios.length > 0" class="table">
-      <thead>
-        <tr>
-          <th>Nombre de Usuario</th>
-          <th>Rol</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let usuario of usuarios">
-          <td>{{ usuario.username }}</td>
-          <td>{{ usuario.role }}</td>
-          <td>
-            <button class="btn btn-primary" (click)="editUser(usuario)">Editar</button>
-            <button 
-            *ngIf="usuario.id !== loggedUserId" 
-            class="btn btn-danger"
-            (click)="deleteUser(usuario.id)">
-            Eliminar
-          </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  
-    <div *ngIf="usuarios.length === 0">
-      <p>No hay usuarios disponibles.</p>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-error bg-red-500/20 border border-red-500/50 text-white mb-6">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+      </svg>
+      <span>{{ errorMessage }}</span>
+    </div>
+
+    <!-- User List -->
+    <div class="backdrop-blur-lg bg-white/10 rounded-2xl shadow-2xl border border-white/20 overflow-hidden">
+      <div *ngIf="usuarios.length > 0" class="overflow-x-auto">
+        <table class="table w-full">
+          <thead>
+            <tr class="border-b border-white/10">
+              <th class="bg-white/5 text-white font-semibold px-6 py-4">Usuario</th>
+              <th class="bg-white/5 text-white font-semibold px-6 py-4">Rol</th>
+              <th class="bg-white/5 text-white font-semibold px-6 py-4">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of usuarios" class="border-b border-white/10 hover:bg-white/5 transition-colors">
+              <td class="px-6 py-4">
+                <div class="flex items-center space-x-3">
+                  <div class="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white">
+                    {{ usuario.username.charAt(0).toUpperCase() }}
+                  </div>
+                  <span class="text-white">{{ usuario.username }}</span>
+                </div>
+              </td>
+              <td class="px-6 py-4">
+                <span class="px-3 py-1 rounded-full text-xs font-medium" 
+                      [ngClass]="usuario.role === 'Admin' ? 'bg-purple-500/20 text-purple-200 border border-purple-500/50' : 'bg-blue-500/20 text-blue-200 border border-blue-500/50'">
+                  {{ usuario.role }}
+                </span>
+              </td>
+              <td class="px-6 py-4">
+                <div class="flex gap-2">
+                  <button 
+                    (click)="editUser(usuario)"
+                    class="btn btn-sm btn-ghost text-blue-400 hover:bg-blue-500/20"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                  </button>
+                  <button 
+                    *ngIf="usuario.id !== loggedUserId"
+                    (click)="deleteUser(usuario.id)"
+                    class="btn btn-sm btn-ghost text-red-400 hover:bg-red-500/20"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Empty State -->
+      <div *ngIf="usuarios.length === 0" class="flex flex-col items-center justify-center py-12">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <p class="text-gray-300 text-lg">No hay usuarios disponibles.</p>
+      </div>
     </div>
   </div>
-  
+</div>
+
+<!-- Modal -->
+<dialog id="user_modal" class="modal modal-bottom sm:modal-middle" [ngClass]="{'modal-open': isModalOpen}">
+  <div class="modal-box bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <h3 class="font-bold text-lg mb-6">
+      {{ isEditing ? 'Editar Usuario' : 'Crear Usuario' }}
+    </h3>
+    
+    <form (ngSubmit)="isEditing ? updateUser() : createUser()" class="space-y-4">
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text text-white">Nombre de Usuario</span>
+        </label>
+        <input 
+          type="text"
+          class="input input-bordered bg-gray-800/50 border-gray-700 text-white focus:border-blue-500"
+          placeholder="Ingrese nombre de usuario"
+          [(ngModel)]="usuarioForm.username"
+          name="username"
+          required
+        />
+      </div>
+
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text text-white">Contraseña</span>
+        </label>
+        <input 
+          type="password"
+          class="input input-bordered bg-gray-800/50 border-gray-700 text-white focus:border-blue-500"
+          placeholder="Ingrese contraseña"
+          [(ngModel)]="usuarioForm.password"
+          name="password"
+          [required]="!isEditing"
+        />
+      </div>
+
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text text-white">Rol</span>
+        </label>
+        <select 
+          class="select select-bordered bg-gray-800/50 border-gray-700 text-white focus:border-blue-500"
+          [(ngModel)]="usuarioForm.role"
+          name="role"
+          required
+        >
+          <option value="" disabled selected>Seleccione un rol</option>
+          <option value="Admin">Admin</option>
+          <option value="User">Usuario</option>
+        </select>
+      </div>
+
+      <div class="modal-action">
+        <button type="button" class="btn btn-ghost" (click)="closeModal()">Cancelar</button>
+        <button type="submit" class="btn btn-primary bg-gradient-to-r from-blue-500 to-purple-500 border-0">
+          {{ isEditing ? 'Actualizar' : 'Crear' }}
+        </button>
+      </div>
+    </form>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button (click)="closeModal()">close</button>
+  </form>
+</dialog>

@@ -7,16 +7,16 @@ import {
   _VIEW_REPEATER_STRATEGY,
   _ViewRepeaterOperation,
   isDataSource
-} from "./chunk-UKIMETGX.js";
+} from "./chunk-FQLL2CFB.js";
 import {
   Directionality,
   MatCommonModule,
   Platform,
   _isNumberValue
-} from "./chunk-E3TBRHGJ.js";
+} from "./chunk-5MBBO3DQ.js";
 import {
   DOCUMENT
-} from "./chunk-EVZ7MBMK.js";
+} from "./chunk-CJQ54GTB.js";
 import {
   Attribute,
   ChangeDetectionStrategy,
@@ -78,12 +78,12 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-QHIF2FQR.js";
-import "./chunk-UKEHM6V6.js";
+} from "./chunk-FDSD7WD4.js";
 import {
   isObservable,
   merge
 } from "./chunk-V2DXGMIT.js";
+import "./chunk-UKEHM6V6.js";
 import {
   BehaviorSubject,
   Subject,
@@ -150,20 +150,23 @@ function CdkTextColumn_td_2_Template(rf, ctx) {
 }
 var CDK_TABLE = new InjectionToken("CDK_TABLE");
 var TEXT_COLUMN_OPTIONS = new InjectionToken("text-column-options");
-var _CdkCellDef = class _CdkCellDef {
+var CdkCellDef = class _CdkCellDef {
   constructor(template) {
     this.template = template;
   }
+  static {
+    this.ɵfac = function CdkCellDef_Factory(t) {
+      return new (t || _CdkCellDef)(ɵɵdirectiveInject(TemplateRef));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _CdkCellDef,
+      selectors: [["", "cdkCellDef", ""]],
+      standalone: true
+    });
+  }
 };
-_CdkCellDef.ɵfac = function CdkCellDef_Factory(t) {
-  return new (t || _CdkCellDef)(ɵɵdirectiveInject(TemplateRef));
-};
-_CdkCellDef.ɵdir = ɵɵdefineDirective({
-  type: _CdkCellDef,
-  selectors: [["", "cdkCellDef", ""]],
-  standalone: true
-});
-var CdkCellDef = _CdkCellDef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkCellDef, [{
     type: Directive,
@@ -175,20 +178,23 @@ var CdkCellDef = _CdkCellDef;
     type: TemplateRef
   }], null);
 })();
-var _CdkHeaderCellDef = class _CdkHeaderCellDef {
+var CdkHeaderCellDef = class _CdkHeaderCellDef {
   constructor(template) {
     this.template = template;
   }
+  static {
+    this.ɵfac = function CdkHeaderCellDef_Factory(t) {
+      return new (t || _CdkHeaderCellDef)(ɵɵdirectiveInject(TemplateRef));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _CdkHeaderCellDef,
+      selectors: [["", "cdkHeaderCellDef", ""]],
+      standalone: true
+    });
+  }
 };
-_CdkHeaderCellDef.ɵfac = function CdkHeaderCellDef_Factory(t) {
-  return new (t || _CdkHeaderCellDef)(ɵɵdirectiveInject(TemplateRef));
-};
-_CdkHeaderCellDef.ɵdir = ɵɵdefineDirective({
-  type: _CdkHeaderCellDef,
-  selectors: [["", "cdkHeaderCellDef", ""]],
-  standalone: true
-});
-var CdkHeaderCellDef = _CdkHeaderCellDef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkHeaderCellDef, [{
     type: Directive,
@@ -200,20 +206,23 @@ var CdkHeaderCellDef = _CdkHeaderCellDef;
     type: TemplateRef
   }], null);
 })();
-var _CdkFooterCellDef = class _CdkFooterCellDef {
+var CdkFooterCellDef = class _CdkFooterCellDef {
   constructor(template) {
     this.template = template;
   }
+  static {
+    this.ɵfac = function CdkFooterCellDef_Factory(t) {
+      return new (t || _CdkFooterCellDef)(ɵɵdirectiveInject(TemplateRef));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _CdkFooterCellDef,
+      selectors: [["", "cdkFooterCellDef", ""]],
+      standalone: true
+    });
+  }
 };
-_CdkFooterCellDef.ɵfac = function CdkFooterCellDef_Factory(t) {
-  return new (t || _CdkFooterCellDef)(ɵɵdirectiveInject(TemplateRef));
-};
-_CdkFooterCellDef.ɵdir = ɵɵdefineDirective({
-  type: _CdkFooterCellDef,
-  selectors: [["", "cdkFooterCellDef", ""]],
-  standalone: true
-});
-var CdkFooterCellDef = _CdkFooterCellDef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkFooterCellDef, [{
     type: Directive,
@@ -225,7 +234,7 @@ var CdkFooterCellDef = _CdkFooterCellDef;
     type: TemplateRef
   }], null);
 })();
-var _CdkColumnDef = class _CdkColumnDef {
+var CdkColumnDef = class _CdkColumnDef {
   /** Unique name for this column. */
   get name() {
     return this._name;
@@ -296,38 +305,41 @@ var _CdkColumnDef = class _CdkColumnDef {
       this._updateColumnCssClassName();
     }
   }
+  static {
+    this.ɵfac = function CdkColumnDef_Factory(t) {
+      return new (t || _CdkColumnDef)(ɵɵdirectiveInject(CDK_TABLE, 8));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _CdkColumnDef,
+      selectors: [["", "cdkColumnDef", ""]],
+      contentQueries: function CdkColumnDef_ContentQueries(rf, ctx, dirIndex) {
+        if (rf & 1) {
+          ɵɵcontentQuery(dirIndex, CdkCellDef, 5);
+          ɵɵcontentQuery(dirIndex, CdkHeaderCellDef, 5);
+          ɵɵcontentQuery(dirIndex, CdkFooterCellDef, 5);
+        }
+        if (rf & 2) {
+          let _t;
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.cell = _t.first);
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.headerCell = _t.first);
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.footerCell = _t.first);
+        }
+      },
+      inputs: {
+        name: [InputFlags.None, "cdkColumnDef", "name"],
+        sticky: [InputFlags.HasDecoratorInputTransform, "sticky", "sticky", booleanAttribute],
+        stickyEnd: [InputFlags.HasDecoratorInputTransform, "stickyEnd", "stickyEnd", booleanAttribute]
+      },
+      standalone: true,
+      features: [ɵɵProvidersFeature([{
+        provide: "MAT_SORT_HEADER_COLUMN_DEF",
+        useExisting: _CdkColumnDef
+      }]), ɵɵInputTransformsFeature]
+    });
+  }
 };
-_CdkColumnDef.ɵfac = function CdkColumnDef_Factory(t) {
-  return new (t || _CdkColumnDef)(ɵɵdirectiveInject(CDK_TABLE, 8));
-};
-_CdkColumnDef.ɵdir = ɵɵdefineDirective({
-  type: _CdkColumnDef,
-  selectors: [["", "cdkColumnDef", ""]],
-  contentQueries: function CdkColumnDef_ContentQueries(rf, ctx, dirIndex) {
-    if (rf & 1) {
-      ɵɵcontentQuery(dirIndex, CdkCellDef, 5);
-      ɵɵcontentQuery(dirIndex, CdkHeaderCellDef, 5);
-      ɵɵcontentQuery(dirIndex, CdkFooterCellDef, 5);
-    }
-    if (rf & 2) {
-      let _t;
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.cell = _t.first);
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.headerCell = _t.first);
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.footerCell = _t.first);
-    }
-  },
-  inputs: {
-    name: [InputFlags.None, "cdkColumnDef", "name"],
-    sticky: [InputFlags.HasDecoratorInputTransform, "sticky", "sticky", booleanAttribute],
-    stickyEnd: [InputFlags.HasDecoratorInputTransform, "stickyEnd", "stickyEnd", booleanAttribute]
-  },
-  standalone: true,
-  features: [ɵɵProvidersFeature([{
-    provide: "MAT_SORT_HEADER_COLUMN_DEF",
-    useExisting: _CdkColumnDef
-  }]), ɵɵInputTransformsFeature]
-});
-var CdkColumnDef = _CdkColumnDef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkColumnDef, [{
     type: Directive,
@@ -383,22 +395,25 @@ var BaseCdkCell = class {
     elementRef.nativeElement.classList.add(...columnDef._columnCssClassName);
   }
 };
-var _CdkHeaderCell = class _CdkHeaderCell extends BaseCdkCell {
+var CdkHeaderCell = class _CdkHeaderCell extends BaseCdkCell {
   constructor(columnDef, elementRef) {
     super(columnDef, elementRef);
   }
+  static {
+    this.ɵfac = function CdkHeaderCell_Factory(t) {
+      return new (t || _CdkHeaderCell)(ɵɵdirectiveInject(CdkColumnDef), ɵɵdirectiveInject(ElementRef));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _CdkHeaderCell,
+      selectors: [["cdk-header-cell"], ["th", "cdk-header-cell", ""]],
+      hostAttrs: ["role", "columnheader", 1, "cdk-header-cell"],
+      standalone: true,
+      features: [ɵɵInheritDefinitionFeature]
+    });
+  }
 };
-_CdkHeaderCell.ɵfac = function CdkHeaderCell_Factory(t) {
-  return new (t || _CdkHeaderCell)(ɵɵdirectiveInject(CdkColumnDef), ɵɵdirectiveInject(ElementRef));
-};
-_CdkHeaderCell.ɵdir = ɵɵdefineDirective({
-  type: _CdkHeaderCell,
-  selectors: [["cdk-header-cell"], ["th", "cdk-header-cell", ""]],
-  hostAttrs: ["role", "columnheader", 1, "cdk-header-cell"],
-  standalone: true,
-  features: [ɵɵInheritDefinitionFeature]
-});
-var CdkHeaderCell = _CdkHeaderCell;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkHeaderCell, [{
     type: Directive,
@@ -416,7 +431,7 @@ var CdkHeaderCell = _CdkHeaderCell;
     type: ElementRef
   }], null);
 })();
-var _CdkFooterCell = class _CdkFooterCell extends BaseCdkCell {
+var CdkFooterCell = class _CdkFooterCell extends BaseCdkCell {
   constructor(columnDef, elementRef) {
     super(columnDef, elementRef);
     const role = columnDef._table?._getCellRole();
@@ -424,18 +439,21 @@ var _CdkFooterCell = class _CdkFooterCell extends BaseCdkCell {
       elementRef.nativeElement.setAttribute("role", role);
     }
   }
+  static {
+    this.ɵfac = function CdkFooterCell_Factory(t) {
+      return new (t || _CdkFooterCell)(ɵɵdirectiveInject(CdkColumnDef), ɵɵdirectiveInject(ElementRef));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _CdkFooterCell,
+      selectors: [["cdk-footer-cell"], ["td", "cdk-footer-cell", ""]],
+      hostAttrs: [1, "cdk-footer-cell"],
+      standalone: true,
+      features: [ɵɵInheritDefinitionFeature]
+    });
+  }
 };
-_CdkFooterCell.ɵfac = function CdkFooterCell_Factory(t) {
-  return new (t || _CdkFooterCell)(ɵɵdirectiveInject(CdkColumnDef), ɵɵdirectiveInject(ElementRef));
-};
-_CdkFooterCell.ɵdir = ɵɵdefineDirective({
-  type: _CdkFooterCell,
-  selectors: [["cdk-footer-cell"], ["td", "cdk-footer-cell", ""]],
-  hostAttrs: [1, "cdk-footer-cell"],
-  standalone: true,
-  features: [ɵɵInheritDefinitionFeature]
-});
-var CdkFooterCell = _CdkFooterCell;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkFooterCell, [{
     type: Directive,
@@ -452,7 +470,7 @@ var CdkFooterCell = _CdkFooterCell;
     type: ElementRef
   }], null);
 })();
-var _CdkCell = class _CdkCell extends BaseCdkCell {
+var CdkCell = class _CdkCell extends BaseCdkCell {
   constructor(columnDef, elementRef) {
     super(columnDef, elementRef);
     const role = columnDef._table?._getCellRole();
@@ -460,18 +478,21 @@ var _CdkCell = class _CdkCell extends BaseCdkCell {
       elementRef.nativeElement.setAttribute("role", role);
     }
   }
+  static {
+    this.ɵfac = function CdkCell_Factory(t) {
+      return new (t || _CdkCell)(ɵɵdirectiveInject(CdkColumnDef), ɵɵdirectiveInject(ElementRef));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _CdkCell,
+      selectors: [["cdk-cell"], ["td", "cdk-cell", ""]],
+      hostAttrs: [1, "cdk-cell"],
+      standalone: true,
+      features: [ɵɵInheritDefinitionFeature]
+    });
+  }
 };
-_CdkCell.ɵfac = function CdkCell_Factory(t) {
-  return new (t || _CdkCell)(ɵɵdirectiveInject(CdkColumnDef), ɵɵdirectiveInject(ElementRef));
-};
-_CdkCell.ɵdir = ɵɵdefineDirective({
-  type: _CdkCell,
-  selectors: [["cdk-cell"], ["td", "cdk-cell", ""]],
-  hostAttrs: [1, "cdk-cell"],
-  standalone: true,
-  features: [ɵɵInheritDefinitionFeature]
-});
-var CdkCell = _CdkCell;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkCell, [{
     type: Directive,
@@ -495,7 +516,7 @@ var _Schedule = class {
   }
 };
 var _COALESCED_STYLE_SCHEDULER = new InjectionToken("_COALESCED_STYLE_SCHEDULER");
-var __CoalescedStyleScheduler = class __CoalescedStyleScheduler {
+var _CoalescedStyleScheduler = class __CoalescedStyleScheduler {
   constructor(_ngZone) {
     this._ngZone = _ngZone;
     this._currentSchedule = null;
@@ -543,15 +564,18 @@ var __CoalescedStyleScheduler = class __CoalescedStyleScheduler {
   _getScheduleObservable() {
     return this._ngZone.isStable ? from(Promise.resolve(void 0)) : this._ngZone.onStable.pipe(take(1));
   }
+  static {
+    this.ɵfac = function _CoalescedStyleScheduler_Factory(t) {
+      return new (t || __CoalescedStyleScheduler)(ɵɵinject(NgZone));
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: __CoalescedStyleScheduler,
+      factory: __CoalescedStyleScheduler.ɵfac
+    });
+  }
 };
-__CoalescedStyleScheduler.ɵfac = function _CoalescedStyleScheduler_Factory(t) {
-  return new (t || __CoalescedStyleScheduler)(ɵɵinject(NgZone));
-};
-__CoalescedStyleScheduler.ɵprov = ɵɵdefineInjectable({
-  token: __CoalescedStyleScheduler,
-  factory: __CoalescedStyleScheduler.ɵfac
-});
-var _CoalescedStyleScheduler = __CoalescedStyleScheduler;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(_CoalescedStyleScheduler, [{
     type: Injectable
@@ -560,7 +584,7 @@ var _CoalescedStyleScheduler = __CoalescedStyleScheduler;
   }], null);
 })();
 var CDK_ROW_TEMPLATE = `<ng-container cdkCellOutlet></ng-container>`;
-var _BaseRowDef = class _BaseRowDef {
+var BaseRowDef = class _BaseRowDef {
   constructor(template, _differs) {
     this.template = template;
     this._differs = _differs;
@@ -590,15 +614,18 @@ var _BaseRowDef = class _BaseRowDef {
       return column.cell.template;
     }
   }
+  static {
+    this.ɵfac = function BaseRowDef_Factory(t) {
+      return new (t || _BaseRowDef)(ɵɵdirectiveInject(TemplateRef), ɵɵdirectiveInject(IterableDiffers));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _BaseRowDef,
+      features: [ɵɵNgOnChangesFeature]
+    });
+  }
 };
-_BaseRowDef.ɵfac = function BaseRowDef_Factory(t) {
-  return new (t || _BaseRowDef)(ɵɵdirectiveInject(TemplateRef), ɵɵdirectiveInject(IterableDiffers));
-};
-_BaseRowDef.ɵdir = ɵɵdefineDirective({
-  type: _BaseRowDef,
-  features: [ɵɵNgOnChangesFeature]
-});
-var BaseRowDef = _BaseRowDef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(BaseRowDef, [{
     type: Directive
@@ -608,7 +635,7 @@ var BaseRowDef = _BaseRowDef;
     type: IterableDiffers
   }], null);
 })();
-var _CdkHeaderRowDef = class _CdkHeaderRowDef extends BaseRowDef {
+var CdkHeaderRowDef = class _CdkHeaderRowDef extends BaseRowDef {
   /** Whether the row is sticky. */
   get sticky() {
     return this._sticky;
@@ -640,21 +667,24 @@ var _CdkHeaderRowDef = class _CdkHeaderRowDef extends BaseRowDef {
   resetStickyChanged() {
     this._hasStickyChanged = false;
   }
+  static {
+    this.ɵfac = function CdkHeaderRowDef_Factory(t) {
+      return new (t || _CdkHeaderRowDef)(ɵɵdirectiveInject(TemplateRef), ɵɵdirectiveInject(IterableDiffers), ɵɵdirectiveInject(CDK_TABLE, 8));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _CdkHeaderRowDef,
+      selectors: [["", "cdkHeaderRowDef", ""]],
+      inputs: {
+        columns: [InputFlags.None, "cdkHeaderRowDef", "columns"],
+        sticky: [InputFlags.HasDecoratorInputTransform, "cdkHeaderRowDefSticky", "sticky", booleanAttribute]
+      },
+      standalone: true,
+      features: [ɵɵInputTransformsFeature, ɵɵInheritDefinitionFeature, ɵɵNgOnChangesFeature]
+    });
+  }
 };
-_CdkHeaderRowDef.ɵfac = function CdkHeaderRowDef_Factory(t) {
-  return new (t || _CdkHeaderRowDef)(ɵɵdirectiveInject(TemplateRef), ɵɵdirectiveInject(IterableDiffers), ɵɵdirectiveInject(CDK_TABLE, 8));
-};
-_CdkHeaderRowDef.ɵdir = ɵɵdefineDirective({
-  type: _CdkHeaderRowDef,
-  selectors: [["", "cdkHeaderRowDef", ""]],
-  inputs: {
-    columns: [InputFlags.None, "cdkHeaderRowDef", "columns"],
-    sticky: [InputFlags.HasDecoratorInputTransform, "cdkHeaderRowDefSticky", "sticky", booleanAttribute]
-  },
-  standalone: true,
-  features: [ɵɵInputTransformsFeature, ɵɵInheritDefinitionFeature, ɵɵNgOnChangesFeature]
-});
-var CdkHeaderRowDef = _CdkHeaderRowDef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkHeaderRowDef, [{
     type: Directive,
@@ -688,7 +718,7 @@ var CdkHeaderRowDef = _CdkHeaderRowDef;
     }]
   });
 })();
-var _CdkFooterRowDef = class _CdkFooterRowDef extends BaseRowDef {
+var CdkFooterRowDef = class _CdkFooterRowDef extends BaseRowDef {
   /** Whether the row is sticky. */
   get sticky() {
     return this._sticky;
@@ -720,21 +750,24 @@ var _CdkFooterRowDef = class _CdkFooterRowDef extends BaseRowDef {
   resetStickyChanged() {
     this._hasStickyChanged = false;
   }
+  static {
+    this.ɵfac = function CdkFooterRowDef_Factory(t) {
+      return new (t || _CdkFooterRowDef)(ɵɵdirectiveInject(TemplateRef), ɵɵdirectiveInject(IterableDiffers), ɵɵdirectiveInject(CDK_TABLE, 8));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _CdkFooterRowDef,
+      selectors: [["", "cdkFooterRowDef", ""]],
+      inputs: {
+        columns: [InputFlags.None, "cdkFooterRowDef", "columns"],
+        sticky: [InputFlags.HasDecoratorInputTransform, "cdkFooterRowDefSticky", "sticky", booleanAttribute]
+      },
+      standalone: true,
+      features: [ɵɵInputTransformsFeature, ɵɵInheritDefinitionFeature, ɵɵNgOnChangesFeature]
+    });
+  }
 };
-_CdkFooterRowDef.ɵfac = function CdkFooterRowDef_Factory(t) {
-  return new (t || _CdkFooterRowDef)(ɵɵdirectiveInject(TemplateRef), ɵɵdirectiveInject(IterableDiffers), ɵɵdirectiveInject(CDK_TABLE, 8));
-};
-_CdkFooterRowDef.ɵdir = ɵɵdefineDirective({
-  type: _CdkFooterRowDef,
-  selectors: [["", "cdkFooterRowDef", ""]],
-  inputs: {
-    columns: [InputFlags.None, "cdkFooterRowDef", "columns"],
-    sticky: [InputFlags.HasDecoratorInputTransform, "cdkFooterRowDefSticky", "sticky", booleanAttribute]
-  },
-  standalone: true,
-  features: [ɵɵInputTransformsFeature, ɵɵInheritDefinitionFeature, ɵɵNgOnChangesFeature]
-});
-var CdkFooterRowDef = _CdkFooterRowDef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkFooterRowDef, [{
     type: Directive,
@@ -768,28 +801,31 @@ var CdkFooterRowDef = _CdkFooterRowDef;
     }]
   });
 })();
-var _CdkRowDef = class _CdkRowDef extends BaseRowDef {
+var CdkRowDef = class _CdkRowDef extends BaseRowDef {
   // TODO(andrewseguin): Add an input for providing a switch function to determine
   //   if this template should be used.
   constructor(template, _differs, _table) {
     super(template, _differs);
     this._table = _table;
   }
+  static {
+    this.ɵfac = function CdkRowDef_Factory(t) {
+      return new (t || _CdkRowDef)(ɵɵdirectiveInject(TemplateRef), ɵɵdirectiveInject(IterableDiffers), ɵɵdirectiveInject(CDK_TABLE, 8));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _CdkRowDef,
+      selectors: [["", "cdkRowDef", ""]],
+      inputs: {
+        columns: [InputFlags.None, "cdkRowDefColumns", "columns"],
+        when: [InputFlags.None, "cdkRowDefWhen", "when"]
+      },
+      standalone: true,
+      features: [ɵɵInheritDefinitionFeature]
+    });
+  }
 };
-_CdkRowDef.ɵfac = function CdkRowDef_Factory(t) {
-  return new (t || _CdkRowDef)(ɵɵdirectiveInject(TemplateRef), ɵɵdirectiveInject(IterableDiffers), ɵɵdirectiveInject(CDK_TABLE, 8));
-};
-_CdkRowDef.ɵdir = ɵɵdefineDirective({
-  type: _CdkRowDef,
-  selectors: [["", "cdkRowDef", ""]],
-  inputs: {
-    columns: [InputFlags.None, "cdkRowDefColumns", "columns"],
-    when: [InputFlags.None, "cdkRowDefWhen", "when"]
-  },
-  standalone: true,
-  features: [ɵɵInheritDefinitionFeature]
-});
-var CdkRowDef = _CdkRowDef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkRowDef, [{
     type: Directive,
@@ -818,7 +854,10 @@ var CdkRowDef = _CdkRowDef;
     }]
   }], null);
 })();
-var _CdkCellOutlet = class _CdkCellOutlet {
+var CdkCellOutlet = class _CdkCellOutlet {
+  static {
+    this.mostRecentCellOutlet = null;
+  }
   constructor(_viewContainer) {
     this._viewContainer = _viewContainer;
     _CdkCellOutlet.mostRecentCellOutlet = this;
@@ -828,17 +867,19 @@ var _CdkCellOutlet = class _CdkCellOutlet {
       _CdkCellOutlet.mostRecentCellOutlet = null;
     }
   }
+  static {
+    this.ɵfac = function CdkCellOutlet_Factory(t) {
+      return new (t || _CdkCellOutlet)(ɵɵdirectiveInject(ViewContainerRef));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _CdkCellOutlet,
+      selectors: [["", "cdkCellOutlet", ""]],
+      standalone: true
+    });
+  }
 };
-_CdkCellOutlet.mostRecentCellOutlet = null;
-_CdkCellOutlet.ɵfac = function CdkCellOutlet_Factory(t) {
-  return new (t || _CdkCellOutlet)(ɵɵdirectiveInject(ViewContainerRef));
-};
-_CdkCellOutlet.ɵdir = ɵɵdefineDirective({
-  type: _CdkCellOutlet,
-  selectors: [["", "cdkCellOutlet", ""]],
-  standalone: true
-});
-var CdkCellOutlet = _CdkCellOutlet;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkCellOutlet, [{
     type: Directive,
@@ -850,29 +891,32 @@ var CdkCellOutlet = _CdkCellOutlet;
     type: ViewContainerRef
   }], null);
 })();
-var _CdkHeaderRow = class _CdkHeaderRow {
+var CdkHeaderRow = class _CdkHeaderRow {
+  static {
+    this.ɵfac = function CdkHeaderRow_Factory(t) {
+      return new (t || _CdkHeaderRow)();
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _CdkHeaderRow,
+      selectors: [["cdk-header-row"], ["tr", "cdk-header-row", ""]],
+      hostAttrs: ["role", "row", 1, "cdk-header-row"],
+      standalone: true,
+      features: [ɵɵStandaloneFeature],
+      decls: 1,
+      vars: 0,
+      consts: [["cdkCellOutlet", ""]],
+      template: function CdkHeaderRow_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵelementContainer(0, 0);
+        }
+      },
+      dependencies: [CdkCellOutlet],
+      encapsulation: 2
+    });
+  }
 };
-_CdkHeaderRow.ɵfac = function CdkHeaderRow_Factory(t) {
-  return new (t || _CdkHeaderRow)();
-};
-_CdkHeaderRow.ɵcmp = ɵɵdefineComponent({
-  type: _CdkHeaderRow,
-  selectors: [["cdk-header-row"], ["tr", "cdk-header-row", ""]],
-  hostAttrs: ["role", "row", 1, "cdk-header-row"],
-  standalone: true,
-  features: [ɵɵStandaloneFeature],
-  decls: 1,
-  vars: 0,
-  consts: [["cdkCellOutlet", ""]],
-  template: function CdkHeaderRow_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵelementContainer(0, 0);
-    }
-  },
-  dependencies: [CdkCellOutlet],
-  encapsulation: 2
-});
-var CdkHeaderRow = _CdkHeaderRow;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkHeaderRow, [{
     type: Component,
@@ -892,29 +936,32 @@ var CdkHeaderRow = _CdkHeaderRow;
     }]
   }], null, null);
 })();
-var _CdkFooterRow = class _CdkFooterRow {
+var CdkFooterRow = class _CdkFooterRow {
+  static {
+    this.ɵfac = function CdkFooterRow_Factory(t) {
+      return new (t || _CdkFooterRow)();
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _CdkFooterRow,
+      selectors: [["cdk-footer-row"], ["tr", "cdk-footer-row", ""]],
+      hostAttrs: ["role", "row", 1, "cdk-footer-row"],
+      standalone: true,
+      features: [ɵɵStandaloneFeature],
+      decls: 1,
+      vars: 0,
+      consts: [["cdkCellOutlet", ""]],
+      template: function CdkFooterRow_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵelementContainer(0, 0);
+        }
+      },
+      dependencies: [CdkCellOutlet],
+      encapsulation: 2
+    });
+  }
 };
-_CdkFooterRow.ɵfac = function CdkFooterRow_Factory(t) {
-  return new (t || _CdkFooterRow)();
-};
-_CdkFooterRow.ɵcmp = ɵɵdefineComponent({
-  type: _CdkFooterRow,
-  selectors: [["cdk-footer-row"], ["tr", "cdk-footer-row", ""]],
-  hostAttrs: ["role", "row", 1, "cdk-footer-row"],
-  standalone: true,
-  features: [ɵɵStandaloneFeature],
-  decls: 1,
-  vars: 0,
-  consts: [["cdkCellOutlet", ""]],
-  template: function CdkFooterRow_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵelementContainer(0, 0);
-    }
-  },
-  dependencies: [CdkCellOutlet],
-  encapsulation: 2
-});
-var CdkFooterRow = _CdkFooterRow;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkFooterRow, [{
     type: Component,
@@ -934,29 +981,32 @@ var CdkFooterRow = _CdkFooterRow;
     }]
   }], null, null);
 })();
-var _CdkRow = class _CdkRow {
+var CdkRow = class _CdkRow {
+  static {
+    this.ɵfac = function CdkRow_Factory(t) {
+      return new (t || _CdkRow)();
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _CdkRow,
+      selectors: [["cdk-row"], ["tr", "cdk-row", ""]],
+      hostAttrs: ["role", "row", 1, "cdk-row"],
+      standalone: true,
+      features: [ɵɵStandaloneFeature],
+      decls: 1,
+      vars: 0,
+      consts: [["cdkCellOutlet", ""]],
+      template: function CdkRow_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵelementContainer(0, 0);
+        }
+      },
+      dependencies: [CdkCellOutlet],
+      encapsulation: 2
+    });
+  }
 };
-_CdkRow.ɵfac = function CdkRow_Factory(t) {
-  return new (t || _CdkRow)();
-};
-_CdkRow.ɵcmp = ɵɵdefineComponent({
-  type: _CdkRow,
-  selectors: [["cdk-row"], ["tr", "cdk-row", ""]],
-  hostAttrs: ["role", "row", 1, "cdk-row"],
-  standalone: true,
-  features: [ɵɵStandaloneFeature],
-  decls: 1,
-  vars: 0,
-  consts: [["cdkCellOutlet", ""]],
-  template: function CdkRow_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵelementContainer(0, 0);
-    }
-  },
-  dependencies: [CdkCellOutlet],
-  encapsulation: 2
-});
-var CdkRow = _CdkRow;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkRow, [{
     type: Component,
@@ -976,21 +1026,24 @@ var CdkRow = _CdkRow;
     }]
   }], null, null);
 })();
-var _CdkNoDataRow = class _CdkNoDataRow {
+var CdkNoDataRow = class _CdkNoDataRow {
   constructor(templateRef) {
     this.templateRef = templateRef;
     this._contentClassName = "cdk-no-data-row";
   }
+  static {
+    this.ɵfac = function CdkNoDataRow_Factory(t) {
+      return new (t || _CdkNoDataRow)(ɵɵdirectiveInject(TemplateRef));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _CdkNoDataRow,
+      selectors: [["ng-template", "cdkNoDataRow", ""]],
+      standalone: true
+    });
+  }
 };
-_CdkNoDataRow.ɵfac = function CdkNoDataRow_Factory(t) {
-  return new (t || _CdkNoDataRow)(ɵɵdirectiveInject(TemplateRef));
-};
-_CdkNoDataRow.ɵdir = ɵɵdefineDirective({
-  type: _CdkNoDataRow,
-  selectors: [["ng-template", "cdkNoDataRow", ""]],
-  standalone: true
-});
-var CdkNoDataRow = _CdkNoDataRow;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkNoDataRow, [{
     type: Directive,
@@ -1326,21 +1379,24 @@ function getTableTextColumnMissingNameError() {
   return Error(`Table text column must have a name.`);
 }
 var STICKY_POSITIONING_LISTENER = new InjectionToken("CDK_SPL");
-var _CdkRecycleRows = class _CdkRecycleRows {
+var CdkRecycleRows = class _CdkRecycleRows {
+  static {
+    this.ɵfac = function CdkRecycleRows_Factory(t) {
+      return new (t || _CdkRecycleRows)();
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _CdkRecycleRows,
+      selectors: [["cdk-table", "recycleRows", ""], ["table", "cdk-table", "", "recycleRows", ""]],
+      standalone: true,
+      features: [ɵɵProvidersFeature([{
+        provide: _VIEW_REPEATER_STRATEGY,
+        useClass: _RecycleViewRepeaterStrategy
+      }])]
+    });
+  }
 };
-_CdkRecycleRows.ɵfac = function CdkRecycleRows_Factory(t) {
-  return new (t || _CdkRecycleRows)();
-};
-_CdkRecycleRows.ɵdir = ɵɵdefineDirective({
-  type: _CdkRecycleRows,
-  selectors: [["cdk-table", "recycleRows", ""], ["table", "cdk-table", "", "recycleRows", ""]],
-  standalone: true,
-  features: [ɵɵProvidersFeature([{
-    provide: _VIEW_REPEATER_STRATEGY,
-    useClass: _RecycleViewRepeaterStrategy
-  }])]
-});
-var CdkRecycleRows = _CdkRecycleRows;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkRecycleRows, [{
     type: Directive,
@@ -1354,7 +1410,7 @@ var CdkRecycleRows = _CdkRecycleRows;
     }]
   }], null, null);
 })();
-var _DataRowOutlet = class _DataRowOutlet {
+var DataRowOutlet = class _DataRowOutlet {
   constructor(viewContainer, elementRef) {
     this.viewContainer = viewContainer;
     this.elementRef = elementRef;
@@ -1362,16 +1418,19 @@ var _DataRowOutlet = class _DataRowOutlet {
     table._rowOutlet = this;
     table._outletAssigned();
   }
+  static {
+    this.ɵfac = function DataRowOutlet_Factory(t) {
+      return new (t || _DataRowOutlet)(ɵɵdirectiveInject(ViewContainerRef), ɵɵdirectiveInject(ElementRef));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _DataRowOutlet,
+      selectors: [["", "rowOutlet", ""]],
+      standalone: true
+    });
+  }
 };
-_DataRowOutlet.ɵfac = function DataRowOutlet_Factory(t) {
-  return new (t || _DataRowOutlet)(ɵɵdirectiveInject(ViewContainerRef), ɵɵdirectiveInject(ElementRef));
-};
-_DataRowOutlet.ɵdir = ɵɵdefineDirective({
-  type: _DataRowOutlet,
-  selectors: [["", "rowOutlet", ""]],
-  standalone: true
-});
-var DataRowOutlet = _DataRowOutlet;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(DataRowOutlet, [{
     type: Directive,
@@ -1385,7 +1444,7 @@ var DataRowOutlet = _DataRowOutlet;
     type: ElementRef
   }], null);
 })();
-var _HeaderRowOutlet = class _HeaderRowOutlet {
+var HeaderRowOutlet = class _HeaderRowOutlet {
   constructor(viewContainer, elementRef) {
     this.viewContainer = viewContainer;
     this.elementRef = elementRef;
@@ -1393,16 +1452,19 @@ var _HeaderRowOutlet = class _HeaderRowOutlet {
     table._headerRowOutlet = this;
     table._outletAssigned();
   }
+  static {
+    this.ɵfac = function HeaderRowOutlet_Factory(t) {
+      return new (t || _HeaderRowOutlet)(ɵɵdirectiveInject(ViewContainerRef), ɵɵdirectiveInject(ElementRef));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _HeaderRowOutlet,
+      selectors: [["", "headerRowOutlet", ""]],
+      standalone: true
+    });
+  }
 };
-_HeaderRowOutlet.ɵfac = function HeaderRowOutlet_Factory(t) {
-  return new (t || _HeaderRowOutlet)(ɵɵdirectiveInject(ViewContainerRef), ɵɵdirectiveInject(ElementRef));
-};
-_HeaderRowOutlet.ɵdir = ɵɵdefineDirective({
-  type: _HeaderRowOutlet,
-  selectors: [["", "headerRowOutlet", ""]],
-  standalone: true
-});
-var HeaderRowOutlet = _HeaderRowOutlet;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(HeaderRowOutlet, [{
     type: Directive,
@@ -1416,7 +1478,7 @@ var HeaderRowOutlet = _HeaderRowOutlet;
     type: ElementRef
   }], null);
 })();
-var _FooterRowOutlet = class _FooterRowOutlet {
+var FooterRowOutlet = class _FooterRowOutlet {
   constructor(viewContainer, elementRef) {
     this.viewContainer = viewContainer;
     this.elementRef = elementRef;
@@ -1424,16 +1486,19 @@ var _FooterRowOutlet = class _FooterRowOutlet {
     table._footerRowOutlet = this;
     table._outletAssigned();
   }
+  static {
+    this.ɵfac = function FooterRowOutlet_Factory(t) {
+      return new (t || _FooterRowOutlet)(ɵɵdirectiveInject(ViewContainerRef), ɵɵdirectiveInject(ElementRef));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _FooterRowOutlet,
+      selectors: [["", "footerRowOutlet", ""]],
+      standalone: true
+    });
+  }
 };
-_FooterRowOutlet.ɵfac = function FooterRowOutlet_Factory(t) {
-  return new (t || _FooterRowOutlet)(ɵɵdirectiveInject(ViewContainerRef), ɵɵdirectiveInject(ElementRef));
-};
-_FooterRowOutlet.ɵdir = ɵɵdefineDirective({
-  type: _FooterRowOutlet,
-  selectors: [["", "footerRowOutlet", ""]],
-  standalone: true
-});
-var FooterRowOutlet = _FooterRowOutlet;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FooterRowOutlet, [{
     type: Directive,
@@ -1447,7 +1512,7 @@ var FooterRowOutlet = _FooterRowOutlet;
     type: ElementRef
   }], null);
 })();
-var _NoDataRowOutlet = class _NoDataRowOutlet {
+var NoDataRowOutlet = class _NoDataRowOutlet {
   constructor(viewContainer, elementRef) {
     this.viewContainer = viewContainer;
     this.elementRef = elementRef;
@@ -1455,16 +1520,19 @@ var _NoDataRowOutlet = class _NoDataRowOutlet {
     table._noDataRowOutlet = this;
     table._outletAssigned();
   }
+  static {
+    this.ɵfac = function NoDataRowOutlet_Factory(t) {
+      return new (t || _NoDataRowOutlet)(ɵɵdirectiveInject(ViewContainerRef), ɵɵdirectiveInject(ElementRef));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _NoDataRowOutlet,
+      selectors: [["", "noDataRowOutlet", ""]],
+      standalone: true
+    });
+  }
 };
-_NoDataRowOutlet.ɵfac = function NoDataRowOutlet_Factory(t) {
-  return new (t || _NoDataRowOutlet)(ɵɵdirectiveInject(ViewContainerRef), ɵɵdirectiveInject(ElementRef));
-};
-_NoDataRowOutlet.ɵdir = ɵɵdefineDirective({
-  type: _NoDataRowOutlet,
-  selectors: [["", "noDataRowOutlet", ""]],
-  standalone: true
-});
-var NoDataRowOutlet = _NoDataRowOutlet;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NoDataRowOutlet, [{
     type: Directive,
@@ -1512,7 +1580,7 @@ var CDK_TABLE_TEMPLATE = (
   }
 `
 );
-var _CdkTable = class _CdkTable {
+var CdkTable = class _CdkTable {
   /** Aria role to apply to the table's cells based on the table's own role. */
   _getCellRole() {
     if (this._cellRoleInternal === void 0) {
@@ -2197,90 +2265,93 @@ var _CdkTable = class _CdkTable {
     this._isShowingNoDataRow = shouldShow;
     this._changeDetectorRef.markForCheck();
   }
+  static {
+    this.ɵfac = function CdkTable_Factory(t) {
+      return new (t || _CdkTable)(ɵɵdirectiveInject(IterableDiffers), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵinjectAttribute("role"), ɵɵdirectiveInject(Directionality, 8), ɵɵdirectiveInject(DOCUMENT), ɵɵdirectiveInject(Platform), ɵɵdirectiveInject(_VIEW_REPEATER_STRATEGY), ɵɵdirectiveInject(_COALESCED_STYLE_SCHEDULER), ɵɵdirectiveInject(ViewportRuler), ɵɵdirectiveInject(STICKY_POSITIONING_LISTENER, 12), ɵɵdirectiveInject(NgZone, 8));
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _CdkTable,
+      selectors: [["cdk-table"], ["table", "cdk-table", ""]],
+      contentQueries: function CdkTable_ContentQueries(rf, ctx, dirIndex) {
+        if (rf & 1) {
+          ɵɵcontentQuery(dirIndex, CdkNoDataRow, 5);
+          ɵɵcontentQuery(dirIndex, CdkColumnDef, 5);
+          ɵɵcontentQuery(dirIndex, CdkRowDef, 5);
+          ɵɵcontentQuery(dirIndex, CdkHeaderRowDef, 5);
+          ɵɵcontentQuery(dirIndex, CdkFooterRowDef, 5);
+        }
+        if (rf & 2) {
+          let _t;
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._noDataRow = _t.first);
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._contentColumnDefs = _t);
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._contentRowDefs = _t);
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._contentHeaderRowDefs = _t);
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._contentFooterRowDefs = _t);
+        }
+      },
+      hostAttrs: [1, "cdk-table"],
+      hostVars: 2,
+      hostBindings: function CdkTable_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          ɵɵclassProp("cdk-table-fixed-layout", ctx.fixedLayout);
+        }
+      },
+      inputs: {
+        trackBy: "trackBy",
+        dataSource: "dataSource",
+        multiTemplateDataRows: [InputFlags.HasDecoratorInputTransform, "multiTemplateDataRows", "multiTemplateDataRows", booleanAttribute],
+        fixedLayout: [InputFlags.HasDecoratorInputTransform, "fixedLayout", "fixedLayout", booleanAttribute]
+      },
+      outputs: {
+        contentChanged: "contentChanged"
+      },
+      exportAs: ["cdkTable"],
+      standalone: true,
+      features: [ɵɵProvidersFeature([
+        {
+          provide: CDK_TABLE,
+          useExisting: _CdkTable
+        },
+        {
+          provide: _VIEW_REPEATER_STRATEGY,
+          useClass: _DisposeViewRepeaterStrategy
+        },
+        {
+          provide: _COALESCED_STYLE_SCHEDULER,
+          useClass: _CoalescedStyleScheduler
+        },
+        // Prevent nested tables from seeing this table's StickyPositioningListener.
+        {
+          provide: STICKY_POSITIONING_LISTENER,
+          useValue: null
+        }
+      ]), ɵɵInputTransformsFeature, ɵɵStandaloneFeature],
+      ngContentSelectors: _c1,
+      decls: 5,
+      vars: 2,
+      consts: [["role", "rowgroup"], ["headerRowOutlet", ""], ["rowOutlet", ""], ["noDataRowOutlet", ""], ["footerRowOutlet", ""]],
+      template: function CdkTable_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵprojectionDef(_c0);
+          ɵɵprojection(0);
+          ɵɵprojection(1, 1);
+          ɵɵtemplate(2, CdkTable_Conditional_2_Template, 1, 0)(3, CdkTable_Conditional_3_Template, 7, 0)(4, CdkTable_Conditional_4_Template, 4, 0);
+        }
+        if (rf & 2) {
+          ɵɵadvance(2);
+          ɵɵconditional(2, ctx._isServer ? 2 : -1);
+          ɵɵadvance();
+          ɵɵconditional(3, ctx._isNativeHtmlTable ? 3 : 4);
+        }
+      },
+      dependencies: [HeaderRowOutlet, DataRowOutlet, NoDataRowOutlet, FooterRowOutlet],
+      styles: [".cdk-table-fixed-layout{table-layout:fixed}"],
+      encapsulation: 2
+    });
+  }
 };
-_CdkTable.ɵfac = function CdkTable_Factory(t) {
-  return new (t || _CdkTable)(ɵɵdirectiveInject(IterableDiffers), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵinjectAttribute("role"), ɵɵdirectiveInject(Directionality, 8), ɵɵdirectiveInject(DOCUMENT), ɵɵdirectiveInject(Platform), ɵɵdirectiveInject(_VIEW_REPEATER_STRATEGY), ɵɵdirectiveInject(_COALESCED_STYLE_SCHEDULER), ɵɵdirectiveInject(ViewportRuler), ɵɵdirectiveInject(STICKY_POSITIONING_LISTENER, 12), ɵɵdirectiveInject(NgZone, 8));
-};
-_CdkTable.ɵcmp = ɵɵdefineComponent({
-  type: _CdkTable,
-  selectors: [["cdk-table"], ["table", "cdk-table", ""]],
-  contentQueries: function CdkTable_ContentQueries(rf, ctx, dirIndex) {
-    if (rf & 1) {
-      ɵɵcontentQuery(dirIndex, CdkNoDataRow, 5);
-      ɵɵcontentQuery(dirIndex, CdkColumnDef, 5);
-      ɵɵcontentQuery(dirIndex, CdkRowDef, 5);
-      ɵɵcontentQuery(dirIndex, CdkHeaderRowDef, 5);
-      ɵɵcontentQuery(dirIndex, CdkFooterRowDef, 5);
-    }
-    if (rf & 2) {
-      let _t;
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._noDataRow = _t.first);
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._contentColumnDefs = _t);
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._contentRowDefs = _t);
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._contentHeaderRowDefs = _t);
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._contentFooterRowDefs = _t);
-    }
-  },
-  hostAttrs: [1, "cdk-table"],
-  hostVars: 2,
-  hostBindings: function CdkTable_HostBindings(rf, ctx) {
-    if (rf & 2) {
-      ɵɵclassProp("cdk-table-fixed-layout", ctx.fixedLayout);
-    }
-  },
-  inputs: {
-    trackBy: "trackBy",
-    dataSource: "dataSource",
-    multiTemplateDataRows: [InputFlags.HasDecoratorInputTransform, "multiTemplateDataRows", "multiTemplateDataRows", booleanAttribute],
-    fixedLayout: [InputFlags.HasDecoratorInputTransform, "fixedLayout", "fixedLayout", booleanAttribute]
-  },
-  outputs: {
-    contentChanged: "contentChanged"
-  },
-  exportAs: ["cdkTable"],
-  standalone: true,
-  features: [ɵɵProvidersFeature([
-    {
-      provide: CDK_TABLE,
-      useExisting: _CdkTable
-    },
-    {
-      provide: _VIEW_REPEATER_STRATEGY,
-      useClass: _DisposeViewRepeaterStrategy
-    },
-    {
-      provide: _COALESCED_STYLE_SCHEDULER,
-      useClass: _CoalescedStyleScheduler
-    },
-    // Prevent nested tables from seeing this table's StickyPositioningListener.
-    {
-      provide: STICKY_POSITIONING_LISTENER,
-      useValue: null
-    }
-  ]), ɵɵInputTransformsFeature, ɵɵStandaloneFeature],
-  ngContentSelectors: _c1,
-  decls: 5,
-  vars: 2,
-  consts: [["role", "rowgroup"], ["headerRowOutlet", ""], ["rowOutlet", ""], ["noDataRowOutlet", ""], ["footerRowOutlet", ""]],
-  template: function CdkTable_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵprojectionDef(_c0);
-      ɵɵprojection(0);
-      ɵɵprojection(1, 1);
-      ɵɵtemplate(2, CdkTable_Conditional_2_Template, 1, 0)(3, CdkTable_Conditional_3_Template, 7, 0)(4, CdkTable_Conditional_4_Template, 4, 0);
-    }
-    if (rf & 2) {
-      ɵɵadvance(2);
-      ɵɵconditional(2, ctx._isServer ? 2 : -1);
-      ɵɵadvance();
-      ɵɵconditional(3, ctx._isNativeHtmlTable ? 3 : 4);
-    }
-  },
-  dependencies: [HeaderRowOutlet, DataRowOutlet, NoDataRowOutlet, FooterRowOutlet],
-  styles: [".cdk-table-fixed-layout{table-layout:fixed}"],
-  encapsulation: 2
-});
-var CdkTable = _CdkTable;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkTable, [{
     type: Component,
@@ -2440,7 +2511,7 @@ function closestTableSection(outlet, section) {
   }
   return null;
 }
-var _CdkTextColumn = class _CdkTextColumn {
+var CdkTextColumn = class _CdkTextColumn {
   /** Column name that should be used to reference this column. */
   get name() {
     return this._name;
@@ -2496,48 +2567,51 @@ var _CdkTextColumn = class _CdkTextColumn {
       this.columnDef.name = this.name;
     }
   }
+  static {
+    this.ɵfac = function CdkTextColumn_Factory(t) {
+      return new (t || _CdkTextColumn)(ɵɵdirectiveInject(CdkTable, 8), ɵɵdirectiveInject(TEXT_COLUMN_OPTIONS, 8));
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _CdkTextColumn,
+      selectors: [["cdk-text-column"]],
+      viewQuery: function CdkTextColumn_Query(rf, ctx) {
+        if (rf & 1) {
+          ɵɵviewQuery(CdkColumnDef, 7);
+          ɵɵviewQuery(CdkCellDef, 7);
+          ɵɵviewQuery(CdkHeaderCellDef, 7);
+        }
+        if (rf & 2) {
+          let _t;
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.columnDef = _t.first);
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.cell = _t.first);
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.headerCell = _t.first);
+        }
+      },
+      inputs: {
+        name: "name",
+        headerText: "headerText",
+        dataAccessor: "dataAccessor",
+        justify: "justify"
+      },
+      standalone: true,
+      features: [ɵɵStandaloneFeature],
+      decls: 3,
+      vars: 0,
+      consts: [["cdkColumnDef", ""], ["cdk-header-cell", "", 3, "text-align", 4, "cdkHeaderCellDef"], ["cdk-cell", "", 3, "text-align", 4, "cdkCellDef"], ["cdk-header-cell", ""], ["cdk-cell", ""]],
+      template: function CdkTextColumn_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵelementContainerStart(0, 0);
+          ɵɵtemplate(1, CdkTextColumn_th_1_Template, 2, 3, "th", 1)(2, CdkTextColumn_td_2_Template, 2, 3, "td", 2);
+          ɵɵelementContainerEnd();
+        }
+      },
+      dependencies: [CdkColumnDef, CdkHeaderCellDef, CdkHeaderCell, CdkCellDef, CdkCell],
+      encapsulation: 2
+    });
+  }
 };
-_CdkTextColumn.ɵfac = function CdkTextColumn_Factory(t) {
-  return new (t || _CdkTextColumn)(ɵɵdirectiveInject(CdkTable, 8), ɵɵdirectiveInject(TEXT_COLUMN_OPTIONS, 8));
-};
-_CdkTextColumn.ɵcmp = ɵɵdefineComponent({
-  type: _CdkTextColumn,
-  selectors: [["cdk-text-column"]],
-  viewQuery: function CdkTextColumn_Query(rf, ctx) {
-    if (rf & 1) {
-      ɵɵviewQuery(CdkColumnDef, 7);
-      ɵɵviewQuery(CdkCellDef, 7);
-      ɵɵviewQuery(CdkHeaderCellDef, 7);
-    }
-    if (rf & 2) {
-      let _t;
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.columnDef = _t.first);
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.cell = _t.first);
-      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.headerCell = _t.first);
-    }
-  },
-  inputs: {
-    name: "name",
-    headerText: "headerText",
-    dataAccessor: "dataAccessor",
-    justify: "justify"
-  },
-  standalone: true,
-  features: [ɵɵStandaloneFeature],
-  decls: 3,
-  vars: 0,
-  consts: [["cdkColumnDef", ""], ["cdk-header-cell", "", 3, "text-align", 4, "cdkHeaderCellDef"], ["cdk-cell", "", 3, "text-align", 4, "cdkCellDef"], ["cdk-header-cell", ""], ["cdk-cell", ""]],
-  template: function CdkTextColumn_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵelementContainerStart(0, 0);
-      ɵɵtemplate(1, CdkTextColumn_th_1_Template, 2, 3, "th", 1)(2, CdkTextColumn_td_2_Template, 2, 3, "td", 2);
-      ɵɵelementContainerEnd();
-    }
-  },
-  dependencies: [CdkColumnDef, CdkHeaderCellDef, CdkHeaderCell, CdkCellDef, CdkCell],
-  encapsulation: 2
-});
-var CdkTextColumn = _CdkTextColumn;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkTextColumn, [{
     type: Component,
@@ -2611,20 +2685,25 @@ var CdkTextColumn = _CdkTextColumn;
   });
 })();
 var EXPORTED_DECLARATIONS = [CdkTable, CdkRowDef, CdkCellDef, CdkCellOutlet, CdkHeaderCellDef, CdkFooterCellDef, CdkColumnDef, CdkCell, CdkRow, CdkHeaderCell, CdkFooterCell, CdkHeaderRow, CdkHeaderRowDef, CdkFooterRow, CdkFooterRowDef, DataRowOutlet, HeaderRowOutlet, FooterRowOutlet, CdkTextColumn, CdkNoDataRow, CdkRecycleRows, NoDataRowOutlet];
-var _CdkTableModule = class _CdkTableModule {
+var CdkTableModule = class _CdkTableModule {
+  static {
+    this.ɵfac = function CdkTableModule_Factory(t) {
+      return new (t || _CdkTableModule)();
+    };
+  }
+  static {
+    this.ɵmod = ɵɵdefineNgModule({
+      type: _CdkTableModule,
+      imports: [ScrollingModule, CdkTable, CdkRowDef, CdkCellDef, CdkCellOutlet, CdkHeaderCellDef, CdkFooterCellDef, CdkColumnDef, CdkCell, CdkRow, CdkHeaderCell, CdkFooterCell, CdkHeaderRow, CdkHeaderRowDef, CdkFooterRow, CdkFooterRowDef, DataRowOutlet, HeaderRowOutlet, FooterRowOutlet, CdkTextColumn, CdkNoDataRow, CdkRecycleRows, NoDataRowOutlet],
+      exports: [CdkTable, CdkRowDef, CdkCellDef, CdkCellOutlet, CdkHeaderCellDef, CdkFooterCellDef, CdkColumnDef, CdkCell, CdkRow, CdkHeaderCell, CdkFooterCell, CdkHeaderRow, CdkHeaderRowDef, CdkFooterRow, CdkFooterRowDef, DataRowOutlet, HeaderRowOutlet, FooterRowOutlet, CdkTextColumn, CdkNoDataRow, CdkRecycleRows, NoDataRowOutlet]
+    });
+  }
+  static {
+    this.ɵinj = ɵɵdefineInjector({
+      imports: [ScrollingModule]
+    });
+  }
 };
-_CdkTableModule.ɵfac = function CdkTableModule_Factory(t) {
-  return new (t || _CdkTableModule)();
-};
-_CdkTableModule.ɵmod = ɵɵdefineNgModule({
-  type: _CdkTableModule,
-  imports: [ScrollingModule, CdkTable, CdkRowDef, CdkCellDef, CdkCellOutlet, CdkHeaderCellDef, CdkFooterCellDef, CdkColumnDef, CdkCell, CdkRow, CdkHeaderCell, CdkFooterCell, CdkHeaderRow, CdkHeaderRowDef, CdkFooterRow, CdkFooterRowDef, DataRowOutlet, HeaderRowOutlet, FooterRowOutlet, CdkTextColumn, CdkNoDataRow, CdkRecycleRows, NoDataRowOutlet],
-  exports: [CdkTable, CdkRowDef, CdkCellDef, CdkCellOutlet, CdkHeaderCellDef, CdkFooterCellDef, CdkColumnDef, CdkCell, CdkRow, CdkHeaderCell, CdkFooterCell, CdkHeaderRow, CdkHeaderRowDef, CdkFooterRow, CdkFooterRowDef, DataRowOutlet, HeaderRowOutlet, FooterRowOutlet, CdkTextColumn, CdkNoDataRow, CdkRecycleRows, NoDataRowOutlet]
-});
-_CdkTableModule.ɵinj = ɵɵdefineInjector({
-  imports: [ScrollingModule]
-});
-var CdkTableModule = _CdkTableModule;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkTableModule, [{
     type: NgModule,
@@ -2688,21 +2767,24 @@ function MatTextColumn_td_2_Template(rf, ctx) {
     ɵɵtextInterpolate1(" ", ctx_r1.dataAccessor(data_r2, ctx_r1.name), " ");
   }
 }
-var _MatRecycleRows = class _MatRecycleRows {
+var MatRecycleRows = class _MatRecycleRows {
+  static {
+    this.ɵfac = function MatRecycleRows_Factory(t) {
+      return new (t || _MatRecycleRows)();
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatRecycleRows,
+      selectors: [["mat-table", "recycleRows", ""], ["table", "mat-table", "", "recycleRows", ""]],
+      standalone: true,
+      features: [ɵɵProvidersFeature([{
+        provide: _VIEW_REPEATER_STRATEGY,
+        useClass: _RecycleViewRepeaterStrategy
+      }])]
+    });
+  }
 };
-_MatRecycleRows.ɵfac = function MatRecycleRows_Factory(t) {
-  return new (t || _MatRecycleRows)();
-};
-_MatRecycleRows.ɵdir = ɵɵdefineDirective({
-  type: _MatRecycleRows,
-  selectors: [["mat-table", "recycleRows", ""], ["table", "mat-table", "", "recycleRows", ""]],
-  standalone: true,
-  features: [ɵɵProvidersFeature([{
-    provide: _VIEW_REPEATER_STRATEGY,
-    useClass: _RecycleViewRepeaterStrategy
-  }])]
-});
-var MatRecycleRows = _MatRecycleRows;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatRecycleRows, [{
     type: Directive,
@@ -2716,79 +2798,82 @@ var MatRecycleRows = _MatRecycleRows;
     }]
   }], null, null);
 })();
-var _MatTable = class _MatTable extends CdkTable {
+var MatTable = class _MatTable extends CdkTable {
   constructor() {
     super(...arguments);
     this.stickyCssClass = "mat-mdc-table-sticky";
     this.needsPositionStickyOnElement = false;
   }
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatTable_BaseFactory;
+      return function MatTable_Factory(t) {
+        return (ɵMatTable_BaseFactory || (ɵMatTable_BaseFactory = ɵɵgetInheritedFactory(_MatTable)))(t || _MatTable);
+      };
+    })();
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _MatTable,
+      selectors: [["mat-table"], ["table", "mat-table", ""]],
+      hostAttrs: [1, "mat-mdc-table", "mdc-data-table__table"],
+      hostVars: 2,
+      hostBindings: function MatTable_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          ɵɵclassProp("mdc-table-fixed-layout", ctx.fixedLayout);
+        }
+      },
+      exportAs: ["matTable"],
+      standalone: true,
+      features: [ɵɵProvidersFeature([
+        {
+          provide: CdkTable,
+          useExisting: _MatTable
+        },
+        {
+          provide: CDK_TABLE,
+          useExisting: _MatTable
+        },
+        {
+          provide: _COALESCED_STYLE_SCHEDULER,
+          useClass: _CoalescedStyleScheduler
+        },
+        // TODO(michaeljamesparsons) Abstract the view repeater strategy to a directive API so this code
+        //  is only included in the build if used.
+        {
+          provide: _VIEW_REPEATER_STRATEGY,
+          useClass: _DisposeViewRepeaterStrategy
+        },
+        // Prevent nested tables from seeing this table's StickyPositioningListener.
+        {
+          provide: STICKY_POSITIONING_LISTENER,
+          useValue: null
+        }
+      ]), ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
+      ngContentSelectors: _c12,
+      decls: 5,
+      vars: 2,
+      consts: [["role", "rowgroup"], ["headerRowOutlet", ""], ["role", "rowgroup", 1, "mdc-data-table__content"], ["rowOutlet", ""], ["noDataRowOutlet", ""], ["footerRowOutlet", ""]],
+      template: function MatTable_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵprojectionDef(_c02);
+          ɵɵprojection(0);
+          ɵɵprojection(1, 1);
+          ɵɵtemplate(2, MatTable_Conditional_2_Template, 1, 0)(3, MatTable_Conditional_3_Template, 7, 0)(4, MatTable_Conditional_4_Template, 4, 0);
+        }
+        if (rf & 2) {
+          ɵɵadvance(2);
+          ɵɵconditional(2, ctx._isServer ? 2 : -1);
+          ɵɵadvance();
+          ɵɵconditional(3, ctx._isNativeHtmlTable ? 3 : 4);
+        }
+      },
+      dependencies: [HeaderRowOutlet, DataRowOutlet, NoDataRowOutlet, FooterRowOutlet],
+      styles: [".mat-mdc-table-sticky{position:sticky !important}.mdc-data-table{-webkit-overflow-scrolling:touch;display:inline-flex;flex-direction:column;box-sizing:border-box;position:relative}.mdc-data-table__table-container{-webkit-overflow-scrolling:touch;overflow-x:auto;width:100%}.mdc-data-table__table{min-width:100%;border:0;white-space:nowrap;border-spacing:0;table-layout:fixed}.mdc-data-table__cell{box-sizing:border-box;overflow:hidden;text-align:left;text-overflow:ellipsis}[dir=rtl] .mdc-data-table__cell,.mdc-data-table__cell[dir=rtl]{text-align:right}.mdc-data-table__cell--numeric{text-align:right}[dir=rtl] .mdc-data-table__cell--numeric,.mdc-data-table__cell--numeric[dir=rtl]{text-align:left}.mdc-data-table__header-cell{box-sizing:border-box;text-overflow:ellipsis;overflow:hidden;outline:none;text-align:left}[dir=rtl] .mdc-data-table__header-cell,.mdc-data-table__header-cell[dir=rtl]{text-align:right}.mdc-data-table__header-cell--numeric{text-align:right}[dir=rtl] .mdc-data-table__header-cell--numeric,.mdc-data-table__header-cell--numeric[dir=rtl]{text-align:left}.mdc-data-table__header-cell-wrapper{align-items:center;display:inline-flex;vertical-align:middle}.mdc-data-table__cell,.mdc-data-table__header-cell{padding:0 16px 0 16px}.mdc-data-table__header-cell--checkbox,.mdc-data-table__cell--checkbox{padding-left:4px;padding-right:0}[dir=rtl] .mdc-data-table__header-cell--checkbox,[dir=rtl] .mdc-data-table__cell--checkbox,.mdc-data-table__header-cell--checkbox[dir=rtl],.mdc-data-table__cell--checkbox[dir=rtl]{padding-left:0;padding-right:4px}mat-table{display:block}mat-header-row{min-height:56px}mat-row,mat-footer-row{min-height:48px}mat-row,mat-header-row,mat-footer-row{display:flex;border-width:0;border-bottom-width:1px;border-style:solid;align-items:center;box-sizing:border-box}mat-cell:first-of-type,mat-header-cell:first-of-type,mat-footer-cell:first-of-type{padding-left:24px}[dir=rtl] mat-cell:first-of-type:not(:only-of-type),[dir=rtl] mat-header-cell:first-of-type:not(:only-of-type),[dir=rtl] mat-footer-cell:first-of-type:not(:only-of-type){padding-left:0;padding-right:24px}mat-cell:last-of-type,mat-header-cell:last-of-type,mat-footer-cell:last-of-type{padding-right:24px}[dir=rtl] mat-cell:last-of-type:not(:only-of-type),[dir=rtl] mat-header-cell:last-of-type:not(:only-of-type),[dir=rtl] mat-footer-cell:last-of-type:not(:only-of-type){padding-right:0;padding-left:24px}mat-cell,mat-header-cell,mat-footer-cell{flex:1;display:flex;align-items:center;overflow:hidden;word-wrap:break-word;min-height:inherit}.mat-mdc-table{table-layout:auto;white-space:normal;background-color:var(--mat-table-background-color)}.mat-mdc-header-row{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;height:var(--mat-table-header-container-height, 56px);color:var(--mat-table-header-headline-color, rgba(0, 0, 0, 0.87));font-family:var(--mat-table-header-headline-font, Roboto, sans-serif);line-height:var(--mat-table-header-headline-line-height);font-size:var(--mat-table-header-headline-size, 14px);font-weight:var(--mat-table-header-headline-weight, 500)}.mat-mdc-row{height:var(--mat-table-row-item-container-height, 52px);color:var(--mat-table-row-item-label-text-color, rgba(0, 0, 0, 0.87))}.mat-mdc-row,.mdc-data-table__content{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:var(--mat-table-row-item-label-text-font, Roboto, sans-serif);line-height:var(--mat-table-row-item-label-text-line-height);font-size:var(--mat-table-row-item-label-text-size, 14px);font-weight:var(--mat-table-row-item-label-text-weight)}.mat-mdc-footer-row{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;height:var(--mat-table-footer-container-height, 52px);color:var(--mat-table-row-item-label-text-color, rgba(0, 0, 0, 0.87));font-family:var(--mat-table-footer-supporting-text-font, Roboto, sans-serif);line-height:var(--mat-table-footer-supporting-text-line-height);font-size:var(--mat-table-footer-supporting-text-size, 14px);font-weight:var(--mat-table-footer-supporting-text-weight);letter-spacing:var(--mat-table-footer-supporting-text-tracking)}.mat-mdc-header-cell{border-bottom-color:var(--mat-table-row-item-outline-color, rgba(0, 0, 0, 0.12));border-bottom-width:var(--mat-table-row-item-outline-width, 1px);border-bottom-style:solid;letter-spacing:var(--mat-table-header-headline-tracking);font-weight:inherit;line-height:inherit}.mat-mdc-cell{border-bottom-color:var(--mat-table-row-item-outline-color, rgba(0, 0, 0, 0.12));border-bottom-width:var(--mat-table-row-item-outline-width, 1px);border-bottom-style:solid;letter-spacing:var(--mat-table-row-item-label-text-tracking);line-height:inherit}.mdc-data-table__row:last-child .mat-mdc-cell{border-bottom:none}.mat-mdc-footer-cell{letter-spacing:var(--mat-table-row-item-label-text-tracking)}mat-row.mat-mdc-row,mat-header-row.mat-mdc-header-row,mat-footer-row.mat-mdc-footer-row{border-bottom:none}.mat-mdc-table tbody,.mat-mdc-table tfoot,.mat-mdc-table thead,.mat-mdc-cell,.mat-mdc-footer-cell,.mat-mdc-header-row,.mat-mdc-row,.mat-mdc-footer-row,.mat-mdc-table .mat-mdc-header-cell{background:inherit}.mat-mdc-table mat-header-row.mat-mdc-header-row,.mat-mdc-table mat-row.mat-mdc-row,.mat-mdc-table mat-footer-row.mat-mdc-footer-cell{height:unset}mat-header-cell.mat-mdc-header-cell,mat-cell.mat-mdc-cell,mat-footer-cell.mat-mdc-footer-cell{align-self:stretch}"],
+      encapsulation: 2
+    });
+  }
 };
-_MatTable.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatTable_BaseFactory;
-  return function MatTable_Factory(t) {
-    return (ɵMatTable_BaseFactory || (ɵMatTable_BaseFactory = ɵɵgetInheritedFactory(_MatTable)))(t || _MatTable);
-  };
-})();
-_MatTable.ɵcmp = ɵɵdefineComponent({
-  type: _MatTable,
-  selectors: [["mat-table"], ["table", "mat-table", ""]],
-  hostAttrs: [1, "mat-mdc-table", "mdc-data-table__table"],
-  hostVars: 2,
-  hostBindings: function MatTable_HostBindings(rf, ctx) {
-    if (rf & 2) {
-      ɵɵclassProp("mdc-table-fixed-layout", ctx.fixedLayout);
-    }
-  },
-  exportAs: ["matTable"],
-  standalone: true,
-  features: [ɵɵProvidersFeature([
-    {
-      provide: CdkTable,
-      useExisting: _MatTable
-    },
-    {
-      provide: CDK_TABLE,
-      useExisting: _MatTable
-    },
-    {
-      provide: _COALESCED_STYLE_SCHEDULER,
-      useClass: _CoalescedStyleScheduler
-    },
-    // TODO(michaeljamesparsons) Abstract the view repeater strategy to a directive API so this code
-    //  is only included in the build if used.
-    {
-      provide: _VIEW_REPEATER_STRATEGY,
-      useClass: _DisposeViewRepeaterStrategy
-    },
-    // Prevent nested tables from seeing this table's StickyPositioningListener.
-    {
-      provide: STICKY_POSITIONING_LISTENER,
-      useValue: null
-    }
-  ]), ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
-  ngContentSelectors: _c12,
-  decls: 5,
-  vars: 2,
-  consts: [["role", "rowgroup"], ["headerRowOutlet", ""], ["role", "rowgroup", 1, "mdc-data-table__content"], ["rowOutlet", ""], ["noDataRowOutlet", ""], ["footerRowOutlet", ""]],
-  template: function MatTable_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵprojectionDef(_c02);
-      ɵɵprojection(0);
-      ɵɵprojection(1, 1);
-      ɵɵtemplate(2, MatTable_Conditional_2_Template, 1, 0)(3, MatTable_Conditional_3_Template, 7, 0)(4, MatTable_Conditional_4_Template, 4, 0);
-    }
-    if (rf & 2) {
-      ɵɵadvance(2);
-      ɵɵconditional(2, ctx._isServer ? 2 : -1);
-      ɵɵadvance();
-      ɵɵconditional(3, ctx._isNativeHtmlTable ? 3 : 4);
-    }
-  },
-  dependencies: [HeaderRowOutlet, DataRowOutlet, NoDataRowOutlet, FooterRowOutlet],
-  styles: [".mat-mdc-table-sticky{position:sticky !important}.mdc-data-table{-webkit-overflow-scrolling:touch;display:inline-flex;flex-direction:column;box-sizing:border-box;position:relative}.mdc-data-table__table-container{-webkit-overflow-scrolling:touch;overflow-x:auto;width:100%}.mdc-data-table__table{min-width:100%;border:0;white-space:nowrap;border-spacing:0;table-layout:fixed}.mdc-data-table__cell{box-sizing:border-box;overflow:hidden;text-align:left;text-overflow:ellipsis}[dir=rtl] .mdc-data-table__cell,.mdc-data-table__cell[dir=rtl]{text-align:right}.mdc-data-table__cell--numeric{text-align:right}[dir=rtl] .mdc-data-table__cell--numeric,.mdc-data-table__cell--numeric[dir=rtl]{text-align:left}.mdc-data-table__header-cell{box-sizing:border-box;text-overflow:ellipsis;overflow:hidden;outline:none;text-align:left}[dir=rtl] .mdc-data-table__header-cell,.mdc-data-table__header-cell[dir=rtl]{text-align:right}.mdc-data-table__header-cell--numeric{text-align:right}[dir=rtl] .mdc-data-table__header-cell--numeric,.mdc-data-table__header-cell--numeric[dir=rtl]{text-align:left}.mdc-data-table__header-cell-wrapper{align-items:center;display:inline-flex;vertical-align:middle}.mdc-data-table__cell,.mdc-data-table__header-cell{padding:0 16px 0 16px}.mdc-data-table__header-cell--checkbox,.mdc-data-table__cell--checkbox{padding-left:4px;padding-right:0}[dir=rtl] .mdc-data-table__header-cell--checkbox,[dir=rtl] .mdc-data-table__cell--checkbox,.mdc-data-table__header-cell--checkbox[dir=rtl],.mdc-data-table__cell--checkbox[dir=rtl]{padding-left:0;padding-right:4px}mat-table{display:block}mat-header-row{min-height:56px}mat-row,mat-footer-row{min-height:48px}mat-row,mat-header-row,mat-footer-row{display:flex;border-width:0;border-bottom-width:1px;border-style:solid;align-items:center;box-sizing:border-box}mat-cell:first-of-type,mat-header-cell:first-of-type,mat-footer-cell:first-of-type{padding-left:24px}[dir=rtl] mat-cell:first-of-type:not(:only-of-type),[dir=rtl] mat-header-cell:first-of-type:not(:only-of-type),[dir=rtl] mat-footer-cell:first-of-type:not(:only-of-type){padding-left:0;padding-right:24px}mat-cell:last-of-type,mat-header-cell:last-of-type,mat-footer-cell:last-of-type{padding-right:24px}[dir=rtl] mat-cell:last-of-type:not(:only-of-type),[dir=rtl] mat-header-cell:last-of-type:not(:only-of-type),[dir=rtl] mat-footer-cell:last-of-type:not(:only-of-type){padding-right:0;padding-left:24px}mat-cell,mat-header-cell,mat-footer-cell{flex:1;display:flex;align-items:center;overflow:hidden;word-wrap:break-word;min-height:inherit}.mat-mdc-table{table-layout:auto;white-space:normal;background-color:var(--mat-table-background-color)}.mat-mdc-header-row{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;height:var(--mat-table-header-container-height, 56px);color:var(--mat-table-header-headline-color, rgba(0, 0, 0, 0.87));font-family:var(--mat-table-header-headline-font, Roboto, sans-serif);line-height:var(--mat-table-header-headline-line-height);font-size:var(--mat-table-header-headline-size, 14px);font-weight:var(--mat-table-header-headline-weight, 500)}.mat-mdc-row{height:var(--mat-table-row-item-container-height, 52px);color:var(--mat-table-row-item-label-text-color, rgba(0, 0, 0, 0.87))}.mat-mdc-row,.mdc-data-table__content{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:var(--mat-table-row-item-label-text-font, Roboto, sans-serif);line-height:var(--mat-table-row-item-label-text-line-height);font-size:var(--mat-table-row-item-label-text-size, 14px);font-weight:var(--mat-table-row-item-label-text-weight)}.mat-mdc-footer-row{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;height:var(--mat-table-footer-container-height, 52px);color:var(--mat-table-row-item-label-text-color, rgba(0, 0, 0, 0.87));font-family:var(--mat-table-footer-supporting-text-font, Roboto, sans-serif);line-height:var(--mat-table-footer-supporting-text-line-height);font-size:var(--mat-table-footer-supporting-text-size, 14px);font-weight:var(--mat-table-footer-supporting-text-weight);letter-spacing:var(--mat-table-footer-supporting-text-tracking)}.mat-mdc-header-cell{border-bottom-color:var(--mat-table-row-item-outline-color, rgba(0, 0, 0, 0.12));border-bottom-width:var(--mat-table-row-item-outline-width, 1px);border-bottom-style:solid;letter-spacing:var(--mat-table-header-headline-tracking);font-weight:inherit;line-height:inherit}.mat-mdc-cell{border-bottom-color:var(--mat-table-row-item-outline-color, rgba(0, 0, 0, 0.12));border-bottom-width:var(--mat-table-row-item-outline-width, 1px);border-bottom-style:solid;letter-spacing:var(--mat-table-row-item-label-text-tracking);line-height:inherit}.mdc-data-table__row:last-child .mat-mdc-cell{border-bottom:none}.mat-mdc-footer-cell{letter-spacing:var(--mat-table-row-item-label-text-tracking)}mat-row.mat-mdc-row,mat-header-row.mat-mdc-header-row,mat-footer-row.mat-mdc-footer-row{border-bottom:none}.mat-mdc-table tbody,.mat-mdc-table tfoot,.mat-mdc-table thead,.mat-mdc-cell,.mat-mdc-footer-cell,.mat-mdc-header-row,.mat-mdc-row,.mat-mdc-footer-row,.mat-mdc-table .mat-mdc-header-cell{background:inherit}.mat-mdc-table mat-header-row.mat-mdc-header-row,.mat-mdc-table mat-row.mat-mdc-row,.mat-mdc-table mat-footer-row.mat-mdc-footer-cell{height:unset}mat-header-cell.mat-mdc-header-cell,mat-cell.mat-mdc-cell,mat-footer-cell.mat-mdc-footer-cell{align-self:stretch}"],
-  encapsulation: 2
-});
-var MatTable = _MatTable;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatTable, [{
     type: Component,
@@ -2862,24 +2947,27 @@ var MatTable = _MatTable;
     }]
   }], null, null);
 })();
-var _MatCellDef = class _MatCellDef extends CdkCellDef {
+var MatCellDef = class _MatCellDef extends CdkCellDef {
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatCellDef_BaseFactory;
+      return function MatCellDef_Factory(t) {
+        return (ɵMatCellDef_BaseFactory || (ɵMatCellDef_BaseFactory = ɵɵgetInheritedFactory(_MatCellDef)))(t || _MatCellDef);
+      };
+    })();
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatCellDef,
+      selectors: [["", "matCellDef", ""]],
+      standalone: true,
+      features: [ɵɵProvidersFeature([{
+        provide: CdkCellDef,
+        useExisting: _MatCellDef
+      }]), ɵɵInheritDefinitionFeature]
+    });
+  }
 };
-_MatCellDef.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatCellDef_BaseFactory;
-  return function MatCellDef_Factory(t) {
-    return (ɵMatCellDef_BaseFactory || (ɵMatCellDef_BaseFactory = ɵɵgetInheritedFactory(_MatCellDef)))(t || _MatCellDef);
-  };
-})();
-_MatCellDef.ɵdir = ɵɵdefineDirective({
-  type: _MatCellDef,
-  selectors: [["", "matCellDef", ""]],
-  standalone: true,
-  features: [ɵɵProvidersFeature([{
-    provide: CdkCellDef,
-    useExisting: _MatCellDef
-  }]), ɵɵInheritDefinitionFeature]
-});
-var MatCellDef = _MatCellDef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatCellDef, [{
     type: Directive,
@@ -2893,24 +2981,27 @@ var MatCellDef = _MatCellDef;
     }]
   }], null, null);
 })();
-var _MatHeaderCellDef = class _MatHeaderCellDef extends CdkHeaderCellDef {
+var MatHeaderCellDef = class _MatHeaderCellDef extends CdkHeaderCellDef {
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatHeaderCellDef_BaseFactory;
+      return function MatHeaderCellDef_Factory(t) {
+        return (ɵMatHeaderCellDef_BaseFactory || (ɵMatHeaderCellDef_BaseFactory = ɵɵgetInheritedFactory(_MatHeaderCellDef)))(t || _MatHeaderCellDef);
+      };
+    })();
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatHeaderCellDef,
+      selectors: [["", "matHeaderCellDef", ""]],
+      standalone: true,
+      features: [ɵɵProvidersFeature([{
+        provide: CdkHeaderCellDef,
+        useExisting: _MatHeaderCellDef
+      }]), ɵɵInheritDefinitionFeature]
+    });
+  }
 };
-_MatHeaderCellDef.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatHeaderCellDef_BaseFactory;
-  return function MatHeaderCellDef_Factory(t) {
-    return (ɵMatHeaderCellDef_BaseFactory || (ɵMatHeaderCellDef_BaseFactory = ɵɵgetInheritedFactory(_MatHeaderCellDef)))(t || _MatHeaderCellDef);
-  };
-})();
-_MatHeaderCellDef.ɵdir = ɵɵdefineDirective({
-  type: _MatHeaderCellDef,
-  selectors: [["", "matHeaderCellDef", ""]],
-  standalone: true,
-  features: [ɵɵProvidersFeature([{
-    provide: CdkHeaderCellDef,
-    useExisting: _MatHeaderCellDef
-  }]), ɵɵInheritDefinitionFeature]
-});
-var MatHeaderCellDef = _MatHeaderCellDef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatHeaderCellDef, [{
     type: Directive,
@@ -2924,24 +3015,27 @@ var MatHeaderCellDef = _MatHeaderCellDef;
     }]
   }], null, null);
 })();
-var _MatFooterCellDef = class _MatFooterCellDef extends CdkFooterCellDef {
+var MatFooterCellDef = class _MatFooterCellDef extends CdkFooterCellDef {
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatFooterCellDef_BaseFactory;
+      return function MatFooterCellDef_Factory(t) {
+        return (ɵMatFooterCellDef_BaseFactory || (ɵMatFooterCellDef_BaseFactory = ɵɵgetInheritedFactory(_MatFooterCellDef)))(t || _MatFooterCellDef);
+      };
+    })();
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatFooterCellDef,
+      selectors: [["", "matFooterCellDef", ""]],
+      standalone: true,
+      features: [ɵɵProvidersFeature([{
+        provide: CdkFooterCellDef,
+        useExisting: _MatFooterCellDef
+      }]), ɵɵInheritDefinitionFeature]
+    });
+  }
 };
-_MatFooterCellDef.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatFooterCellDef_BaseFactory;
-  return function MatFooterCellDef_Factory(t) {
-    return (ɵMatFooterCellDef_BaseFactory || (ɵMatFooterCellDef_BaseFactory = ɵɵgetInheritedFactory(_MatFooterCellDef)))(t || _MatFooterCellDef);
-  };
-})();
-_MatFooterCellDef.ɵdir = ɵɵdefineDirective({
-  type: _MatFooterCellDef,
-  selectors: [["", "matFooterCellDef", ""]],
-  standalone: true,
-  features: [ɵɵProvidersFeature([{
-    provide: CdkFooterCellDef,
-    useExisting: _MatFooterCellDef
-  }]), ɵɵInheritDefinitionFeature]
-});
-var MatFooterCellDef = _MatFooterCellDef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatFooterCellDef, [{
     type: Directive,
@@ -2955,7 +3049,7 @@ var MatFooterCellDef = _MatFooterCellDef;
     }]
   }], null, null);
 })();
-var _MatColumnDef = class _MatColumnDef extends CdkColumnDef {
+var MatColumnDef = class _MatColumnDef extends CdkColumnDef {
   /** Unique name for this column. */
   get name() {
     return this._name;
@@ -2973,29 +3067,32 @@ var _MatColumnDef = class _MatColumnDef extends CdkColumnDef {
     super._updateColumnCssClassName();
     this._columnCssClassName.push(`mat-column-${this.cssClassFriendlyName}`);
   }
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatColumnDef_BaseFactory;
+      return function MatColumnDef_Factory(t) {
+        return (ɵMatColumnDef_BaseFactory || (ɵMatColumnDef_BaseFactory = ɵɵgetInheritedFactory(_MatColumnDef)))(t || _MatColumnDef);
+      };
+    })();
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatColumnDef,
+      selectors: [["", "matColumnDef", ""]],
+      inputs: {
+        name: [InputFlags.None, "matColumnDef", "name"]
+      },
+      standalone: true,
+      features: [ɵɵProvidersFeature([{
+        provide: CdkColumnDef,
+        useExisting: _MatColumnDef
+      }, {
+        provide: "MAT_SORT_HEADER_COLUMN_DEF",
+        useExisting: _MatColumnDef
+      }]), ɵɵInheritDefinitionFeature]
+    });
+  }
 };
-_MatColumnDef.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatColumnDef_BaseFactory;
-  return function MatColumnDef_Factory(t) {
-    return (ɵMatColumnDef_BaseFactory || (ɵMatColumnDef_BaseFactory = ɵɵgetInheritedFactory(_MatColumnDef)))(t || _MatColumnDef);
-  };
-})();
-_MatColumnDef.ɵdir = ɵɵdefineDirective({
-  type: _MatColumnDef,
-  selectors: [["", "matColumnDef", ""]],
-  inputs: {
-    name: [InputFlags.None, "matColumnDef", "name"]
-  },
-  standalone: true,
-  features: [ɵɵProvidersFeature([{
-    provide: CdkColumnDef,
-    useExisting: _MatColumnDef
-  }, {
-    provide: "MAT_SORT_HEADER_COLUMN_DEF",
-    useExisting: _MatColumnDef
-  }]), ɵɵInheritDefinitionFeature]
-});
-var MatColumnDef = _MatColumnDef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatColumnDef, [{
     type: Directive,
@@ -3017,22 +3114,25 @@ var MatColumnDef = _MatColumnDef;
     }]
   });
 })();
-var _MatHeaderCell = class _MatHeaderCell extends CdkHeaderCell {
+var MatHeaderCell = class _MatHeaderCell extends CdkHeaderCell {
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatHeaderCell_BaseFactory;
+      return function MatHeaderCell_Factory(t) {
+        return (ɵMatHeaderCell_BaseFactory || (ɵMatHeaderCell_BaseFactory = ɵɵgetInheritedFactory(_MatHeaderCell)))(t || _MatHeaderCell);
+      };
+    })();
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatHeaderCell,
+      selectors: [["mat-header-cell"], ["th", "mat-header-cell", ""]],
+      hostAttrs: ["role", "columnheader", 1, "mat-mdc-header-cell", "mdc-data-table__header-cell"],
+      standalone: true,
+      features: [ɵɵInheritDefinitionFeature]
+    });
+  }
 };
-_MatHeaderCell.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatHeaderCell_BaseFactory;
-  return function MatHeaderCell_Factory(t) {
-    return (ɵMatHeaderCell_BaseFactory || (ɵMatHeaderCell_BaseFactory = ɵɵgetInheritedFactory(_MatHeaderCell)))(t || _MatHeaderCell);
-  };
-})();
-_MatHeaderCell.ɵdir = ɵɵdefineDirective({
-  type: _MatHeaderCell,
-  selectors: [["mat-header-cell"], ["th", "mat-header-cell", ""]],
-  hostAttrs: ["role", "columnheader", 1, "mat-mdc-header-cell", "mdc-data-table__header-cell"],
-  standalone: true,
-  features: [ɵɵInheritDefinitionFeature]
-});
-var MatHeaderCell = _MatHeaderCell;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatHeaderCell, [{
     type: Directive,
@@ -3046,22 +3146,25 @@ var MatHeaderCell = _MatHeaderCell;
     }]
   }], null, null);
 })();
-var _MatFooterCell = class _MatFooterCell extends CdkFooterCell {
+var MatFooterCell = class _MatFooterCell extends CdkFooterCell {
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatFooterCell_BaseFactory;
+      return function MatFooterCell_Factory(t) {
+        return (ɵMatFooterCell_BaseFactory || (ɵMatFooterCell_BaseFactory = ɵɵgetInheritedFactory(_MatFooterCell)))(t || _MatFooterCell);
+      };
+    })();
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatFooterCell,
+      selectors: [["mat-footer-cell"], ["td", "mat-footer-cell", ""]],
+      hostAttrs: [1, "mat-mdc-footer-cell", "mdc-data-table__cell"],
+      standalone: true,
+      features: [ɵɵInheritDefinitionFeature]
+    });
+  }
 };
-_MatFooterCell.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatFooterCell_BaseFactory;
-  return function MatFooterCell_Factory(t) {
-    return (ɵMatFooterCell_BaseFactory || (ɵMatFooterCell_BaseFactory = ɵɵgetInheritedFactory(_MatFooterCell)))(t || _MatFooterCell);
-  };
-})();
-_MatFooterCell.ɵdir = ɵɵdefineDirective({
-  type: _MatFooterCell,
-  selectors: [["mat-footer-cell"], ["td", "mat-footer-cell", ""]],
-  hostAttrs: [1, "mat-mdc-footer-cell", "mdc-data-table__cell"],
-  standalone: true,
-  features: [ɵɵInheritDefinitionFeature]
-});
-var MatFooterCell = _MatFooterCell;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatFooterCell, [{
     type: Directive,
@@ -3074,22 +3177,25 @@ var MatFooterCell = _MatFooterCell;
     }]
   }], null, null);
 })();
-var _MatCell = class _MatCell extends CdkCell {
+var MatCell = class _MatCell extends CdkCell {
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatCell_BaseFactory;
+      return function MatCell_Factory(t) {
+        return (ɵMatCell_BaseFactory || (ɵMatCell_BaseFactory = ɵɵgetInheritedFactory(_MatCell)))(t || _MatCell);
+      };
+    })();
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatCell,
+      selectors: [["mat-cell"], ["td", "mat-cell", ""]],
+      hostAttrs: [1, "mat-mdc-cell", "mdc-data-table__cell"],
+      standalone: true,
+      features: [ɵɵInheritDefinitionFeature]
+    });
+  }
 };
-_MatCell.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatCell_BaseFactory;
-  return function MatCell_Factory(t) {
-    return (ɵMatCell_BaseFactory || (ɵMatCell_BaseFactory = ɵɵgetInheritedFactory(_MatCell)))(t || _MatCell);
-  };
-})();
-_MatCell.ɵdir = ɵɵdefineDirective({
-  type: _MatCell,
-  selectors: [["mat-cell"], ["td", "mat-cell", ""]],
-  hostAttrs: [1, "mat-mdc-cell", "mdc-data-table__cell"],
-  standalone: true,
-  features: [ɵɵInheritDefinitionFeature]
-});
-var MatCell = _MatCell;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatCell, [{
     type: Directive,
@@ -3103,28 +3209,31 @@ var MatCell = _MatCell;
   }], null, null);
 })();
 var ROW_TEMPLATE = `<ng-container cdkCellOutlet></ng-container>`;
-var _MatHeaderRowDef = class _MatHeaderRowDef extends CdkHeaderRowDef {
+var MatHeaderRowDef = class _MatHeaderRowDef extends CdkHeaderRowDef {
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatHeaderRowDef_BaseFactory;
+      return function MatHeaderRowDef_Factory(t) {
+        return (ɵMatHeaderRowDef_BaseFactory || (ɵMatHeaderRowDef_BaseFactory = ɵɵgetInheritedFactory(_MatHeaderRowDef)))(t || _MatHeaderRowDef);
+      };
+    })();
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatHeaderRowDef,
+      selectors: [["", "matHeaderRowDef", ""]],
+      inputs: {
+        columns: [InputFlags.None, "matHeaderRowDef", "columns"],
+        sticky: [InputFlags.HasDecoratorInputTransform, "matHeaderRowDefSticky", "sticky", booleanAttribute]
+      },
+      standalone: true,
+      features: [ɵɵProvidersFeature([{
+        provide: CdkHeaderRowDef,
+        useExisting: _MatHeaderRowDef
+      }]), ɵɵInputTransformsFeature, ɵɵInheritDefinitionFeature]
+    });
+  }
 };
-_MatHeaderRowDef.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatHeaderRowDef_BaseFactory;
-  return function MatHeaderRowDef_Factory(t) {
-    return (ɵMatHeaderRowDef_BaseFactory || (ɵMatHeaderRowDef_BaseFactory = ɵɵgetInheritedFactory(_MatHeaderRowDef)))(t || _MatHeaderRowDef);
-  };
-})();
-_MatHeaderRowDef.ɵdir = ɵɵdefineDirective({
-  type: _MatHeaderRowDef,
-  selectors: [["", "matHeaderRowDef", ""]],
-  inputs: {
-    columns: [InputFlags.None, "matHeaderRowDef", "columns"],
-    sticky: [InputFlags.HasDecoratorInputTransform, "matHeaderRowDefSticky", "sticky", booleanAttribute]
-  },
-  standalone: true,
-  features: [ɵɵProvidersFeature([{
-    provide: CdkHeaderRowDef,
-    useExisting: _MatHeaderRowDef
-  }]), ɵɵInputTransformsFeature, ɵɵInheritDefinitionFeature]
-});
-var MatHeaderRowDef = _MatHeaderRowDef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatHeaderRowDef, [{
     type: Directive,
@@ -3146,28 +3255,31 @@ var MatHeaderRowDef = _MatHeaderRowDef;
     }]
   }], null, null);
 })();
-var _MatFooterRowDef = class _MatFooterRowDef extends CdkFooterRowDef {
+var MatFooterRowDef = class _MatFooterRowDef extends CdkFooterRowDef {
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatFooterRowDef_BaseFactory;
+      return function MatFooterRowDef_Factory(t) {
+        return (ɵMatFooterRowDef_BaseFactory || (ɵMatFooterRowDef_BaseFactory = ɵɵgetInheritedFactory(_MatFooterRowDef)))(t || _MatFooterRowDef);
+      };
+    })();
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatFooterRowDef,
+      selectors: [["", "matFooterRowDef", ""]],
+      inputs: {
+        columns: [InputFlags.None, "matFooterRowDef", "columns"],
+        sticky: [InputFlags.HasDecoratorInputTransform, "matFooterRowDefSticky", "sticky", booleanAttribute]
+      },
+      standalone: true,
+      features: [ɵɵProvidersFeature([{
+        provide: CdkFooterRowDef,
+        useExisting: _MatFooterRowDef
+      }]), ɵɵInputTransformsFeature, ɵɵInheritDefinitionFeature]
+    });
+  }
 };
-_MatFooterRowDef.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatFooterRowDef_BaseFactory;
-  return function MatFooterRowDef_Factory(t) {
-    return (ɵMatFooterRowDef_BaseFactory || (ɵMatFooterRowDef_BaseFactory = ɵɵgetInheritedFactory(_MatFooterRowDef)))(t || _MatFooterRowDef);
-  };
-})();
-_MatFooterRowDef.ɵdir = ɵɵdefineDirective({
-  type: _MatFooterRowDef,
-  selectors: [["", "matFooterRowDef", ""]],
-  inputs: {
-    columns: [InputFlags.None, "matFooterRowDef", "columns"],
-    sticky: [InputFlags.HasDecoratorInputTransform, "matFooterRowDefSticky", "sticky", booleanAttribute]
-  },
-  standalone: true,
-  features: [ɵɵProvidersFeature([{
-    provide: CdkFooterRowDef,
-    useExisting: _MatFooterRowDef
-  }]), ɵɵInputTransformsFeature, ɵɵInheritDefinitionFeature]
-});
-var MatFooterRowDef = _MatFooterRowDef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatFooterRowDef, [{
     type: Directive,
@@ -3189,28 +3301,31 @@ var MatFooterRowDef = _MatFooterRowDef;
     }]
   }], null, null);
 })();
-var _MatRowDef = class _MatRowDef extends CdkRowDef {
+var MatRowDef = class _MatRowDef extends CdkRowDef {
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatRowDef_BaseFactory;
+      return function MatRowDef_Factory(t) {
+        return (ɵMatRowDef_BaseFactory || (ɵMatRowDef_BaseFactory = ɵɵgetInheritedFactory(_MatRowDef)))(t || _MatRowDef);
+      };
+    })();
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatRowDef,
+      selectors: [["", "matRowDef", ""]],
+      inputs: {
+        columns: [InputFlags.None, "matRowDefColumns", "columns"],
+        when: [InputFlags.None, "matRowDefWhen", "when"]
+      },
+      standalone: true,
+      features: [ɵɵProvidersFeature([{
+        provide: CdkRowDef,
+        useExisting: _MatRowDef
+      }]), ɵɵInheritDefinitionFeature]
+    });
+  }
 };
-_MatRowDef.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatRowDef_BaseFactory;
-  return function MatRowDef_Factory(t) {
-    return (ɵMatRowDef_BaseFactory || (ɵMatRowDef_BaseFactory = ɵɵgetInheritedFactory(_MatRowDef)))(t || _MatRowDef);
-  };
-})();
-_MatRowDef.ɵdir = ɵɵdefineDirective({
-  type: _MatRowDef,
-  selectors: [["", "matRowDef", ""]],
-  inputs: {
-    columns: [InputFlags.None, "matRowDefColumns", "columns"],
-    when: [InputFlags.None, "matRowDefWhen", "when"]
-  },
-  standalone: true,
-  features: [ɵɵProvidersFeature([{
-    provide: CdkRowDef,
-    useExisting: _MatRowDef
-  }]), ɵɵInheritDefinitionFeature]
-});
-var MatRowDef = _MatRowDef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatRowDef, [{
     type: Directive,
@@ -3231,36 +3346,39 @@ var MatRowDef = _MatRowDef;
     }]
   }], null, null);
 })();
-var _MatHeaderRow = class _MatHeaderRow extends CdkHeaderRow {
+var MatHeaderRow = class _MatHeaderRow extends CdkHeaderRow {
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatHeaderRow_BaseFactory;
+      return function MatHeaderRow_Factory(t) {
+        return (ɵMatHeaderRow_BaseFactory || (ɵMatHeaderRow_BaseFactory = ɵɵgetInheritedFactory(_MatHeaderRow)))(t || _MatHeaderRow);
+      };
+    })();
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _MatHeaderRow,
+      selectors: [["mat-header-row"], ["tr", "mat-header-row", ""]],
+      hostAttrs: ["role", "row", 1, "mat-mdc-header-row", "mdc-data-table__header-row"],
+      exportAs: ["matHeaderRow"],
+      standalone: true,
+      features: [ɵɵProvidersFeature([{
+        provide: CdkHeaderRow,
+        useExisting: _MatHeaderRow
+      }]), ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
+      decls: 1,
+      vars: 0,
+      consts: [["cdkCellOutlet", ""]],
+      template: function MatHeaderRow_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵelementContainer(0, 0);
+        }
+      },
+      dependencies: [CdkCellOutlet],
+      encapsulation: 2
+    });
+  }
 };
-_MatHeaderRow.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatHeaderRow_BaseFactory;
-  return function MatHeaderRow_Factory(t) {
-    return (ɵMatHeaderRow_BaseFactory || (ɵMatHeaderRow_BaseFactory = ɵɵgetInheritedFactory(_MatHeaderRow)))(t || _MatHeaderRow);
-  };
-})();
-_MatHeaderRow.ɵcmp = ɵɵdefineComponent({
-  type: _MatHeaderRow,
-  selectors: [["mat-header-row"], ["tr", "mat-header-row", ""]],
-  hostAttrs: ["role", "row", 1, "mat-mdc-header-row", "mdc-data-table__header-row"],
-  exportAs: ["matHeaderRow"],
-  standalone: true,
-  features: [ɵɵProvidersFeature([{
-    provide: CdkHeaderRow,
-    useExisting: _MatHeaderRow
-  }]), ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
-  decls: 1,
-  vars: 0,
-  consts: [["cdkCellOutlet", ""]],
-  template: function MatHeaderRow_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵelementContainer(0, 0);
-    }
-  },
-  dependencies: [CdkCellOutlet],
-  encapsulation: 2
-});
-var MatHeaderRow = _MatHeaderRow;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatHeaderRow, [{
     type: Component,
@@ -3285,36 +3403,39 @@ var MatHeaderRow = _MatHeaderRow;
     }]
   }], null, null);
 })();
-var _MatFooterRow = class _MatFooterRow extends CdkFooterRow {
+var MatFooterRow = class _MatFooterRow extends CdkFooterRow {
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatFooterRow_BaseFactory;
+      return function MatFooterRow_Factory(t) {
+        return (ɵMatFooterRow_BaseFactory || (ɵMatFooterRow_BaseFactory = ɵɵgetInheritedFactory(_MatFooterRow)))(t || _MatFooterRow);
+      };
+    })();
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _MatFooterRow,
+      selectors: [["mat-footer-row"], ["tr", "mat-footer-row", ""]],
+      hostAttrs: ["role", "row", 1, "mat-mdc-footer-row", "mdc-data-table__row"],
+      exportAs: ["matFooterRow"],
+      standalone: true,
+      features: [ɵɵProvidersFeature([{
+        provide: CdkFooterRow,
+        useExisting: _MatFooterRow
+      }]), ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
+      decls: 1,
+      vars: 0,
+      consts: [["cdkCellOutlet", ""]],
+      template: function MatFooterRow_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵelementContainer(0, 0);
+        }
+      },
+      dependencies: [CdkCellOutlet],
+      encapsulation: 2
+    });
+  }
 };
-_MatFooterRow.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatFooterRow_BaseFactory;
-  return function MatFooterRow_Factory(t) {
-    return (ɵMatFooterRow_BaseFactory || (ɵMatFooterRow_BaseFactory = ɵɵgetInheritedFactory(_MatFooterRow)))(t || _MatFooterRow);
-  };
-})();
-_MatFooterRow.ɵcmp = ɵɵdefineComponent({
-  type: _MatFooterRow,
-  selectors: [["mat-footer-row"], ["tr", "mat-footer-row", ""]],
-  hostAttrs: ["role", "row", 1, "mat-mdc-footer-row", "mdc-data-table__row"],
-  exportAs: ["matFooterRow"],
-  standalone: true,
-  features: [ɵɵProvidersFeature([{
-    provide: CdkFooterRow,
-    useExisting: _MatFooterRow
-  }]), ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
-  decls: 1,
-  vars: 0,
-  consts: [["cdkCellOutlet", ""]],
-  template: function MatFooterRow_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵelementContainer(0, 0);
-    }
-  },
-  dependencies: [CdkCellOutlet],
-  encapsulation: 2
-});
-var MatFooterRow = _MatFooterRow;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatFooterRow, [{
     type: Component,
@@ -3339,36 +3460,39 @@ var MatFooterRow = _MatFooterRow;
     }]
   }], null, null);
 })();
-var _MatRow = class _MatRow extends CdkRow {
+var MatRow = class _MatRow extends CdkRow {
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatRow_BaseFactory;
+      return function MatRow_Factory(t) {
+        return (ɵMatRow_BaseFactory || (ɵMatRow_BaseFactory = ɵɵgetInheritedFactory(_MatRow)))(t || _MatRow);
+      };
+    })();
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _MatRow,
+      selectors: [["mat-row"], ["tr", "mat-row", ""]],
+      hostAttrs: ["role", "row", 1, "mat-mdc-row", "mdc-data-table__row"],
+      exportAs: ["matRow"],
+      standalone: true,
+      features: [ɵɵProvidersFeature([{
+        provide: CdkRow,
+        useExisting: _MatRow
+      }]), ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
+      decls: 1,
+      vars: 0,
+      consts: [["cdkCellOutlet", ""]],
+      template: function MatRow_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵelementContainer(0, 0);
+        }
+      },
+      dependencies: [CdkCellOutlet],
+      encapsulation: 2
+    });
+  }
 };
-_MatRow.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatRow_BaseFactory;
-  return function MatRow_Factory(t) {
-    return (ɵMatRow_BaseFactory || (ɵMatRow_BaseFactory = ɵɵgetInheritedFactory(_MatRow)))(t || _MatRow);
-  };
-})();
-_MatRow.ɵcmp = ɵɵdefineComponent({
-  type: _MatRow,
-  selectors: [["mat-row"], ["tr", "mat-row", ""]],
-  hostAttrs: ["role", "row", 1, "mat-mdc-row", "mdc-data-table__row"],
-  exportAs: ["matRow"],
-  standalone: true,
-  features: [ɵɵProvidersFeature([{
-    provide: CdkRow,
-    useExisting: _MatRow
-  }]), ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
-  decls: 1,
-  vars: 0,
-  consts: [["cdkCellOutlet", ""]],
-  template: function MatRow_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵelementContainer(0, 0);
-    }
-  },
-  dependencies: [CdkCellOutlet],
-  encapsulation: 2
-});
-var MatRow = _MatRow;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatRow, [{
     type: Component,
@@ -3393,28 +3517,31 @@ var MatRow = _MatRow;
     }]
   }], null, null);
 })();
-var _MatNoDataRow = class _MatNoDataRow extends CdkNoDataRow {
+var MatNoDataRow = class _MatNoDataRow extends CdkNoDataRow {
   constructor() {
     super(...arguments);
     this._contentClassName = "mat-mdc-no-data-row";
   }
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatNoDataRow_BaseFactory;
+      return function MatNoDataRow_Factory(t) {
+        return (ɵMatNoDataRow_BaseFactory || (ɵMatNoDataRow_BaseFactory = ɵɵgetInheritedFactory(_MatNoDataRow)))(t || _MatNoDataRow);
+      };
+    })();
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _MatNoDataRow,
+      selectors: [["ng-template", "matNoDataRow", ""]],
+      standalone: true,
+      features: [ɵɵProvidersFeature([{
+        provide: CdkNoDataRow,
+        useExisting: _MatNoDataRow
+      }]), ɵɵInheritDefinitionFeature]
+    });
+  }
 };
-_MatNoDataRow.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatNoDataRow_BaseFactory;
-  return function MatNoDataRow_Factory(t) {
-    return (ɵMatNoDataRow_BaseFactory || (ɵMatNoDataRow_BaseFactory = ɵɵgetInheritedFactory(_MatNoDataRow)))(t || _MatNoDataRow);
-  };
-})();
-_MatNoDataRow.ɵdir = ɵɵdefineDirective({
-  type: _MatNoDataRow,
-  selectors: [["ng-template", "matNoDataRow", ""]],
-  standalone: true,
-  features: [ɵɵProvidersFeature([{
-    provide: CdkNoDataRow,
-    useExisting: _MatNoDataRow
-  }]), ɵɵInheritDefinitionFeature]
-});
-var MatNoDataRow = _MatNoDataRow;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatNoDataRow, [{
     type: Directive,
@@ -3428,33 +3555,36 @@ var MatNoDataRow = _MatNoDataRow;
     }]
   }], null, null);
 })();
-var _MatTextColumn = class _MatTextColumn extends CdkTextColumn {
+var MatTextColumn = class _MatTextColumn extends CdkTextColumn {
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵMatTextColumn_BaseFactory;
+      return function MatTextColumn_Factory(t) {
+        return (ɵMatTextColumn_BaseFactory || (ɵMatTextColumn_BaseFactory = ɵɵgetInheritedFactory(_MatTextColumn)))(t || _MatTextColumn);
+      };
+    })();
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _MatTextColumn,
+      selectors: [["mat-text-column"]],
+      standalone: true,
+      features: [ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
+      decls: 3,
+      vars: 0,
+      consts: [["matColumnDef", ""], ["mat-header-cell", "", 3, "text-align", 4, "matHeaderCellDef"], ["mat-cell", "", 3, "text-align", 4, "matCellDef"], ["mat-header-cell", ""], ["mat-cell", ""]],
+      template: function MatTextColumn_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵelementContainerStart(0, 0);
+          ɵɵtemplate(1, MatTextColumn_th_1_Template, 2, 3, "th", 1)(2, MatTextColumn_td_2_Template, 2, 3, "td", 2);
+          ɵɵelementContainerEnd();
+        }
+      },
+      dependencies: [MatColumnDef, MatHeaderCellDef, MatHeaderCell, MatCellDef, MatCell],
+      encapsulation: 2
+    });
+  }
 };
-_MatTextColumn.ɵfac = /* @__PURE__ */ (() => {
-  let ɵMatTextColumn_BaseFactory;
-  return function MatTextColumn_Factory(t) {
-    return (ɵMatTextColumn_BaseFactory || (ɵMatTextColumn_BaseFactory = ɵɵgetInheritedFactory(_MatTextColumn)))(t || _MatTextColumn);
-  };
-})();
-_MatTextColumn.ɵcmp = ɵɵdefineComponent({
-  type: _MatTextColumn,
-  selectors: [["mat-text-column"]],
-  standalone: true,
-  features: [ɵɵInheritDefinitionFeature, ɵɵStandaloneFeature],
-  decls: 3,
-  vars: 0,
-  consts: [["matColumnDef", ""], ["mat-header-cell", "", 3, "text-align", 4, "matHeaderCellDef"], ["mat-cell", "", 3, "text-align", 4, "matCellDef"], ["mat-header-cell", ""], ["mat-cell", ""]],
-  template: function MatTextColumn_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵelementContainerStart(0, 0);
-      ɵɵtemplate(1, MatTextColumn_th_1_Template, 2, 3, "th", 1)(2, MatTextColumn_td_2_Template, 2, 3, "td", 2);
-      ɵɵelementContainerEnd();
-    }
-  },
-  dependencies: [MatColumnDef, MatHeaderCellDef, MatHeaderCell, MatCellDef, MatCell],
-  encapsulation: 2
-});
-var MatTextColumn = _MatTextColumn;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatTextColumn, [{
     type: Component,
@@ -3506,67 +3636,72 @@ var EXPORTED_DECLARATIONS2 = [
   MatNoDataRow,
   MatTextColumn
 ];
-var _MatTableModule = class _MatTableModule {
+var MatTableModule = class _MatTableModule {
+  static {
+    this.ɵfac = function MatTableModule_Factory(t) {
+      return new (t || _MatTableModule)();
+    };
+  }
+  static {
+    this.ɵmod = ɵɵdefineNgModule({
+      type: _MatTableModule,
+      imports: [
+        MatCommonModule,
+        CdkTableModule,
+        // Table
+        MatTable,
+        MatRecycleRows,
+        // Template defs
+        MatHeaderCellDef,
+        MatHeaderRowDef,
+        MatColumnDef,
+        MatCellDef,
+        MatRowDef,
+        MatFooterCellDef,
+        MatFooterRowDef,
+        // Cell directives
+        MatHeaderCell,
+        MatCell,
+        MatFooterCell,
+        // Row directives
+        MatHeaderRow,
+        MatRow,
+        MatFooterRow,
+        MatNoDataRow,
+        MatTextColumn
+      ],
+      exports: [
+        MatCommonModule,
+        // Table
+        MatTable,
+        MatRecycleRows,
+        // Template defs
+        MatHeaderCellDef,
+        MatHeaderRowDef,
+        MatColumnDef,
+        MatCellDef,
+        MatRowDef,
+        MatFooterCellDef,
+        MatFooterRowDef,
+        // Cell directives
+        MatHeaderCell,
+        MatCell,
+        MatFooterCell,
+        // Row directives
+        MatHeaderRow,
+        MatRow,
+        MatFooterRow,
+        MatNoDataRow,
+        MatTextColumn
+      ]
+    });
+  }
+  static {
+    this.ɵinj = ɵɵdefineInjector({
+      imports: [MatCommonModule, CdkTableModule, MatCommonModule]
+    });
+  }
 };
-_MatTableModule.ɵfac = function MatTableModule_Factory(t) {
-  return new (t || _MatTableModule)();
-};
-_MatTableModule.ɵmod = ɵɵdefineNgModule({
-  type: _MatTableModule,
-  imports: [
-    MatCommonModule,
-    CdkTableModule,
-    // Table
-    MatTable,
-    MatRecycleRows,
-    // Template defs
-    MatHeaderCellDef,
-    MatHeaderRowDef,
-    MatColumnDef,
-    MatCellDef,
-    MatRowDef,
-    MatFooterCellDef,
-    MatFooterRowDef,
-    // Cell directives
-    MatHeaderCell,
-    MatCell,
-    MatFooterCell,
-    // Row directives
-    MatHeaderRow,
-    MatRow,
-    MatFooterRow,
-    MatNoDataRow,
-    MatTextColumn
-  ],
-  exports: [
-    MatCommonModule,
-    // Table
-    MatTable,
-    MatRecycleRows,
-    // Template defs
-    MatHeaderCellDef,
-    MatHeaderRowDef,
-    MatColumnDef,
-    MatCellDef,
-    MatRowDef,
-    MatFooterCellDef,
-    MatFooterRowDef,
-    // Cell directives
-    MatHeaderCell,
-    MatCell,
-    MatFooterCell,
-    // Row directives
-    MatHeaderRow,
-    MatRow,
-    MatFooterRow,
-    MatNoDataRow,
-    MatTextColumn
-  ]
-});
-_MatTableModule.ɵinj = ɵɵdefineInjector({
-  imports: [MatCommonModule, CdkTableModule, MatCommonModule]
-});
-var MatTableModule = _MatTableModule;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatTableModule, [{
     type: NgModule,

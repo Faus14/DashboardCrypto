@@ -21,6 +21,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { CommonModule } from '@angular/common';
+import { PortfolioComponent } from './components/portafolios/portafolios.component';
+
 
 
 
@@ -34,6 +37,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     CriptosComponent,
     UsuariosComponent,
     UnauthorizedComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatSnackBarModule,
     MatToolbarModule,
     FormsModule,
+    CommonModule
     
   ],
   providers: [],

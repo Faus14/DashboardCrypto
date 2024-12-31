@@ -23,6 +23,9 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  actualizar(){
+    this.fetchCryptos();
+  }
   
   fetchCryptos() {
     this.cryptoService.getCryptos().subscribe({

@@ -53,6 +53,8 @@ export class CryptoService {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
-  
+  getallCryptos(): Observable<any> {
+    return this.http.get<any>(this.apiUrl);
+  }
   
 }

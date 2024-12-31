@@ -11,6 +11,8 @@ export class CriptosComponent implements OnInit {
   cryptos: any[] = [];
   selectedCrypto: any = null;
   newCrypto: any = { name: '', symbol: '' };
+  isModalOpen: boolean = false;
+  isEditing: boolean = false; 
 
   constructor(private cryptoService: CryptoService) {}
 
@@ -34,6 +36,8 @@ export class CriptosComponent implements OnInit {
       (data) => {
         this.cryptos.push(data);
         this.newCrypto = { name: '', symbol: '' };
+        this.getCryptos();
+        this.closeModal();
       },
       (error) => {
         console.error('Error al crear la criptomoneda', error);
@@ -66,6 +70,27 @@ export class CriptosComponent implements OnInit {
 
   selectCrypto(crypto: any): void {
     this.selectedCrypto = { ...crypto };
+  }
+
+
+  editUser(newCrypto: any): void {
+    this.isEditing = true;
+    this.newCrypto = { ...newCrypto };
+    this.isModalOpen = true;
+  }
+  resetForm(): void {
+    this.newCrypto = { id: null, username: '', password: '', role: '' };
+    this.isEditing = false;
+  }
+
+  openModal(): void {
+    this.resetForm();
+    this.isModalOpen = true;
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
+    this.resetForm();
   }
 
 }

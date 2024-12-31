@@ -6,19 +6,19 @@ import { authorize } from '../middleware/authorize';
 const router = Router();
 
 
-router.get('/:user_id', portfolioController.getUserPortfolio); 
-router.get('/user/:user_id',portfolioController.getAllUserPortfolios);
+// Obtener todos los portafolios de un usuario
+router.get('/:user_id',portfolioController.getUserPortfolios);
 
+// Obtener un portafolio por su id
+router.get('/portfolio/:portfolio_id',portfolioController.getPortfolioById);
 
-router.post('/create',portfolioController.createPortfolio); 
-router.delete('/delete/:portfolio_id',portfolioController.deletePortfolio); 
+// Crear un nuevo portafolio
+router.post('/create',portfolioController.createPortfolio);
 
+// Eliminar un portafolio
+router.delete('/delete/:portfolio_id',portfolioController.deletePortfolio);
 
-router.post('/add-crypto',portfolioController.addCryptoToPortfolio); 
-router.delete('/remove-crypto/:portfolio_id/:crypto_id',portfolioController.removeCryptoFromPortfolio); 
-
-
-router.get('/balance/:user_id', portfolioController.getPortfolioBalanceForUser); 
-
+// Ver el balance total de un portafolio
+router.get('/total/:portfolio_id',portfolioController.getTotalPortfolioBalance);
 
 export default router;
