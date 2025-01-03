@@ -10,6 +10,7 @@
 /node_modules
 npm-debug.log
 yarn-error.log
+node_modules/
 
 # IDEs and editors
 .idea/
@@ -41,5 +42,12 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# Otros
-.env
+
+# Optional npm cache directory
+.npm/
+
+# JetBrains IDE (IntelliJ IDEA, WebStorm, etc.)
+.idea/
+
+# Mac system files
+*.swp
