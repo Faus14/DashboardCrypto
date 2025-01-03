@@ -8,11 +8,6 @@ import {
   PortalModule,
   TemplatePortal
 } from "./chunk-25RDIYG6.js";
-import "./chunk-EHMUFQWV.js";
-import {
-  MatButton,
-  MatButtonModule
-} from "./chunk-XQ6OF5CL.js";
 import {
   animate,
   state,
@@ -20,6 +15,11 @@ import {
   transition,
   trigger
 } from "./chunk-KOOWEJSD.js";
+import "./chunk-EHMUFQWV.js";
+import {
+  MatButton,
+  MatButtonModule
+} from "./chunk-XQ6OF5CL.js";
 import {
   BreakpointObserver,
   Breakpoints,
