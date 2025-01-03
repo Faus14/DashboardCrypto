@@ -26,7 +26,11 @@ Asegúrate de tener instalados los siguientes programas:
 
 3. Levanta los contenedores de Docker:
     ```bash
+    LINUX
     sudo docker-compose up -d
+    
+    O WINDOWS
+    docker-compose up -d
     ```
 
 4. Instala las dependencias del frontend:

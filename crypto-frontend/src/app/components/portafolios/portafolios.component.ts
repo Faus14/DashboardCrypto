@@ -46,7 +46,12 @@ export class PortfolioComponent implements OnInit {
         this.getUserPortfolios();
       }
     }
+    this.getUserPortfolios();
+    this.getPortfolioBalance();
+    this.getPortfolioTransactions(this.selectedPortfolioId);
     this.getallcryptos();
+    this.getPortfolioBalance();
+
   }
 
   getUserPortfolios(): void {
