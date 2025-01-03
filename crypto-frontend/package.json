@@ -23,6 +23,7 @@
     "@ngrx/entity": "^17.1.1",
     "@ngrx/store": "^17.1.1",
     "@ngrx/store-devtools": "^17.1.1",
+    "jwt-decode": "^4.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
@@ -32,6 +33,7 @@
     "@angular/cli": "^17.1.0-next.0",
     "@angular/compiler-cli": "^17.1.0-next.0",
     "@types/jasmine": "~5.1.0",
+    "@types/jwt-decode": "^3.1.0",
     "autoprefixer": "^10.4.20",
     "daisyui": "^4.12.22",
     "jasmine-core": "~5.1.0",

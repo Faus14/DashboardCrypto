@@ -29,13 +29,21 @@ export const getCryptoById = async (req: Request, res: Response): Promise<void> 
 
 export const createCrypto = async (req: Request, res: Response): Promise<void> => {
   try {
+    const { name, symbol } = req.body;
+    const existingCrypto = await cryptoService.getCryptoByName(name);
+    if (existingCrypto) {
+      res.status(400).json({ message: 'Ya existe una criptomoneda con ese nombre' });
+      return;
+    }
+
     const crypto = await cryptoService.createCrypto(req.body);
     res.status(201).json(crypto);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Error al crear crypto' });
   }
-}
+};
+
 
 export const updateCrypto = async (req: Request, res: Response): Promise<void> => {
   try {

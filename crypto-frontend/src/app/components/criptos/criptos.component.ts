@@ -44,18 +44,24 @@ export class CriptosComponent implements OnInit {
       this.errorMessage = 'Por favor, complete todos los campos.';
       return;
     }
-
+  
     this.cryptoService.createCrypto(this.newCrypto).subscribe({
-      next: () => {
-        this.getCryptos();
-        this.closeModal();
-        this.errorMessage = ''; 
+      next: (response) => {
+        if (response.errorMessage) {
+          this.errorMessage = response.errorMessage; // Mostramos el mensaje de error
+        } else {
+          this.getCryptos();
+          this.closeModal();
+          this.errorMessage = '';  // Limpiar el mensaje de error después de un éxito
+        }
       },
       error: (error) => {
         console.error('Error al crear la criptomoneda', error);
+        this.errorMessage = 'Error al crear la criptomoneda, ya esta creada';
       }
     });
   }
+  
 
   updateCrypto(): void {
     if (!this.selectedCrypto?.crypto_id) return;

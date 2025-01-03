@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../user.service';
+import { jwtDecode } from 'jwt-decode';
 
 @Component({
   selector: 'app-usuarios',
@@ -21,10 +22,13 @@ export class UsuariosComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
+
+
   ngOnInit(): void {
-    const loggedUser = localStorage.getItem('loggedUser');
-    if (loggedUser) {
-      this.loggedUserId = JSON.parse(loggedUser).id;
+    const token = localStorage.getItem('token');
+    if (token) {
+      const decoded: any = jwtDecode(token);
+      this.loggedUserId = decoded.userId;
     }
     this.getAllUsers();
   }

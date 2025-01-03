@@ -33,3 +33,9 @@ export const updateCrypto = async (id: number, crypto: Partial<Crypto>): Promise
 export const deleteCrypto = async (id: number): Promise<void> => {
     await pool.query('DELETE FROM cryptocurrencies WHERE crypto_id = $1', [id]);
     }
+
+export const getCryptoByName = async (name: string): Promise<Crypto | null> => {
+    const result = await pool.query('SELECT * FROM cryptocurrencies WHERE name = $1', [name]);
+    return result.rows[0] || null;
+    }
+    

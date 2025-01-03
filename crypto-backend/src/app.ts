@@ -7,6 +7,7 @@ import portfolioRoutes from './routes/portfolio.routes';
 import loginRoutes from './routes/auth.routes';
 import transactionRoutes from './routes/transaction.routes';
 import axios from 'axios';
+import { createAdminIfNotExists } from './controllers/user.controller';
 
 const app = express();
 
@@ -20,22 +21,7 @@ app.use('/portfolio', portfolioRoutes);
 app.use('/transaction', transactionRoutes);
 app.use('/login', loginRoutes);
 
-const createAdminUser = async () => {
-  try {
-    const response = await axios.post('http://localhost:3000/users', {
-      username: 'admin',
-      password: 'admin',
-      role: 'Admin',
-    });
-
-    console.log('Usuario admin creado con éxito:', response.data);
-  } catch (error) {
-    console.error('Error al crear usuario admin:', error);
-  }
-};
-
-createAdminUser();
-
+createAdminIfNotExists();
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

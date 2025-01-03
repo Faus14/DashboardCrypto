@@ -1,6 +1,8 @@
 import { Request, Response } from 'express';
 import * as userService from '../services/user.service';
 import bcrypt from 'bcrypt';
+import { User } from '../models/user.model';
+
 
 export const getAllUsers = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -33,18 +35,24 @@ export const getUserById = async (req: Request, res: Response): Promise<void> =>
 
 export const createUser = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { username, password, role } = req.body
+    const { username, password, role } = req.body;
+    
     if (!username || !password || !role) {
       res.status(400).json({ message: 'Faltan campos obligatorios' });
       return;
     }
-
 
     if (password.trim() === '') {
       res.status(400).json({ message: 'La contraseña no puede estar vacía' });
       return;
     }
 
+    // Verificar si ya existe un usuario con el mismo nombre de usuario
+    const existingUser = await userService.getUserByUsername(username);
+    if (existingUser) {
+      res.status(400).json({ message: 'El usuario ya existe' });
+      return;
+    }
 
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(password, saltRounds);
@@ -55,10 +63,7 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
       role,
     });
 
-
     const { password_hash, ...userWithoutPassword } = user;
-
-
     res.status(201).json(userWithoutPassword);
   } catch (error) {
     console.error('Error al crear usuario:', error);
@@ -68,6 +73,7 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
     }
   }
 };
+
 
 
 export const updateUser = async (req: Request, res: Response): Promise<void> => {
@@ -125,4 +131,30 @@ export const getUserByUsername = async (username: string): Promise<any | null> =
     return null;
   }
 }
+
+
+
+
+export const createAdminIfNotExists = async () => {
+  // Verificar si el usuario admin ya existe
+  const adminUser = await getUserByUsername('admin');
+
+  if (!adminUser) {
+    const hashedPassword = await bcrypt.hash('admin', 10); // Encriptamos la contraseña
+
+ 
+    const newUser: User = {
+      username: 'admin',
+      password_hash: hashedPassword,
+      role: 'Admin' as 'admin', // Aseguramos que el rol sea 'admin'
+    };
+
+    await userService.createUser(newUser); // Crear el usuario admin
+    console.log('Usuario admin creado');
+  } else {
+    console.log('El usuario admin ya existe');
+  }
+};
+
+
 

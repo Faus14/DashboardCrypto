@@ -23,8 +23,8 @@ export class LoginComponent {
     this.authService.login(this.loginObj.username, this.loginObj.password).subscribe(
       (response: any) => {
         console.log('Login exitoso:', response);
-        const role = response.user?.role; 
-        localStorage.setItem('loggedUser', JSON.stringify(response.user));
+        const token = response.token;
+        localStorage.setItem('token', token);
   
         this.router.navigateByUrl('/dashboard');
       },
@@ -34,6 +34,7 @@ export class LoginComponent {
       }
     );
   }
+  
   
   
 }
