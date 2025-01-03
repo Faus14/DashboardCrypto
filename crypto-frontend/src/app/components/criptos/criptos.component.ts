@@ -48,11 +48,11 @@ export class CriptosComponent implements OnInit {
     this.cryptoService.createCrypto(this.newCrypto).subscribe({
       next: (response) => {
         if (response.errorMessage) {
-          this.errorMessage = response.errorMessage; // Mostramos el mensaje de error
+          this.errorMessage = response.errorMessage;
         } else {
           this.getCryptos();
           this.closeModal();
-          this.errorMessage = '';  // Limpiar el mensaje de error después de un éxito
+          this.errorMessage = '';
         }
       },
       error: (error) => {

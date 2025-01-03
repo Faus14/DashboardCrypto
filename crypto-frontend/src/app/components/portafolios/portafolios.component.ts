@@ -120,8 +120,8 @@ export class PortfolioComponent implements OnInit {
       if (transaction.crypto_id) {
         this.criptoService.getSelectedCrypto(transaction.crypto_id).subscribe(
           (cryptoData) => {
-            transaction.crypto_name = cryptoData.name; // Agrega el nombre a la transacción
-            console.log(`Nombre de la cripto: ${cryptoData.name}`); // Verifica que se esté asignando correctamente
+            transaction.crypto_name = cryptoData.name; 
+            console.log(`Nombre de la cripto: ${cryptoData.name}`); 
           },
           (error) => {
             console.error('Error obteniendo datos de la cripto:', error);
@@ -211,7 +211,7 @@ removeCryptoFromPortfolio(crypto_id: number): void {
 
   if (!this.quantity || this.quantity <= 0) {
     this.errorMessage = 'La cantidad debe ser mayor a 0.';
-    setTimeout(() => this.errorMessage = '', 3000); // Borra el mensaje de error después de 3 segundos
+    setTimeout(() => this.errorMessage = '', 3000);
     return;
   }
   

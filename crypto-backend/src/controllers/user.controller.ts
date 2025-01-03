@@ -47,7 +47,6 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
       return;
     }
 
-    // Verificar si ya existe un usuario con el mismo nombre de usuario
     const existingUser = await userService.getUserByUsername(username);
     if (existingUser) {
       res.status(400).json({ message: 'El usuario ya existe' });
@@ -136,20 +135,20 @@ export const getUserByUsername = async (username: string): Promise<any | null> =
 
 
 export const createAdminIfNotExists = async () => {
-  // Verificar si el usuario admin ya existe
+ 
   const adminUser = await getUserByUsername('admin');
 
   if (!adminUser) {
-    const hashedPassword = await bcrypt.hash('admin', 10); // Encriptamos la contraseña
+    const hashedPassword = await bcrypt.hash('admin', 10); 
 
  
     const newUser: User = {
       username: 'admin',
       password_hash: hashedPassword,
-      role: 'Admin' as 'admin', // Aseguramos que el rol sea 'admin'
+      role: 'Admin' as 'admin', 
     };
 
-    await userService.createUser(newUser); // Crear el usuario admin
+    await userService.createUser(newUser); 
     console.log('Usuario admin creado');
   } else {
     console.log('El usuario admin ya existe');
