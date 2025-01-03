@@ -11,6 +11,10 @@ export class UnauthorizedComponent {
   constructor(private router: Router) { }
 
   goBackTo() {
-    this.router.navigate(['/login'], { replaceUrl: true });
+        localStorage.removeItem('loggedUser');
+        localStorage.removeItem('role');
+        localStorage.removeItem('token');
+    
+        this.router.navigateByUrl('/login');
   }
 }

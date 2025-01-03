@@ -1,7 +1,7 @@
 import pool from '../config/database';
 import { Transaction } from '../models/transaction.model';
 import axios from 'axios';
-// Obtener todas las transacciones de un portafolio
+
 export const getporfolioTransactions = async (portfolio_id: number): Promise<Transaction[]> => {
   const result = await pool.query(
     `
@@ -14,7 +14,6 @@ export const getporfolioTransactions = async (portfolio_id: number): Promise<Tra
   return result.rows;
 }
 
-// Ver todas las monedas de un portafolio
 export const getPortfolioCryptos = async (portfolio_id: number): Promise<any[]> => {
   const result = await pool.query(
     `
@@ -36,9 +35,6 @@ export const getPortfolioCryptos = async (portfolio_id: number): Promise<any[]> 
 };
 
 
-
-
-// Agregar criptomoneda a un portafolio
 export const addCryptoToPortfolio = async (transaction: Transaction): Promise<Transaction> => {
   const { portfolio_id, crypto_id, quantity, transaction_type, transaction_date } = transaction;
 

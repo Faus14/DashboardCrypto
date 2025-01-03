@@ -11,13 +11,10 @@ router.get('/',authenticate, authorize(['Admin', 'User']),cryptoController.getCr
 router.get('/:id',authenticate, authorize(['Admin', 'User']),cryptoController.getCryptoById);
 
 
-router.post('/',authenticate, authorize(['Admin', 'User']),cryptoController.createCrypto);
-router.put('/:id',authenticate, authorize(['Admin', 'User']),cryptoController.updateCrypto);
-router.delete('/:id',authenticate, authorize(['Admin', 'User']),cryptoController.deleteCrypto);
+router.post('/',authenticate, authorize(['Admin']),cryptoController.createCrypto);
+router.put('/:id',authenticate, authorize(['Admin']),cryptoController.updateCrypto);
+router.delete('/:id',authenticate, authorize(['Admin']),cryptoController.deleteCrypto);
 
 
 export default router;
 
-
-// authenticate, authorize(['Admin']), 
-// authenticate, authorize(['Admin', 'User']), 

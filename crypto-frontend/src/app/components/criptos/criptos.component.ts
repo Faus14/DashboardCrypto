@@ -1,6 +1,6 @@
-// criptos.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CryptoService } from '../../crypto.service';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-criptos',
@@ -12,85 +12,109 @@ export class CriptosComponent implements OnInit {
   selectedCrypto: any = null;
   newCrypto: any = { name: '', symbol: '' };
   isModalOpen: boolean = false;
-  isEditing: boolean = false; 
+  errorMessage: string = ''; 
+  router: any;
 
-  constructor(private cryptoService: CryptoService) {}
+  constructor(private cryptoService: CryptoService, private authService: AuthService) {}
 
   ngOnInit(): void {
+    this.checkAuthorization();
     this.getCryptos();
   }
 
+  checkAuthorization(): void {
+    if (!this.authService.isAuthenticated()) {
+      this.router.navigate(['/unauthorized']);
+    }
+  }
+
   getCryptos(): void {
-    this.cryptoService.getCryptos().subscribe(
-      (data) => {
+    this.cryptoService.getCryptos().subscribe({
+      next: (data) => {
         this.cryptos = data;
       },
-      (error) => {
+      error: (error) => {
         console.error('Error al obtener las criptomonedas', error);
       }
-    );
+    });
   }
 
   createCrypto(): void {
-    this.cryptoService.createCrypto(this.newCrypto).subscribe(
-      (data) => {
-        this.cryptos.push(data);
-        this.newCrypto = { name: '', symbol: '' };
+    if (!this.newCrypto.name.trim() || !this.newCrypto.symbol.trim()) {
+      this.errorMessage = 'Por favor, complete todos los campos.';
+      return;
+    }
+
+    this.cryptoService.createCrypto(this.newCrypto).subscribe({
+      next: () => {
         this.getCryptos();
         this.closeModal();
+        this.errorMessage = ''; 
       },
-      (error) => {
+      error: (error) => {
         console.error('Error al crear la criptomoneda', error);
       }
-    );
+    });
   }
 
   updateCrypto(): void {
-    this.cryptoService.updateCrypto(this.selectedCrypto.crypto_id, this.selectedCrypto).subscribe(
-      (data) => {
-        const index = this.cryptos.findIndex((crypto) => crypto.crypto_id === data.crypto_id);
-        this.cryptos[index] = data;
+    if (!this.selectedCrypto?.crypto_id) return;
+
+    if (!this.selectedCrypto.name.trim() || !this.selectedCrypto.symbol.trim()) {
+      this.errorMessage = 'Por favor, complete todos los campos.';
+      return;
+    }
+
+    this.cryptoService.updateCrypto(this.selectedCrypto.crypto_id, this.selectedCrypto).subscribe({
+      next: () => {
+        this.getCryptos();
+        this.closeModal();
+        this.errorMessage = ''; 
       },
-      (error) => {
+      error: (error) => {
         console.error('Error al actualizar la criptomoneda', error);
       }
-    );
+    });
   }
 
   deleteCrypto(id: number): void {
-    this.cryptoService.deleteCrypto(id).subscribe(
-      () => {
-        this.cryptos = this.cryptos.filter((crypto) => crypto.crypto_id !== id);
-      },
-      (error) => {
-        console.error('Error al eliminar la criptomoneda', error);
-      }
-    );
+    if (confirm('¿Está seguro de que desea eliminar esta criptomoneda?')) {
+      this.cryptoService.deleteCrypto(id).subscribe({
+        next: () => {
+          this.getCryptos();
+        },
+        error: (error) => {
+          console.error('Error al eliminar la criptomoneda', error);
+        }
+      });
+    }
   }
 
   selectCrypto(crypto: any): void {
     this.selectedCrypto = { ...crypto };
-  }
-
-
-  editUser(newCrypto: any): void {
-    this.isEditing = true;
-    this.newCrypto = { ...newCrypto };
     this.isModalOpen = true;
-  }
-  resetForm(): void {
-    this.newCrypto = { id: null, username: '', password: '', role: '' };
-    this.isEditing = false;
+    this.errorMessage = '';
   }
 
   openModal(): void {
-    this.resetForm();
+    this.selectedCrypto = null;
+    this.newCrypto = { name: '', symbol: '' };
     this.isModalOpen = true;
+    this.errorMessage = ''; 
   }
 
   closeModal(): void {
     this.isModalOpen = false;
-    this.resetForm();
+    this.selectedCrypto = null;
+    this.newCrypto = { name: '', symbol: '' };
+    this.errorMessage = ''; 
   }
 
+  onSubmit(): void {
+    if (this.selectedCrypto) {
+      this.updateCrypto();
+    } else {
+      this.createCrypto();
+    }
+  }
 }

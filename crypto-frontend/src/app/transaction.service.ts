@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TransactionService {
 
-  private apiUrl = 'http://localhost:3000/transaction'; // URL de la API
+  private apiUrl = 'http://localhost:3000/transaction';
 
   constructor(private http: HttpClient) {}
 
@@ -18,7 +18,6 @@ export class TransactionService {
     });
   }
 
-  // Obtener todas las transacciones de un usuario
   getTransactions(userId: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/${userId}`, { headers: this.getAuthHeaders() });
   }
@@ -27,8 +26,6 @@ export class TransactionService {
     return this.http.get(`${this.apiUrl}/portfolio/${portfolioId}`, { headers: this.getAuthHeaders() });
   }
 
-
-  // Obtener las criptomonedas de un portafolio
   getPortfolioCryptos(portfolioId: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/monedas/${portfolioId}`, { headers: this.getAuthHeaders() });
   }

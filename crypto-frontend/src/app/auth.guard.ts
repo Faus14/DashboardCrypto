@@ -12,7 +12,6 @@ export class AuthGuard implements CanActivate {
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
     console.log('canActivate - Verificando autenticación...');
     
@@ -21,7 +20,7 @@ export class AuthGuard implements CanActivate {
       this.router.navigate(['/login']);
       return false;
     }
-  
+
     const expectedRole = route.data['role'];
     const userRole = this.authService.getRole();
   

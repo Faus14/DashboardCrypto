@@ -1,8 +1,6 @@
-import { Pool } from 'pg';
-import dotenv from 'dotenv';
 import axios from 'axios';
 import pool from '../config/database';
-import e from 'express';
+
 
 
 export const createPortfolios = async (user_id: number, portfolio_name: string) => {

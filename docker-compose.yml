@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  postgres_db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mibdcripto
+    ports:
+      - "5435:5432"  # Puedes cambiar el puerto si el 5432 ya está en uso en tu máquina
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Asegúrate de que el archivo SQL esté en la ubicación correcta
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge

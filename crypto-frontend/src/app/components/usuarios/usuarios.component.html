@@ -115,6 +115,9 @@
           name="username"
           required
         />
+        <label class="label" *ngIf="usernameError">
+          <span class="label-text-alt text-red-400">{{ usernameError }}</span>
+        </label>
       </div>
 
       <div class="form-control">
@@ -129,11 +132,17 @@
           name="password"
           [required]="!isEditing"
         />
+        <label class="label" *ngIf="passwordError">
+          <span class="label-text-alt text-red-400">{{ passwordError }}</span>
+        </label>
       </div>
 
       <div class="form-control">
         <label class="label">
           <span class="label-text text-white">Rol</span>
+        </label>
+        <label class="label" *ngIf="roleError">
+          <span class="label-text-alt text-red-400">{{ roleError }}</span>
         </label>
         <select 
           class="select select-bordered bg-gray-800/50 border-gray-700 text-white focus:border-blue-500"

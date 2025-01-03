@@ -116,8 +116,6 @@ export const deleteUser = async (req: Request, res: Response): Promise<void> => 
   }
 };
 
-
-// Obtener un usuario por su nombre de usuario (función utilizada para login)
 export const getUserByUsername = async (username: string): Promise<any | null> => {
   try {
     const user = await userService.getUserByUsername(username);

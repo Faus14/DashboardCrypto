@@ -61,13 +61,13 @@ export class PortfolioComponent implements OnInit {
   }
 
   getPortfolioBalance(): void {
-    console.log('selectedPortfolioId:', this.selectedPortfolioId);  // Agregar un log para verificar el valor de selectedPortfolioId
+    console.log('selectedPortfolioId:', this.selectedPortfolioId);  
   
     if (this.selectedPortfolioId > 0) {
       this.portfolioService.getTotalPortfolioBalance(this.selectedPortfolioId).subscribe(
         (data) => {
           this.portfolioBalance = data.balance;
-          console.log('Balance del portafolio:', this.portfolioBalance);  // Verifica que el balance sea recibido correctamente
+          console.log('Balance del portafolio:', this.portfolioBalance);  
         },
         (error) => {
           console.error('Error fetching portfolio balance:', error);
@@ -80,17 +80,16 @@ export class PortfolioComponent implements OnInit {
   
   
 
-  // Método para seleccionar un portafolio y obtener sus transacciones
   selectPortfolio(portfolioId: number): void {
     this.selectedPortfolioId = portfolioId;
     console.log('Portafolio seleccionado:', portfolioId);
   
-    // Buscar el nombre del portafolio seleccionado y actualizar la variable
+
     
     const selectedPortfolio = this.portfolios.find((p) => p.portfolio_id === portfolioId);
     this.selectedPortfolioName = selectedPortfolio?.portfolio_name || 'Desconocido';
     
-    // Llamar a los métodos para obtener balance y transacciones
+
     this.getPortfolioTransactions(portfolioId);
     this.getPortfolioBalance();
     this.getCryptoPorfolio(portfolioId);
@@ -110,7 +109,7 @@ export class PortfolioComponent implements OnInit {
     );
   }
 
-   // Método para obtener el nombre de la cripto basado en el crypto_id
+
    updateCryptoNames(): void {
     this.transactions.forEach((transaction) => {
       if (transaction.crypto_id) {
@@ -153,10 +152,8 @@ export class PortfolioComponent implements OnInit {
   handleCryptoAction(): void {
     if (this.action === 'add') {
       this.addCryptoToPortfolio();
-      this.showNotification('Operación exitosa', 'success');
     } else if (this.action === 'remove') {
       this.removeCryptoFromPortfolio(this.selectedCryptoId);
-      this.showNotification('Error en la operación', 'error');
     } else {
       console.error('Acción no definida');
     }
@@ -168,14 +165,27 @@ export class PortfolioComponent implements OnInit {
   }
   
   addCryptoToPortfolio(): void {
+    if (!this.selectedCryptoId || this.selectedCryptoId <= 0) {
+      this.showNotification('Por favor, selecciona una criptomoneda válida', 'error');
+      return;
+    }
+
+    if (!this.quantity || this.quantity <= 0) {
+      this.errorMessage = 'La cantidad debe ser mayor a 0.';
+      setTimeout(() => this.errorMessage = '', 3000);
+      return;
+    }
+
+
     const portfolio_id = this.selectedPortfolioId;
-    const quantity = this.quantity;  // Usar la cantidad seleccionada
+    const quantity = this.quantity;
     this.transactionService.addCryptoToPortfolio(portfolio_id, this.selectedCryptoId, quantity).subscribe(
       (data) => {
         console.log('Cripto agregada al portafolio:', data);
         this.getCryptoPorfolio(portfolio_id);
         this.getPortfolioTransactions(portfolio_id);
         this.successMessage= 'Cripto agregada del portafolio';
+        setTimeout(() => this.successMessage = '', 3000);
         this.getPortfolioBalance();
 
       },
@@ -187,6 +197,20 @@ export class PortfolioComponent implements OnInit {
 
 
 removeCryptoFromPortfolio(crypto_id: number): void {
+
+
+  if (!this.selectedCryptoId || this.selectedCryptoId <= 0) {
+    this.showNotification('Por favor, selecciona una criptomoneda válida', 'error');
+    return;
+  }
+
+  if (!this.quantity || this.quantity <= 0) {
+    this.errorMessage = 'La cantidad debe ser mayor a 0.';
+    setTimeout(() => this.errorMessage = '', 3000); // Borra el mensaje de error después de 3 segundos
+    return;
+  }
+  
+  
   const portfolio_id = this.selectedPortfolioId;
   const quantity = this.quantity;
   
@@ -198,6 +222,7 @@ removeCryptoFromPortfolio(crypto_id: number): void {
       this.getCryptoPorfolio(portfolio_id);
       this.getPortfolioTransactions(portfolio_id);
       this.successMessage= 'Cripto removida del portafolio';
+      setTimeout(() => this.successMessage = '', 3000); 
       this.getPortfolioBalance();
     },
     (error) => {
@@ -256,6 +281,7 @@ removeCryptoFromPortfolio(crypto_id: number): void {
     this.portfolioToDelete = portfolioId;
     const modal = document.getElementById('deleteModal') as HTMLDialogElement;
     modal.showModal();
+    this.getUserPortfolios()
   }
 
   confirmDelete() {
@@ -267,6 +293,9 @@ removeCryptoFromPortfolio(crypto_id: number): void {
           this.portfolioToDelete = null;
           this.showSuccess('Portafolio eliminado exitosamente');
           this.getUserPortfolios()
+          this.selectedPortfolioId = 0;
+          
+
         },
         error: (err) => {
           console.error('Error al eliminar el portafolio:', err);
@@ -280,5 +309,8 @@ removeCryptoFromPortfolio(crypto_id: number): void {
     setTimeout(() => (this.successMessage = ''), 3000);
   }
     
-  
+  openTransactionModal() {
+    const modal = document.getElementById('transactionModal') as HTMLDialogElement;
+    modal.showModal();
+  }
 }

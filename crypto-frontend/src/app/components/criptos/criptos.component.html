@@ -93,19 +93,30 @@
       {{ selectedCrypto ? 'Editar Criptomoneda' : 'Crear Criptomoneda' }}
     </h3>
     
-    <form (ngSubmit)="selectedCrypto ? updateCrypto() : createCrypto()" class="space-y-4">
+    <form (ngSubmit)="onSubmit()" class="space-y-4">
       <div class="form-control">
         <label class="label">
           <span class="label-text text-white">Nombre</span>
         </label>
         <input 
-          type="text"
-          class="input input-bordered bg-gray-800/50 border-gray-700 text-white focus:border-blue-500"
-          placeholder="Ej: Bitcoin"
-          [(ngModel)]="selectedCrypto ? selectedCrypto.name : newCrypto.name"
-          name="name"
-          required
-        />
+        type="text"
+        class="input input-bordered bg-gray-800/50 border-gray-700 text-white focus:border-blue-500"
+        placeholder="Ej: Bitcoin"
+        [(ngModel)]="selectedCrypto.name"
+        name="name"
+        *ngIf="selectedCrypto"
+        required
+      />
+      
+      <input 
+        type="text"
+        class="input input-bordered bg-gray-800/50 border-gray-700 text-white focus:border-blue-500"
+        placeholder="Ej: Bitcoin"
+        [(ngModel)]="newCrypto.name"
+        name="name"
+        *ngIf="!selectedCrypto"
+        required
+      />
       </div>
 
       <div class="form-control">
@@ -113,13 +124,28 @@
           <span class="label-text text-white">Símbolo</span>
         </label>
         <input 
-          type="text"
-          class="input input-bordered bg-gray-800/50 border-gray-700 text-white focus:border-blue-500"
-          placeholder="Ej: BTC"
-          [(ngModel)]="selectedCrypto ? selectedCrypto.symbol : newCrypto.symbol"
-          name="symbol"
-          required
-        />
+        type="text"
+        class="input input-bordered bg-gray-800/50 border-gray-700 text-white focus:border-blue-500"
+        placeholder="Ej: BTC"
+        [(ngModel)]="selectedCrypto.symbol"
+        name="symbol"
+        *ngIf="selectedCrypto"
+        required
+      />
+      
+      <input 
+        type="text"
+        class="input input-bordered bg-gray-800/50 border-gray-700 text-white focus:border-blue-500"
+        placeholder="Ej: BTC"
+        [(ngModel)]="newCrypto.symbol"
+        name="symbol"
+        *ngIf="!selectedCrypto"
+        required
+      />
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      
       </div>
 
       <div class="modal-action">

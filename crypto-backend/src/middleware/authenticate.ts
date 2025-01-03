@@ -6,6 +6,7 @@ export const authenticate = (req: Request, res: Response, next: NextFunction): v
 
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     res.status(401).json({ message: 'Token no proporcionado o inválido' });
+    console.log('Token no proporcionado o inválido');
     return;
   }
 
@@ -13,10 +14,13 @@ export const authenticate = (req: Request, res: Response, next: NextFunction): v
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secret') as any;
-
+  
     req.user = decoded;
+
     next();
   } catch (error) {
     res.status(401).json({ message: 'Token inválido o expirado' });
+    console.log('Token inválido o expirado');
   }
 };
+
