@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,ts}", // Asegúrate de que está configurado correctamente para Angular
+    "./src/**/*.{html,ts}",
   ],
   theme: {
     extend: {},
@@ -9,6 +9,6 @@ module.exports = {
   plugins: [
     require("daisyui"),
   ],
-  darkMode: 'class', // Esto habilita el modo oscuro basado en clases
+  darkMode: 'class',
 }
 

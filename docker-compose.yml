@@ -8,9 +8,9 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: mibdcripto
     ports:
-      - "5435:5432"  # Puedes cambiar el puerto si el 5432 ya está en uso en tu máquina
+      - "5435:5432"
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Asegúrate de que el archivo SQL esté en la ubicación correcta
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  
     networks:
       - app_network
 
