@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TransactionService {
 
-  private apiUrl = 'http://localhost:3000/transaction';
+  private apiUrl = 'https://dashboardcrypto.onrender.com/transaction';
 
   constructor(private http: HttpClient) {}
 

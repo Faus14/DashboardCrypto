@@ -7,7 +7,7 @@ import { forkJoin } from 'rxjs';
   providedIn: 'root',
 })
 export class CryptoService {
-  private apiUrl = 'http://localhost:3000/cryptos';
+  private apiUrl = 'https://dashboardcrypto.onrender.com/cryptos';
   private priceApiUrl = 'https://criptoya.com/api';
 
   constructor(private http: HttpClient) {}

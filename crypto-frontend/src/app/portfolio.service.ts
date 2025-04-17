@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class PortfolioService {
 
-  private apiUrl = 'http://localhost:3000/portfolio';
+  private apiUrl = 'https://dashboardcrypto.onrender.com/portfolio';
 
   constructor(private http: HttpClient) { }
 

@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/login';
+  private apiUrl = 'https://dashboardcrypto.onrender.com/login';
 
   constructor(private http: HttpClient) {}
 
