@@ -3,12 +3,14 @@ import { HttpClient , HttpHeaders} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import { forkJoin } from 'rxjs';
+import { environment } from '../environments/environment';
+
 @Injectable({
   providedIn: 'root',
 })
 export class CryptoService {
-  private apiUrl = 'http://localhost:3000/cryptos';
-  private priceApiUrl = 'https://criptoya.com/api';
+  private apiUrl = `${environment.apiUrl}/cryptos`;
+  private priceApiUrl = `${environment.priceApiUrl}`;
 
   constructor(private http: HttpClient) {}
 

@@ -8,7 +8,7 @@ import { environment } from '../environments/environment';
 })
 export class PortfolioService {
 
-  private apiUrl = `${environment.apiUrl}/portfolios`;
+  private apiUrl = `${environment.apiUrl}/portfolio`;
 
   constructor(private http: HttpClient) { }
 
