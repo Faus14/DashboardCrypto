@@ -136,14 +136,14 @@ export const getUserByUsername = async (username: string): Promise<any | null> =
 
 export const createAdminIfNotExists = async () => {
  
-  const adminUser = await getUserByUsername('admin');
+  const adminUser = await getUserByUsername('admin@gmail.com');
 
   if (!adminUser) {
-    const hashedPassword = await bcrypt.hash('admin', 10); 
+    const hashedPassword = await bcrypt.hash('admin12345', 10); 
 
  
     const newUser: User = {
-      username: 'admin',
+      username: 'admin@gmail.com',
       password_hash: hashedPassword,
       role: 'Admin' as 'admin', 
     };

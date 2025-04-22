@@ -83,7 +83,8 @@
               <div class="w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
                 {{ loggedUser?.username.charAt(0).toUpperCase() }}
               </div>
-              <span class="font-semibold">{{ loggedUser?.username }}</span>
+              <span class="font-semibold">{{ loggedUser?.username.split('@')[0] }}</span>
+
             </div>
           </li>
           <div class="divider my-2 before:bg-white/10 after:bg-white/10"></div>

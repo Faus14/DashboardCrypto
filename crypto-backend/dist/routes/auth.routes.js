@@ -36,5 +36,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const authController = __importStar(require("../controllers/auth.controller"));
 const router = (0, express_1.Router)();
+// Rutas de autenticación
+// Ruta para el registro de usuarios
+router.post('/register', authController.register);
 router.post('/', authController.login);
 exports.default = router;

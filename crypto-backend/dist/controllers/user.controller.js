@@ -101,7 +101,6 @@ const createUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             res.status(400).json({ message: 'La contraseña no puede estar vacía' });
             return;
         }
-        // Verificar si ya existe un usuario con el mismo nombre de usuario
         const existingUser = yield userService.getUserByUsername(username);
         if (existingUser) {
             res.status(400).json({ message: 'El usuario ya existe' });
@@ -179,16 +178,15 @@ const getUserByUsername = (username) => __awaiter(void 0, void 0, void 0, functi
 });
 exports.getUserByUsername = getUserByUsername;
 const createAdminIfNotExists = () => __awaiter(void 0, void 0, void 0, function* () {
-    // Verificar si el usuario admin ya existe
-    const adminUser = yield (0, exports.getUserByUsername)('admin');
+    const adminUser = yield (0, exports.getUserByUsername)('admin@gmail.com');
     if (!adminUser) {
-        const hashedPassword = yield bcrypt_1.default.hash('admin', 10); // Encriptamos la contraseña
+        const hashedPassword = yield bcrypt_1.default.hash('admin12345', 10);
         const newUser = {
-            username: 'admin',
+            username: 'admin@gmail.com',
             password_hash: hashedPassword,
-            role: 'Admin', // Aseguramos que el rol sea 'admin'
+            role: 'Admin',
         };
-        yield userService.createUser(newUser); // Crear el usuario admin
+        yield userService.createUser(newUser);
         console.log('Usuario admin creado');
     }
     else {

@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://dashboardcrypto.onrender.com/login';
+  private apiUrl = 'http://localhost:3000/login';
 
   constructor(private http: HttpClient) {}
 
@@ -49,5 +49,17 @@ export class AuthService {
     const payload = token.split('.')[1];
     const decoded = atob(payload);
     return JSON.parse(decoded);
+  }
+
+  register(username: string, password: string): Observable<any> {
+    const body = { username, password };
+    return this.http.post<any>(this.apiUrl + '/register', body).pipe(
+      map((response: any) => {
+        if (response.token) {
+          localStorage.setItem('token', response.token);
+        }
+        return response;
+      })
+    );
   }
 }
