@@ -102,7 +102,7 @@ const register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const user = yield userService.createUser({
             username,
             password_hash: hashedPassword,
-            role: 'user' // Fijado automáticamente
+            role: 'User'
         });
         const { password_hash } = user, userWithoutPassword = __rest(user, ["password_hash"]);
         res.status(201).json({

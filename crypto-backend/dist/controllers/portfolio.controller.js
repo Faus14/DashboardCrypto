@@ -12,12 +12,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getTotalPortfolioBalance = exports.getPortfolioById = exports.getUserPortfolios = exports.deletePortfolio = exports.createPortfolio = void 0;
 const portfolio_service_1 = require("../services/portfolio.service");
 const createPortfolio = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { user_id, portfolio_name } = req.body;
+    const { portfolio_name } = req.body;
     try {
-        const portfolio = yield (0, portfolio_service_1.createPortfolios)(user_id, portfolio_name);
+        const userId = req.user.userId;
+        const portfolio = yield (0, portfolio_service_1.createPortfolios)(userId, portfolio_name);
         res.status(201).json({ message: 'Portafolio creado', portfolio });
     }
     catch (err) {
+        console.error('Error al crear el portafolio:', err);
         res.status(500).json({ message: 'Error al crear el portafolio', error: err });
     }
 });
@@ -25,22 +27,23 @@ exports.createPortfolio = createPortfolio;
 const deletePortfolio = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { portfolio_id } = req.params;
     try {
-        const { user_id } = req.body;
         yield (0, portfolio_service_1.deletePortfolios)(parseInt(portfolio_id));
         res.status(204).send();
     }
     catch (err) {
+        console.error('Error al eliminar el portafolio:', err);
         res.status(500).json({ message: 'Error al eliminar el portafolio', error: err });
     }
 });
 exports.deletePortfolio = deletePortfolio;
 const getUserPortfolios = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { user_id } = req.params;
     try {
-        const portfolios = yield (0, portfolio_service_1.getPortfolios)(parseInt(user_id));
+        const userId = req.user.userId;
+        const portfolios = yield (0, portfolio_service_1.getPortfolios)(userId);
         res.status(200).json(portfolios);
     }
     catch (err) {
+        console.error('Error al obtener los portafolios:', err);
         res.status(500).json({ message: 'Error al obtener los portafolios', error: err });
     }
 });
@@ -52,6 +55,7 @@ const getPortfolioById = (req, res) => __awaiter(void 0, void 0, void 0, functio
         res.status(200).json(portfolio);
     }
     catch (err) {
+        console.error('Error al obtener el portafolio:', err);
         res.status(500).json({ message: 'Error al obtener el portafolio', error: err });
     }
 });
@@ -63,6 +67,7 @@ const getTotalPortfolioBalance = (req, res) => __awaiter(void 0, void 0, void 0,
         res.status(200).json({ balance });
     }
     catch (err) {
+        console.error('Error al obtener el balance total del portafolio:', err);
         res.status(500).json({ message: 'Error al obtener el balance total del portafolio', error: err });
     }
 });
