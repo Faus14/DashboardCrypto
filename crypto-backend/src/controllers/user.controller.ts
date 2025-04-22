@@ -2,6 +2,9 @@ import { Request, Response } from 'express';
 import * as userService from '../services/user.service';
 import bcrypt from 'bcrypt';
 import { User } from '../models/user.model';
+import dotenv from 'dotenv';
+
+
 
 
 export const getAllUsers = async (req: Request, res: Response): Promise<void> => {
@@ -135,15 +138,17 @@ export const getUserByUsername = async (username: string): Promise<any | null> =
 
 
 export const createAdminIfNotExists = async () => {
+  const adminUsername = process.env.ADMIN_USERNAME as string;
+  const adminPassword = process.env.ADMIN_PASSWORD as string;
  
-  const adminUser = await getUserByUsername('admin@gmail.com');
+  const adminUser = await getUserByUsername(adminUsername);
 
   if (!adminUser) {
-    const hashedPassword = await bcrypt.hash('admin12345', 10); 
+    const hashedPassword = await bcrypt.hash(adminPassword, 10); 
 
  
     const newUser: User = {
-      username: 'admin@gmail.com',
+      username: adminUsername,
       password_hash: hashedPassword,
       role: 'Admin' as 'admin', 
     };
