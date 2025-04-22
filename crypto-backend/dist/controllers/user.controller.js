@@ -178,11 +178,13 @@ const getUserByUsername = (username) => __awaiter(void 0, void 0, void 0, functi
 });
 exports.getUserByUsername = getUserByUsername;
 const createAdminIfNotExists = () => __awaiter(void 0, void 0, void 0, function* () {
-    const adminUser = yield (0, exports.getUserByUsername)('admin@gmail.com');
+    const adminUsername = process.env.ADMIN_USERNAME;
+    const adminPassword = process.env.ADMIN_PASSWORD;
+    const adminUser = yield (0, exports.getUserByUsername)(adminUsername);
     if (!adminUser) {
-        const hashedPassword = yield bcrypt_1.default.hash('admin12345', 10);
+        const hashedPassword = yield bcrypt_1.default.hash(adminPassword, 10);
         const newUser = {
-            username: 'admin@gmail.com',
+            username: adminUsername,
             password_hash: hashedPassword,
             role: 'Admin',
         };
