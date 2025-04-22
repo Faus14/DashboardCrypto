@@ -26,6 +26,9 @@ export class PortfolioComponent implements OnInit {
   successMessage: string = '';
   newPortfolioName: string = '';
   portfolioToDelete: number | null = null;
+  usdtRate: number = 0; // Valor inicial default
+  usdtRateLoaded: boolean = false;
+
   
 
 
@@ -37,22 +40,44 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit(): void {
     const localUser = localStorage.getItem('loggedUser');
+  
     if (localUser) {
       this.loggedUser = JSON.parse(localUser);
       this.userId = this.loggedUser?.id;
-
-      
-      if (this.userId > 0) {
-        this.getUserPortfolios();
-      }
     }
+  
+    // Cargar portafolios, balance y cryptos normalmente
     this.getUserPortfolios();
     this.getPortfolioBalance();
     this.getPortfolioTransactions(this.selectedPortfolioId);
     this.getallcryptos();
-    this.getPortfolioBalance();
-
+  
+    // Y aparte, traer el precio de USDT en segundo plano
+    this.loadUSDTPrice();
   }
+  
+  loadUSDTPrice(): void {
+    this.criptoService.getUSDTPrice().subscribe(
+      (price) => {
+        if (price > 0) {
+          this.usdtRate = price;
+          console.log('USDT actualizado:', this.usdtRate);
+        } else {
+          console.warn('No se pudo obtener precio de USDT, usando valor default');
+        }
+      },
+      (error) => {
+        console.error('Error al obtener precio de USDT:', error);
+      }
+    );
+  }
+  
+
+  approximateUSDT(balanceARS: number): number {
+    return this.usdtRate > 0 ? balanceARS / this.usdtRate : 0;
+  }
+  
+  
 
   getUserPortfolios(): void {
     this.portfolioService.getUserPortfolio(this.userId).subscribe(
@@ -192,6 +217,8 @@ export class PortfolioComponent implements OnInit {
         this.successMessage= 'Cripto agregada del portafolio';
         setTimeout(() => this.successMessage = '', 3000);
         this.getPortfolioBalance();
+        const modal = document.getElementById('transactionModal') as HTMLDialogElement;
+        modal.close(); // 🚀 Cerramos el modal acá
 
       },
       (error) => {
@@ -229,6 +256,8 @@ removeCryptoFromPortfolio(crypto_id: number): void {
       this.successMessage= 'Cripto removida del portafolio';
       setTimeout(() => this.successMessage = '', 3000); 
       this.getPortfolioBalance();
+      const modal = document.getElementById('transactionModal') as HTMLDialogElement;
+      modal.close();
     },
     (error) => {
       console.error('Se produjo un error al remover la criptomoneda:La cantidad solicitada es mayor a la cantidad disponible:', error);

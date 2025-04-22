@@ -121,7 +121,12 @@
 </dialog>
           </div>
           
-          <p class="text-3xl font-bold text-success">{{ portfolioBalance | currency:'ARS' }}</p>
+          <div class="space-y-2">
+            <p class="text-3xl font-bold text-success">{{ portfolioBalance | currency:'ARS ' }}</p>
+            <p class="text-xl font-semibold text-purple-400">
+              ≈ {{ approximateUSDT(portfolioBalance) | number:'1.2-2' }} USDT
+            </p>
+          </div>
         </div>
       </div>
 

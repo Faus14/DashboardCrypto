@@ -19,6 +19,32 @@ export class CryptoService {
     });
   }
 
+  getUSDTPrice(): Observable<number> {
+    return this.http.get<any>(`${this.priceApiUrl}/usdt/ars/1`).pipe(
+      map(response => {
+        if (!response || typeof response !== 'object') {
+          return 0;
+        }
+  
+        const prices = Object.values(response)
+          .map((exchange: any) => exchange?.ask)
+          .filter((ask: number) => ask > 0);
+  
+        if (prices.length === 0) {
+          return 0;
+        }
+  
+        const avgPrice = prices.reduce((acc, price) => acc + price, 0) / prices.length;
+        return avgPrice;
+      }),
+      catchError((error) => {
+        console.error('Error al obtener precio de USDT:', error);
+        return of(0);
+      })
+    );
+  }
+  
+
   getCryptos(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl, { headers: this.getAuthHeaders() }).pipe(
       mergeMap(cryptos => {
